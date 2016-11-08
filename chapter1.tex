@@ -30,7 +30,6 @@ Intermediate-scale structuring typically ranges from 100 m -- 1 km.  This is als
 Small-scale structuring is generally considered to be all irregularities less than 100 m.  Although the effects of these scale sizes on navigation and communication systems are minimal, they can be the easiest to study because of large data sets collected from HF radars globally for several decades.  The irregularity sizes presented here are rough categories only and a high degree of coupling between different scales is generally considered reasonable.  For instance, large-scale structures such as polar patches may very well have internal intermediate- or small-scale structuring.  Some kind of turbulent cascade is often assumed to connect these different scales, but because various instruments or techniques usually only observe structuring on a particular scale, it is difficult to find direct evidence of this or how exactly it occurs.
 
 \section{Observational Techniques and Models}
-\section{SuperDARN}
 
 %Figures
 %- Map of radars (Northern and southern hemisphere)
@@ -41,7 +40,7 @@ Small-scale structuring is generally considered to be all irregularities less th
 %- How does radar work diagram
 %- Pulse sequence diagram
 
-\section{CSR}
+\subsection{Coherent Scatter Radars}
 %-general introduction
 
 Coherent Scatter Radars (CSR) have been used to study the Ionosphere for the last half century.  Radars are ground based instruments used to detect density structures in the ionosphere's plasma.  A basic radar consists of transmission and recieveing antenna.  The radar transmits a radio wave, which can reflect off a suititbly sized structure in the ionosphere.  Reflected waves can be detected by the recieving antennas.  The time difference between when the signal was transmitted and when it was detected  an then be used to determine how far away from the radar the target is.
@@ -49,7 +48,6 @@ Coherent Scatter Radars (CSR) have been used to study the Ionosphere for the las
 The first instance of CSR being used to study plasma density structures in the ionosphere was the Scandanavian Twin Auroral Radar Experiment (STARE) in the 1970s and 1980s.  STARE consisted of two very-high frequency (VHF) radars with overlapping FoVs that were designed to measure FAIs in the E region of the ionosphere \citep{Greenwald1997}.  The advantage of two radars with overlaping FoVs was the ability to observe the same structures from two different orientations.  Because each radar can only measure the LoS velocity of a structure, two simultanious observations from different directions allows two different velocity vecotor compontents to be found, and hense the total velocity vector can be calculated.  This technique is still commonly used with CSR system.
 
 There are three measurements typically made by CSR systems: backscatter power, line of sight (LoS) velocity, and spectral width.  Backscatter power is the power of the retuned signal that the radar's recievers detect.  Typically, a threshold is selected for the minimum power acceptable for a return to be considered an actual signal instead of background noise.  LoS velocity is the component of the total velocity that is measured along one beam of a radar.  Because radars measure velocity through the doppler shift of backscatter, only the component of the velocity vector that is along the radar beam can be measured.  Spectral width represents the width of the doppler power spectrum.
-** EQUATIONS FOR LOS, WIDTH, ECT. **
 
 %- Greenwald, 1985
 
@@ -57,14 +55,14 @@ CSR systems typically operate by transmitting pulses instead of continuously.  T
 
 %% INSERT RADAR PULSE DIAGRAM %%
 
-The radar starts transmitting the pulse at \(t=-\Delta t\) and finishes at \(t=0\).  At \(t=?\), the pulse reaches the backscatter volume and begins reflecting off it.  At \(t=T-\Delta t\), the radar begins to received the the echoed signal, which finishs at \(t=T\).  The speed of the radar pulse in the Earth's atmosphere is approximated by the vacuum speed of light, \(c\).  The distance between the radar and the scattering volume is known as the range and is given in equation \ref{eqn:range}.
+The radar starts transmitting the pulse at \(t=-\Delta t\) and finishes at \(t=0\).  At \(t=?\), the pulse reaches the backscatter volume and begins reflecting off it.  At \(t=T-\Delta t\), the radar begins to received the the echoed signal, which finishs at \(t=T\).  The speed of the radar pulse in the Earth's atmosphere is approximated by the vacuum speed of light, \(c\).  The distance between the radar and the scattering volume is known as the range and is given in equation \ref{eqn:radar_range}.
 \begin{equation}
-	\label{eqn:range}
+	\label{eqn:radar_range}
 	R = \frac{cT}{2}
 \end{equation}
-The size of the range gate is determined by the length of a radar pulse.  This is given in equation \ref{eqn:gatesize}.
+The size of the range gate is determined by the length of a radar pulse.  This is given in equation \ref{eqn:range_gate}.
 \begin{equation}
-	\label{eqn:gatesize}
+	\label{eqn:range_gate}
 	\Delta r = \frac{c\Delta t}{2}
 \end{equation}
 Longer pulses result in larger range gates, resulting in poorer spatial resolution.
@@ -82,43 +80,23 @@ Instead of waiting for each individual signal to be recieved before transmitting
 %- Hanuise, 1993b
 %- Baker, 1995
 
-\subsection{SuperDARN}
-- Overview
-	- geography
-	- number of radars
-	- mid, auroral, high laditudes
-	- history
-		- STARE (Greenwald, 1978) - first use of CSR to study ionosphere, VHF radar
-		- Goose Bay, built in 1983  (Greenwald, 1985) - first HF radar
-	- measures power, spectral width, LoS velocity
-	- decameter scale irregularities
-	- 2 or more radars covering the same area can find the total velocity comonent
-	- Network used to create convection maps
-- Operational Specifications
-	- Hardware - antennas?
-	- Frequency
-	- Modes
-	- 8 pulse ACF (post 2011); 7 pulse before
-		- 7 pulse - Greenwald 1983,1985; Farley 1972
-		- 8 pulse - 2003 SDarn?
-- How are convection maps produced?
-	- Ruohoniemi et al. 1989
-	- merge LoS measurments form 2+ radars with overlapping FoV (old method)
-	- current method involves finding the "best fit" 2D ionospheric electrostatic potential
-		- algorithm for this - Ruohoniemi and Baker, 1998
-		- Legendre functions
-		- Only use F-region measurements
-		- Velocity data is supplimented with a statistical model when data point coverage from SuperDARN alone is insufficient
+\subsubsection{SuperDARN}
+The Super Dual Auroral Radar Network (SuperDARN) is a global network of HF CSRs that was designed to measure small-scale plasma structuring in the ionosphere and map the global plasma convection.  The network currently consists of 35 operational radars between the northern and southern hemispheres distributed at mid-, high-, and polar latitudes.  Following the STARE experiment \citep{Greenwald1978}, the first HF radar was built in Goose Bay, Canada in 1983, which would become the first of the SuperDARN radars \citep{Greenwald1985}.  
 
-\section{Incoherent Scatter Radar}
+It is nessisary to use HF radars to study ionsospheric structures in the polar cap because the magnetic field is close to vertical and in order for the radar beam to meet the perpendicularity condition to observe FAIs, the beam must be refracted through a dense ionosphere.  VHF radar beams are not refracted enough in the polar cap and the beam will pass through the ionosphere without reflecting off any FAIs.  SuperDARN radars operate at a nominal 8--20 MHz frequency, which, according to the Bragg scatter equation for backscatter, corresponds to observing decameter-scale plasma waves.  Each radar consists of 16 independent transmit and recieving antennas.  Beams are electronically steerable and most radars have between 16 and 24 beams in normal operation mode, each beam being \(3.25^\circ\) in azimuth.  Each beam consists of 75--100 range gates, which are generally either 15 km or 45 km in length \citep{Chisham2007}.  SuperDARN radars were originally designed to used a 7 pulse ACF \citep{Farley1972,Greenwald1983,Greenwald1985}, however since 2011, most radars have begun using an 8 pulse sequence.
+
+One of the original purposes of SuperDARN was to produce maps of the plasma convection patterns in the polar caps using 2D velocity vectors.  Originally this was accomplished by considering two radars with overlapping FoVs.  If both recieved backscatter from the same scattering volume, two LoS velocities could be found for that scattering volume, which could be combined to find a 2D velocity vector \citep{Ruohoniemi1989}.  The modern method for creating convection maps involves taking all data recorded by all radars in a particular hemisphere and finding the best fit to a 2D ionospheric electrostatic potential using Legendre functions \citep{Ruohonomiemi1998}.  For convection maps, only data from the F region is considered.  If there is not enough velocity data to confine the fit sufficiently, the measured data points are supplimented with a statistical model based on solar wind IMF conditions \textbf{CITE MCWILLIAMS???}.
+
+
+\subsection{Incoherent Scatter Radar}
 Similar to CSRs, incoherent scatter radars (ISRs) are ground based radars that are used to probe the ionosphere.  However, they use a fundamentally different technique to observe structuring, which allows them to measure different things than CSRs.  Where as CSRs receive backscatter from large, "coherent" density structures in the ionosphere, ISRs operate by radar beams scattering due to the random thermal motion of electrons in the ionosphere.  The radar receivers then detect a spectra of frequencies with different power.  Analysis of this spectra will reveal the plasma frequency, and hence, the electron density, electron and ion temperature, and LoS velocity.
 **CITE Gordon, 1958**
 
-\section{Models}
-Models can be useful tools for establishing the context of experimental measurments, especially in a global sense.  In particular, it is impractical to achieve full global coverage of all instruments, so models can be a useful way to fill in the gaps.  There are two main categories of models.  Theoretical models are based on first principles and global pictures are often found by running large computer simulations based on these first principles.  They can help give insight as to what causes specific phenomena because the process can be followed beginning to end.  Empirical models are based purely on measured data.  These can potentially be more accurate because they should replicate real measurments, but they also do not give any insight into how the system got to its ending state.  In addition, empirial models are often heavily averaged.
--empirical vs theory based models
+The first ISR was built in Arecibo, Puerto Rico in 1958.  Since then, at least 8 other ISRs have been deployed around the world at equitoral, mid-, and high-latitudes.  The most recent advancement has been the development of Advanced Modular Incoherent Scatter Radars (AMISR), of which there are currently three in use, one at the Poker Flat Rocket Range, just north of Fairbanks, AK and two in Resolute Bay, Canada.  The advantage of these new systems is that they are electronical steerable, unlike older ISRs which consisted of a large dish that had to be moved manually to change the beam direction.  This allows beams to be transmitted in many different directions at a very high time cadence, giving the radar the capability to make measurements in multiple directions almost simultaniously.  This is very important for creating 2D maps of ionospheric conditions and tracking how they change in time.
 
-\subsection{IRI}
+\subsection{IRI Model}
+Models can be useful tools for establishing the context of experimental measurments, especially in a global sense.  In particular, it is impractical to achieve full global coverage of all instruments, so models can be a useful way to fill in the gaps.  There are two main categories of models.  Theoretical models are based on first principles and global pictures are often found by running large computer simulations based on these first principles.  They can help give insight as to what causes specific phenomena because the process can be followed beginning to end.  Empirical models are based purely on measured data.  These can potentially be more accurate because they should replicate real measurments, but they also do not give any insight into how the system got to its ending state.  In addition, empirial models are often heavily averaged.
+
 The international reference ionosphere (IRI) is an empirical model of the Earth's ionosphere.  It was originally created in 1969 as a joint effort between the Comittee on Space Research (COSPAR) and the International Union of Radio Science (URSI) and has been periodically updated since then \citep{Rawer1978}.  The current version is IRI-2012 \citep{Bilitza2011}, which is used throughout the work done here.  It can be accessed either as an online module or by downloading and running the FORTRAN source code, both of which are available from the International Reference Ionosphere page on the NASA website (http://iri.gsfc.nasa.gov/).
 
 The IRI model can produce outputs of electron density, temperatures of electrons, ions, and neutrals, ion composition (O+, H+, He+, O2+, NO+, N+), and total electron content (TEC).  The model requires the input of a location (latitude, longitude, and altitude) and time (year, date, and time).  Internally, the model has the additional capability of producing profiles in any of the input parameters.  This is particularly significant for height profiles, and allows the peak heights and densities of the E and F region to be calculated.
@@ -130,11 +108,60 @@ The IRI model can produce outputs of electron density, temperatures of electrons
 %	- FORTRAN source code
 %- Biltza, 1990
 
-\subsection{MSISE}
-The MSISE (Mass Spectrometer-Incoherent Scatter, Extended) model is an empirical model of the Earth's upper atmosphere.  It outputs overal neutral temperature and densities of particular species in the atmosphere, particularly O, N2, O2, He, Ar, H, and N.  Similar to the IRI model, input parameters include a location (latitude, longitude, height) and time (year, date, time), with the opportunity to produce profiles in any of those parameters.  The model was originally developed in 1986 to describe the neutral temperatures and densities above 100 km \citep{Batten1987}.  Currently, the 1990 rendition of the model is used (MSISE-90), which extends the lower altitudinal extent of the model and improves the predictions at higher altitudes \cite{Hedin1991}.
-%- Empirical model of neutral atmosphere
-%- parameters that can be calculated
+\section{Theory and Observations}
+Much work has been done over the past several decades to try to understand the complicated picture of plasma structuring in the polar cap, both from theoretical analysis of plasma dispersion relations, simulations of plasma dynamics, and observations of plasma structuring using a variety of instruments.
 
-\subsection{IGRF}
-The international geomagnetic reference field (IGRF) is a model of the earth's magnetic field.  The model consists of mathematical expressions and corresponing coefficients that are updated regularly that represent both the Earth's magnetic field and how it changes over time \citep{Thebault2015}.  Because the Earth's magnetic field is in fact dynamic (the location of the geomagnetic poles can change by \(\sim\)10 km per year), the model constently needs to be updated not only to improve it but to keep it accurate with the present magnetic field.  It is the internationally agreed upon standard for the magnetic field strength and direction.
-%- Earth's magnetic field
+\subsection{Theory and Simulations}
+One of the primary structuring mechanisms thought to influence the F region ionosphere is the gradient drift instability (GDI) \citep{Tsunoda1988}.  GDI is operational when high-density purturbations in the plasma move to regions of lower background density and low-density purturbations in the plasma move to regions of higher background density, such that the wave amplitude grows relative to background conditions.  As plasma drifts and carries irregularities with it, the ions in high density perturbations lag behind the electrons and create a purturbed electric field.  This purturbed electric field combined with the background magnetic field causes the density perturbations to \(\vec{E}\times\vec{B}\) drift.  If the drift causes high and low density perturbations to move as desribed above, the instability is operational and the perturbations grow.  If instead high density perturbations drift into regions of higher background density and low density perturbations drift into regions of lower background density, the wave is damped.
+
+Some of the first 1D investigations of the linear GDI growth rate found that it can be described by a simple expression involving the plasma drift velocity, \(V_E\), and the gradient scale length, \(L\) \citep{Simon1963,Hoh1963,Linson1970}.
+\begin{equation}
+	\label{eqn:gdi_old}
+	\gamma = \frac{V_E}{L}
+\end{equation}
+This expression is only valid if the density gradient is in the same direction as the plasma drift velocity and wavevector direction is not considered.  The results of \citet{Keskinen1982,Keskinen1983} do consider the wavevector, \(\vec{k}\), to some extent, but still assume a general relationship between density gradients and plasma drift \citep{Tsunoda1988}.
+\begin{equation}
+	\label{eqn:gdi_80s}
+	\gamma = \frac{k_y}{k}\frac{\vec{k}\cdot\vec{V}_E}{kL}
+\end{equation}
+The directional dependance of GDI has been shown to be significant, such that the growth rate can actually change signs (determining whether wave growth or damping occurs) with different wavevector directions, so it is important to consider this factor \citep{Makarevich2014c}.  In addition, these expressions are only applicable in a particular altitudinal regieme, usually the F region.
+
+Recently, a new expression has been introduced that considers an arbetrary altitude, wavevector, and density gradient within the ionosphere, which allows FBI, GDI, an CCI to be considered with a single dispersion relation \citep{Makarevich2016a}.
+\begin{equation}
+	\label{eqn:gdi_Mak16}
+	(H_i-H_e)\omega = (H_i\vec{V}_{e0}-H_e\vec{V}_{i0})\cdot\vec{k}+(C_i-C_e)H_eH_i
+\end{equation}
+As before, \(\vec{k}\) is the wavevector and \(\vec{V}_{\alpha 0}\) is the velocity of species \(\alpha\).  The species \(\alpha\) is given by either \(i\) for ions or \(e\) for electrons.  The other quantities in equation \ref{eqn:gdi_Mak16} are not standard and described below.
+\begin{equation}
+	H_\alpha = S_\alpha F_\alpha + D_\alpha^{-1} F_\parallel \quad\quad\quad
+	C_\alpha = \frac{T_\alpha}{m_\alpha \Omega_\alpha}
+\end{equation}
+\begin{equation}
+	F_\alpha = i k_\perp^2 D_\alpha + \vec{G}\cdot\vec{k}_\perp D_\alpha + \vec{G}\cdot\vec{k}\times\uvec{b} \quad\quad\quad
+	F_\parallel = i k_\parallel^2 + \vec{G}\cdot\vec{k}_\parallel
+\end{equation}
+\begin{equation}
+	S_\alpha = \frac{1}{1+D_\alpha^2} \quad\quad\quad
+	D_\alpha = -\frac{i}{\Omega_\alpha}(\omega-\vec{k}\cdot{V}_{\alpha 0})+r_\alpha
+\end{equation}
+By considering certain limiting cases, an expression that is more relevant to the polar F region specifically can be resolved.  \textbf{After SUBSTANTIAL algebraic manipulation...}  This results in the following expression for the GDI growth rate, which agrees well with the results of \citet{Makarevitch2014c}.
+\begin{equation}
+	\label{eqn:gdi}
+	\gamma = \frac{1}{1+\psi}\left(\uvec{k}\cdot\uvec{b}\times\vec{G}\right)\left(\uvec{k}\cdot\frac{\vec{E}}{B}-R\uvec{k}\cdot\frac{\vec{E}}{B}\times\uvec{b}\right)
+\end{equation}
+
+
+
+-How polar patches form
+-GDI (how small scale structuring forms)
+-Other instability mechanisms and why they aren't considered
+
+\subsection{Observations}
+-Patch formation here?
+-Dahlgren 2012 a, b
+-Semeter 2009
+-Lyne 2015 (rockets)
+-Moen 2012
+
+
+\section{Motivation and Objectives}
