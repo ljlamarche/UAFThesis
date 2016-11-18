@@ -172,10 +172,71 @@ As before, \(\vec{k}\) is the wavevector and \(\vec{V}_{\alpha 0}\) is the veloc
 	S_\alpha = \frac{1}{1+D_\alpha^2} \quad\quad\quad
 	D_\alpha = -\frac{i}{\Omega_\alpha}(\omega-\vec{k}\cdot{V}_{\alpha 0})+r_\alpha
 \end{equation}
-By considering certain limiting cases, an expression that is more relevant to the polar F region specifically can be resolved.  \textbf{After SUBSTANTIAL algebraic manipulation...}  This results in the following expression for the GDI growth rate, which agrees well with the results of \citet{Makarevitch2014c}.
+The quantity \(r_\alpha\) is the ratio of the collision frequency to the gyrofrequency of a particular species, given by \(r_\alpha = \nu_\alpha/\Omega_\alpha\).  
+
+It is useful to express Equation \ref{eqn:gdi_Mak16} in the following equivalent form by defining additional terms.
+\begin{equation}
+	\label{eqn:gdi_Mak16_alt}
+	\left(D_i-D_e\right)\omega = \vec{V}_d\cdot\vec{k}\left(\frac{Z_2}{Z_1}\right) + \left(D_i\vec{V}_{i0}-D_e\vec{V}_{e0}\right)\cdot\vec{k}+(C_i-C_e)k_{\perp}^2\left(\frac{Z_3}{Z_1}\right)
+\end{equation}
+In the F region where background plasma motion is dominated by electric fields perpendicular to the magnetic field, the differential plasma velocity, \(\vec{V}_d\), can be described as 
+\begin{equation}
+	\label{eqn:gdi_Mak16_Vd}
+	\vec{V}_d = \vec{V}_{e0}-\vec{V}_{i0} = (r_i-r_e)\left[s_es_i(1+\psi)\left(R\vec{V}_E-\frac{\vec{E}}{B}\right)\right]
+\end{equation}
+where, \(s_\alpha = (1+r_\alpha^2)^{-1}\).  Additionally,
+\begin{equation}
+\label{eqn:gdi_Mak16_Z}
+\begin{split}
+	Z_1 = i(1+Y)+a+Rb+ycK \quad\quad\quad 
+	Z_2 = R(i+a)-b \quad\quad\quad\quad\quad\quad\\
+	Z_3 = -\frac{\Psi(i+a)^2}{1+\Psi}-Rb(i+a)+\frac{b^2}{1+\Psi}-iy(y-ic)\left[\left(K+1-\Psi^{-1}\right)(i+a)+Rb\left(1-\Psi^{-1}\right)\right]\\+Ky^2(y-ic)^2
+\end{split}
+\end{equation}
+and
+\begin{equation}
+\begin{split}
+	a& = \frac{\vec{G}\cdot\vec{k}_\perp}{k_\perp^2} \quad\quad\quad
+	b = -\frac{\vec{G}\cdot\vec{k}\times\uvec{b}}{k_\perp^2} \quad\quad\quad
+	c = \frac{\vec{G}\cdot\vec{k}_\parallel}{k_\perp k_\parallel} \\
+	\Psi = -D_iD_e& \quad\quad
+	R = \frac{D_i+D_e}{1+\Psi} \quad\quad
+	y = \frac{k_\parallel}{k_\perp} \quad\quad
+	K = \left(1+\frac{1}{\Psi}\right)\left(1+R^2\right) \quad\quad
+	Y = Ky^2
+\end{split}
+\end{equation}.
+
+By considering certain limiting cases, an expression that is more relevant to the polar F region specifically can be resolved from Equation \ref{eqn:gdi_Mak16_alt}.  First, assume a cold plasma such that the temperature of both ions and electrons is negligible.  In this case, \(T_\alpha = 0\), so \(C_\alpha = 0\).  Secondly assume all irregularities are perfectly aligned with the magnetic field such that \(k_\parallel = 0\).  This means that \(\vec{k}_\perp = \vec{k}\), \(y=0\), and \(Y=0\).  Finally, consider only low frequencies (\(\omega \ll \Omega_\alpha\)) and long wavelengths (\(\vec{k}\cdot\vec{V}_{\alpha 0} \\ \nu_\alpha\)).  If \(D_\alpha\) is expressed as shown below, it can bee seen that these limits result in the first two terms being negligible such that \(D_\alpha \approx r_\alpha\).
+\begin{equation}
+	D_\alpha = -i\frac{\omega}{\Omega_\alpha} + i\frac{\vec{k}\cdot\vec{V}_{\alpha 0}}{\Omega_\alpha} + \frac{\nu_\alpha}{\Omega_\alpha} \approx \frac{\nu_\alpha}{\Omega_\alpha} = r_\alpha
+\end{equation}
+Equation \ref{eqn:gdi_Mak16_alt} can then be expressed as follows.
+\begin{equation}
+	\label{eqn:gdi_Mak16_Freg}
+	(r_i-r_e)\omega = \vec{V}_d\cdot\vec{k}\left(\frac{Z_2}{Z_1}\right)+(r_i\vec{V}_{i0}-r_e\vec{V}_{e0})
+\end{equation}
+The growth rate, \(\gamma\), is contained within the dispersion relation as \(\omega = \omega_r+i\gamma\), so the imaginary part of Equation \ref{eqn:gdi_Mak16_Freg} must be considered separately.
+\begin{equation}
+	\label{eqn:gdi_Mak16_gam}
+	(r_i-r_e)\gamma = \vec{V}_d\cdot\vec{k}\;\text{Im}\left\{\frac{Z_2}{Z_1}\right\}
+\end{equation}
+The differential plasma drift has been defined previously in Equation \ref{eqn:gdi_Mak16_Vd} but the imaginary component of \(Z_2/Z_1\) must still be identified.  Using the definitions of \(Z_1\) and \(Z_2\) provided in Equation \ref{eqn:gdi_Mak16_Z} and the simplifying assumptions discussed above for the F region,
+\begin{equation}
+	\frac{Z_2}{Z_1} = \frac{R(i+a)-b}{i+a+Rb}
+\end{equation}.
+Multiplying both the numerator and denominator by \(-i+a+Rb\) removes the imaginary component from the denominator.  Additionally the local approximation \(G/k_\perp \ll 1\) is taken, which results in \(a\), \(b\), and \(c\) being small so that any second order terms in these quantities can be neglected.
+\begin{equation}
+	\frac{Z_2}{Z_1} = R+ib(1+R^2)
+\end{equation}
+Using the above result and Equation \ref{eqn:gdi_Mak16_Vd}, Equation \ref{eqn:gdi_Mak16_gam} becomes
+\begin{equation}
+	(r_i-r_e)\gamma = (r_i-r_e)s_es_i\left(1+\psi\right)\left(R\vec{V}_E-\frac{E}{B}\right)\cdot\vec{k}b\left(1+R^2\right)
+\end{equation}
+Recognizing that \(s_es_i\left(1+R^2\right) = (1+\psi)^{-2}\) and \(b = \vec{G}\cdot\vec{k}\times\uvec{b}/k^2 = -\vec{k}\cdot\uvec{b}\times\vec{G}/k^2\) by vector identities a final expression for the GDI growth rate in the F region can be found, which agrees well with the results of \citet{Makarevitch2014c}.
 \begin{equation}
 	\label{eqn:gdi}
-	\gamma = \frac{1}{1+\psi}\left(\uvec{k}\cdot\uvec{b}\times\vec{G}\right)\left(\uvec{k}\cdot\frac{\vec{E}}{B}-R\uvec{k}\cdot\frac{\vec{E}}{B}\times\uvec{b}\right)
+	\gamma = \frac{1}{1+\psi}\left(\uvec{k}\cdot\uvec{b}\times\vec{G}\right)\uvec{k}\cdot\left(\frac{\vec{E}}{B}-R\vec{V}_E\right)
 \end{equation}
 
 In addition to analytical analysis of dispersion relations, GDI has also been studied through numerical simulations.  \citet{Keskinen1982} found plasma waves on the trailing edge of a large density enhancement are unstable.  \citet{Keskinen1990} expanded these results by considering coupling between the magnetosphere and ionosphere, but found that this coupling only has a substantial effect for very large-scale structuring.  In addition, this simulation predicted instability evolution that was far faster than what observations had shown.  3D simulations of GDI surrounding a plasma density enhancement were introduced in \citet{Guzdar1998}.  \citet{Gondarenko1999} improved this 3D simulation further by including plasma dynamics parallel to the magnetic field and inertial effects.  These factors are nessesary for the simulation to model secondary KHI and tertiary sheer-driven instability processes.  These simulations provided insight in how exactly GDI structuring develops.  Both the density and velocity spectra were found to be anisotropic, however increasing the impact of ion-inertial factors in simulations caused both spectra to become more isotropic \citep{Gondarenko2001}.  Fluctuations in density were found that were as much at 10--20\% of the background plasma density \citep{Gondarenko2004a}.  Although asymmetry between structuring on the leading and trailing edges of a large-scale density structure was observed in all simulations, rapidly changing convection velocity could complicate this \citep{Gondarenko2004b}.  For instance, if a large scale structure was drifting one direction and convection patters change suddenly so that it is now drifting in the opposite direction, the leading edge becomes the trailing edge and vice versa and both edges may exhibit some structuring.  Additionally, both edges may become structured if large velocity shears are initially present surrounding the density structure \citep{Gondarenko2006}.  Large shears additionally cause KHI to be operational as a primary structuring mechanism, but over time GDI will still be the dominant structuring process.
@@ -204,4 +265,4 @@ The first objective of is to evaluate the extent of solar control over irregular
 
 The second objective is to investigate asymmetry in the GDI growth rate surrounding large-scale density structures.  This is a modeling approach to identifying where plasma irregularities occur surrounding a polar patch and how they can be observed by a ground-based HF radar.  The model allows certain factors to be considered that can be challenging to investigate experimentally becsuse it is difficult to isolate particular effects.  The model used considers the direction of a large, elongated polar patch as well as it drift direction to be arbitrary in relation to the radar and independent of each other, which gives some insight as to how structuring would be expected with polar patches in orientations that are not often observed.
 
-The third objective is to investigate the relationship between factors that control GDI and small-scale plasma structuring.  This combines the theoretical consideration of where growth rate is greatest with where structuring is observed the most around a polar patch.  This is particularly important because even though plasma structuring is often observed on the trailing edge of polar patches and this is where GDI predicts the greatest growth rates, GDI theory actually predicts growth of much larger irregularites than the small scale structuring observed by HF radars.  A direct comparison of the two improves our understanding of how growth rates are related to small-scale plasma structuring.
+The third objective is to investigate the relationship between factors that control GDI and small-scale plasma structuring.  This combines the theoretical consideration of where growth rate is greatest with where structuring is observed the most around a polar patch.  This is particularly important because even though plasma structuring is often observed on the trailing edge of polar patches and this is where GDI predicts the greatest growth rates, GDI theory actually predicts growth of much larger irregularities than the small scale structuring observed by HF radars.  A direct comparison of the two improves our understanding of how growth rates are related to small-scale plasma structuring.
