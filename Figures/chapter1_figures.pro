@@ -8,11 +8,12 @@ PRO densprofile
   year = 2007
   month = 1
   day = 1
-  time_flag = 0
-  hour = 0
+  time_flag = 1
+  hour = 12
+  hour_night = 0
   geo_flag = 0
   latitude = 75.
-  longitude = 148.
+  longitude = 0.
   height = 100.
   start = 60.
   stop = 600.
@@ -32,6 +33,7 @@ PRO densprofile
   nN2 = fltarr(nstp)
   nO2 = fltarr(nstp)
   nelec = fltarr(nstp)
+  nelec_night = fltarr(nstp)
   nOp = fltarr(nstp)
   nHp = fltarr(nstp)
   nO2p = fltarr(nstp)
@@ -89,9 +91,31 @@ PRO densprofile
   CLOSE, lun
   FREE_LUN, lun
 
+  ; calculate nighttime density
+  opts = 'vars=06&vars=17&vars=22&vars=23&vars=25&vars=26&vars=28&'  
+  model_parameters = ' "model=iri_2012&year='+string(year,format='(I04)')+'&month='+string(month,format='(I02)')+'&day='+string(day,format='(I02)')+'&time_flag='+string(time_flag,format='(I0)')+'&hour='+string(hour_night,format='(F0)')+'&geo_flag='+string(geo_flag,format='(I0)')+'&latitude='+string(latitude,format='(F0)')+'&longitude='+string(longitude,format='(F0)')+'&height='+string(height,format='(F0)')+'&profile=1&start='+string(start,format='(F0)')+'&stop='+string(stop,format='(F0)')+'&step='+string(step,format='(F0)')+'&sun_n=&ion_n=&radio_f=&radio_f81=&htec_max=&ne_top=0.&imap=0.&ffof2=0.&ib0=2.&probab=0.&ffoE=0.&dreg=0.&tset=0.&icomp=0.&nmf2=0.&hmf2=0.&user_nme=0.&user_hme=0.&format=0&'+opts+'linestyle=solid&charsize=&symbol=2&symsize=&yscale=Linear&xscale=Linear&imagex=640&imagey=480" '
+;  print, model_parameters
+  spawn, 'curl -d'+model_parameters+'http://omniweb.gsfc.nasa.gov/cgi/vitmo/vitmo_model.cgi > iri.txt', /hide
+
+  OPENR, lun, 'iri.txt', /GET_LUN
+  header = strarr(40)
+  READF, lun, header
+  FOR i=0, nstp-1 DO BEGIN
+    READF, lun, h, e, O_p, H_p, O2_p, NO_p, N_p
+	nelec_night[i] = e
+	nOp[i] = O_p*e/100.
+	nHp[i] = H_p*e/100.
+	nO2p[i] = O2_p*e/100.
+	nNOp[i] = NO_p*e/100.
+	nNp[i] = N_p*e/100.
+  ENDFOR
+  CLOSE, lun
+  FREE_LUN, lun
+
 
   set_plot, 'PS'
-  device, filename='C:\UAFThesis\UAFThesis\Figures\densprofile.ps', /color, /portrait, xoffset=-1, yoffset=0 
+  device, filename='C:\UAFThesis\UAFThesis\Figures\densprofile.ps', /color, /portrait, xsize=20, ysize=15, xoffset=-1, yoffset=0 
+  !P.MULTI = 0
   !P.FONT = 1
   
   loadct, 0, /silent
@@ -108,18 +132,22 @@ PRO densprofile
 ;  oplot, nN2, altitude, thick=7, color=100
 ;  oplot, nO2, altitude, thick=7, color=100
   oplot, nelec, altitude, thick=4, color=0
+  oplot, nelec_night, altitude, thick=4, color=0, linestyle=2
 ;  loadct, 46, /silent
 ;  oplot, nO, altitude, thick=3, color=1
 ;  oplot, nN2, altitude, thick=3, color=30
 ;  oplot, nO2, altitude, thick=3, color=60
 ;  oplot, nelec, altitude, thick=3, color=230
 
-  oplot, [dmin,dmax], [80,80], linestyle=2, thick=3
-  oplot, [dmin,dmax], [150,150], linestyle=2, thick=3
+  oplot, [dmin,dmax], [80,80], linestyle=1, thick=3
+  oplot, [dmin,dmax], [150,150], linestyle=1, thick=3
 
   xyouts, 1e11, 50, 'D Region', charsize=1.5, charthick=3
   xyouts, 1e11, 100, 'E Region', charsize=1.5, charthick=3
   xyouts, 1e11, 400, 'F Region', charsize=1.5, charthick=3
+  
+  xyouts, 1.2e11, 250, 'Day', charsize=2, charthick=3
+  xyouts, 4e9, 250, 'Night', charsize=2, charthick=3
   
 ;  xyouts, 1e17, 900, 'O', charsize=1.5, charthick=3, color=1
 ;  xyouts, 1e17, 850, 'N!D2', charsize=1.5, charthick=3, color=30
