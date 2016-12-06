@@ -5,4 +5,14 @@ gs -q -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=530 -dDEVI
 
 gs -q -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=270 -dDEVICEHEIGHTPOINTS=520 -sOutputFile=/Users/ljlamarche/Desktop/UAFThesis/Figures/superdarnmap.pdf /Users/ljlamarche/Desktop/UAFThesis/Figures/SuperDARNmap.ps
 
+
+
+pdflatex LLamarcheThesis.tex
+
+bibtex LLamarcheThesis
+
+bibtex introduction
+
+pdflatex LLamarcheThesis.tex
+
 pdflatex LLamarcheThesis.tex
