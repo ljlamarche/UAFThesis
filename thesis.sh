@@ -16,3 +16,5 @@ bibtex introduction
 pdflatex LLamarcheThesis.tex
 
 pdflatex LLamarcheThesis.tex
+
+rm *.aux
