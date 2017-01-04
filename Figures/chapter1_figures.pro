@@ -265,10 +265,11 @@ PRO SuperDARNmap
   loadct, 0, /silent
   
   latlim = 35
-  orientation = -90
-  map_set, 90, 0, orientation, /azimuthal, /isotropic, limit=[latlim,-180,90,180]
+  orientation = 0
+  shift = 10
+  map_set, 90-shift, -90, orientation, /azimuthal, /isotropic, limit=[latlim,-180,latlim+shift,90,latlim,0,latlim-shift,-90]
   loadct, 1, /silent
-  polyfill, indgen(360), fltarr(360)+latlim, color=220
+  polyfill, indgen(360), fltarr(360)+2, color=220
   loadct, 0, /silent
   map_continents, mag=0, /continents, /fill_continents, color=150
   map_grid, londel=30, latdel=20, glinethick=2 
@@ -286,9 +287,10 @@ PRO SuperDARNmap
   polyfill, nlon[WHERE(northrad EQ 'rkn'),*], nlat[WHERE(northrad EQ 'rkn'),*], /line_fill, spacing=0.05, color=120
 
 
-  map_set, -90, 0, orientation, /azimuthal, /isotropic, /advance, limit=[-90,-180,-1*latlim,180]
+;  map_set, -90, 0, orientation, /azimuthal, /isotropic, /advance, limit=[-90,-180,-1*latlim,180]
+  map_set, -90+shift, -90, orientation, /azimuthal, /isotropic, /advance, limit=[-1*latlim,-180,-1*latlim-shift,-90,-1*latlim,0,-1*latlim+shift,90]
   loadct, 1, /silent
-  polyfill, indgen(360), fltarr(360)-latlim, color=220
+  polyfill, indgen(360), fltarr(360)-2, color=220
   loadct, 0, /silent
   map_continents, mag=0, /continents, /fill_continents, color=150
   map_grid, londel=30, latdel=20, glinethick=2 
@@ -374,10 +376,6 @@ PRO ISRmap
   READF, lun, EISCAT_coords
   CLOSE, lun
   free_lun, lun
-;  FOR n=0, EISCAT_lines-1 DO BEGIN
-;    a = AACGMConvert(EISCAT_coords[0,n], EISCAT_coords[1,n], 400, latm, lonm, r, geo=geo)
-;    EISCAT_coords[0:1,n] = [latm, lonm]
-;  ENDFOR
   
   ESR_lines = file_lines('C:\IDL\data\ISR_FOV\0esr400.txt')
   ESR_coords = fltarr(2,ESR_lines)
@@ -385,10 +383,6 @@ PRO ISRmap
   READF, lun, ESR_coords
   CLOSE, lun
   free_lun, lun
-;  FOR n=0, ESR_lines-1 DO BEGIN
-;    a = AACGMConvert(ESR_coords[0,n], ESR_coords[1,n], 400, latm, lonm, r, geo=geo)
-;    ESR_coords[0:1,n] = [latm, lonm]
-;  ENDFOR
 
   MH_lines = file_lines('C:\IDL\data\ISR_FOV\0mh400.txt')
   MH_coords = fltarr(2,MH_lines)
@@ -396,10 +390,6 @@ PRO ISRmap
   READF, lun, MH_coords
   CLOSE, lun
   free_lun, lun
-;  FOR n=0, MH_lines-1 DO BEGIN
-;    a = AACGMConvert(MH_coords[0,n], MH_coords[1,n], 400, latm, lonm, r, geo=geo)
-;    MH_coords[0:1,n] = [latm, lonm]
-;  ENDFOR
 
   PFISR_lines = file_lines('C:\IDL\data\ISR_FOV\0pfisr400.txt')
   PFISR_coords = fltarr(2,PFISR_lines)
@@ -407,10 +397,6 @@ PRO ISRmap
   READF, lun, PFISR_coords
   CLOSE, lun
   free_lun, lun
-;  FOR n=0, PFISR_lines-1 DO BEGIN
-;    a = AACGMConvert(PFISR_coords[0,n], PFISR_coords[1,n], 400, latm, lonm, r, geo=geo)
-;    PFISR_coords[0:1,n] = [latm, lonm]
-;  ENDFOR
 
   RISRC_lines = file_lines('C:\IDL\data\ISR_FOV\0risrc400.txt')
   RISRC_coords = fltarr(2,RISRC_lines)
@@ -418,10 +404,6 @@ PRO ISRmap
   READF, lun, RISRC_coords
   CLOSE, lun
   free_lun, lun
-;  FOR n=0, RISRC_lines-1 DO BEGIN
-;    a = AACGMConvert(RISRC_coords[0,n], RISRC_coords[1,n], 400, latm, lonm, r, geo=geo)
-;    RISRC_coords[0:1,n] = [latm, lonm]
-;  ENDFOR
 
   RISRN_lines = file_lines('C:\IDL\data\ISR_FOV\0risrn400.txt')
   RISRN_coords = fltarr(2,RISRN_lines)
@@ -429,10 +411,6 @@ PRO ISRmap
   READF, lun, RISRN_coords
   CLOSE, lun
   free_lun, lun
-;  FOR n=0, RISRN_lines-1 DO BEGIN
-;    a = AACGMConvert(RISRN_coords[0,n], RISRN_coords[1,n], 400, latm, lonm, r, geo=geo)
-;    RISRN_coords[0:1,n] = [latm, lonm]
-;  ENDFOR
 
   SFJ_lines = file_lines('C:\IDL\data\ISR_FOV\0sfj400.txt')
   SFJ_coords = fltarr(2,SFJ_lines)
@@ -440,10 +418,6 @@ PRO ISRmap
   READF, lun, SFJ_coords
   CLOSE, lun
   free_lun, lun
-;  FOR n=0, SFJ_lines-1 DO BEGIN
-;    a = AACGMConvert(SFJ_coords[0,n], SFJ_coords[1,n], 400, latm, lonm, r, geo=geo)
-;    SFJ_coords[0:1,n] = [latm, lonm]
-;  ENDFOR
 
   ; find northern hemisphere MLAT outlines
   lon = indgen(361, /float)
@@ -464,14 +438,15 @@ PRO ISRmap
   !P.MULTI = 0
   loadct, 0, /silent
   
-  latlim = 50
+  latlim = 60
   orientation = 0
-  map_set, 70, -90, orientation, /azimuthal, /isotropic, limit=[latlim,-180,90,180]
+  shift = 10
+  map_set, 90-shift, -90, orientation, /azimuthal, /isotropic, limit=[latlim,-180,latlim+shift,90,latlim,0,latlim-shift,-90]
   loadct, 1, /silent
-  polyfill, indgen(360), fltarr(360)+latlim, color=220
+  polyfill, indgen(360), fltarr(360)+latlim-latlim+2, color=220
   loadct, 0, /silent
-  map_continents, mag=0, /continents, /fill_continents, limit=[latlim,-180,90,180], color=150
-  map_grid, londel=30, latdel=20, glinethick=2, limit=[latlim,-180,90,180] 
+  map_continents, mag=0, /continents, /fill_continents, color=150
+  map_grid, londel=30, latdel=20, glinethick=2 
 
   loadct, 4, /silent
   FOR n=0, numlat-1 DO BEGIN
