@@ -1,5 +1,13 @@
 ; chapter1_figures.pro
 
+@C:\IDL\programs\general\radlib.pro
+;@C:\IDL\programs\general\Mylib.pro
+;@C:\IDL\programs\SolarControl\common_procedures.pro
+;@C:\IDL\programs\general\Sollib.pro
+;@C:\IDL\programs\general\IGRF.pro
+;@C:\IDL\programs\general\gcoords.pro
+;@C:\IDL\programs\general\aacgmdefault.pro
+
 @C:\IDL\programs\general\aacgmdefault.pro
 
 
@@ -257,7 +265,7 @@ PRO SuperDARNmap
   loadct, 0, /silent
   
   latlim = 35
-  orientation = 0
+  orientation = -90
   map_set, 90, 0, orientation, /azimuthal, /isotropic, limit=[latlim,-180,90,180]
   loadct, 1, /silent
   polyfill, indgen(360), fltarr(360)+latlim, color=220
@@ -300,3 +308,207 @@ PRO SuperDARNmap
   device, /close  
 
 END
+
+
+;====================================================================================
+
+
+PRO ISRmap
+
+  ; get coordinates for AACGM model
+  unit = 1
+  openr, unit, 'C:\IDL\programs\general\aacgm_coeffs2010.asc'
+  s = AACGMLoadCoef(unit)
+  close, unit
+
+  
+  sdir = 'C:\IDL\data\'
+  
+  ; define radars that are considered in northern and southern hemisphere
+;  northrad = ['bks','cly','fhe','fhw','gbr','han','hok','inv','kap','ksr','kod','pyk','pgr','rkn','sas','sto','wal']
+  northrad = ['rkn']
+  nrad = n_elements(northrad)
+  ; define lines of MLAT to plot
+  mlatline = [80,60,40]
+  numlat = n_elements(mlatline)
+  
+  ; find outlines of northern hemisphere radars
+  nlon = make_array(nrad,300, /float, value=!VALUES.F_NAN)
+  nlat = make_array(nrad,300, /float, value=!VALUES.F_NAN)
+  FOR r=0, nrad-1 DO BEGIN
+    filetest = 0
+    filename = sdir+'SuperDARN_FoV\FoV'+northrad[r]+'400.sav'
+    n = file_search(filename, count=filetest)
+    IF filetest EQ 0 THEN BEGIN
+      print, filename, 'DOES NOT EXIST'
+      CONTINUE
+    ENDIF
+    restore, filename  
+    nbin = sr.bin_num
+    nbeam = sr.beam_num
+    lon = [reform(afov[0,0:nbin,1]),reform(afov[0:nbeam,nbin,1]),reverse(reform(afov[nbeam,0:nbin,1])),reverse(reform(afov[0:nbeam,0,1])),afov[0,0,1]]
+    lat = [reform(afov[0,0:nbin,0]),reform(afov[0:nbeam,nbin,0]),reverse(reform(afov[nbeam,0:nbin,0])),reverse(reform(afov[0:nbeam,0,0])),afov[0,0,0]]
+    nlon[r,0:n_elements(lon)-1] = lon
+    nlat[r,0:n_elements(lat)-1] = lat
+  ENDFOR
+  
+  ; find northern hemisphere MLAT outlines
+  lon = indgen(361, /float)
+  nmlat = fltarr(numlat,361)
+  nmlon = fltarr(numlat,361)
+  FOR n=0, numlat-1 DO BEGIN
+    lat = make_array(361, /float, value=mlatline[n])
+    FOR i=0, 360 DO BEGIN
+      a = AACGMConvert(lat[i], lon[i], 400., mlat, mlon, r, geo=1)
+	  nmlat[n,i] = mlat
+	  nmlon[n,i] = mlon
+    ENDFOR
+  ENDFOR
+
+  
+  
+  ; Get ISR outline coordinates
+  EISCAT_lines = file_lines('C:\IDL\data\ISR_FOV\0eiscat400.txt')
+  EISCAT_coords = fltarr(2,EISCAT_lines)
+  OPENR, lun, 'C:\IDL\data\ISR_FOV\0eiscat400.txt', /get_lun
+  READF, lun, EISCAT_coords
+  CLOSE, lun
+  free_lun, lun
+;  FOR n=0, EISCAT_lines-1 DO BEGIN
+;    a = AACGMConvert(EISCAT_coords[0,n], EISCAT_coords[1,n], 400, latm, lonm, r, geo=geo)
+;    EISCAT_coords[0:1,n] = [latm, lonm]
+;  ENDFOR
+  
+  ESR_lines = file_lines('C:\IDL\data\ISR_FOV\0esr400.txt')
+  ESR_coords = fltarr(2,ESR_lines)
+  OPENR, lun, 'C:\IDL\data\ISR_FOV\0esr400.txt', /get_lun
+  READF, lun, ESR_coords
+  CLOSE, lun
+  free_lun, lun
+;  FOR n=0, ESR_lines-1 DO BEGIN
+;    a = AACGMConvert(ESR_coords[0,n], ESR_coords[1,n], 400, latm, lonm, r, geo=geo)
+;    ESR_coords[0:1,n] = [latm, lonm]
+;  ENDFOR
+
+  MH_lines = file_lines('C:\IDL\data\ISR_FOV\0mh400.txt')
+  MH_coords = fltarr(2,MH_lines)
+  OPENR, lun, 'C:\IDL\data\ISR_FOV\0mh400.txt', /get_lun
+  READF, lun, MH_coords
+  CLOSE, lun
+  free_lun, lun
+;  FOR n=0, MH_lines-1 DO BEGIN
+;    a = AACGMConvert(MH_coords[0,n], MH_coords[1,n], 400, latm, lonm, r, geo=geo)
+;    MH_coords[0:1,n] = [latm, lonm]
+;  ENDFOR
+
+  PFISR_lines = file_lines('C:\IDL\data\ISR_FOV\0pfisr400.txt')
+  PFISR_coords = fltarr(2,PFISR_lines)
+  OPENR, lun, 'C:\IDL\data\ISR_FOV\0pfisr400.txt', /get_lun
+  READF, lun, PFISR_coords
+  CLOSE, lun
+  free_lun, lun
+;  FOR n=0, PFISR_lines-1 DO BEGIN
+;    a = AACGMConvert(PFISR_coords[0,n], PFISR_coords[1,n], 400, latm, lonm, r, geo=geo)
+;    PFISR_coords[0:1,n] = [latm, lonm]
+;  ENDFOR
+
+  RISRC_lines = file_lines('C:\IDL\data\ISR_FOV\0risrc400.txt')
+  RISRC_coords = fltarr(2,RISRC_lines)
+  OPENR, lun, 'C:\IDL\data\ISR_FOV\0risrc400.txt', /get_lun
+  READF, lun, RISRC_coords
+  CLOSE, lun
+  free_lun, lun
+;  FOR n=0, RISRC_lines-1 DO BEGIN
+;    a = AACGMConvert(RISRC_coords[0,n], RISRC_coords[1,n], 400, latm, lonm, r, geo=geo)
+;    RISRC_coords[0:1,n] = [latm, lonm]
+;  ENDFOR
+
+  RISRN_lines = file_lines('C:\IDL\data\ISR_FOV\0risrn400.txt')
+  RISRN_coords = fltarr(2,RISRN_lines)
+  OPENR, lun, 'C:\IDL\data\ISR_FOV\0risrn400.txt', /get_lun
+  READF, lun, RISRN_coords
+  CLOSE, lun
+  free_lun, lun
+;  FOR n=0, RISRN_lines-1 DO BEGIN
+;    a = AACGMConvert(RISRN_coords[0,n], RISRN_coords[1,n], 400, latm, lonm, r, geo=geo)
+;    RISRN_coords[0:1,n] = [latm, lonm]
+;  ENDFOR
+
+  SFJ_lines = file_lines('C:\IDL\data\ISR_FOV\0sfj400.txt')
+  SFJ_coords = fltarr(2,SFJ_lines)
+  OPENR, lun, 'C:\IDL\data\ISR_FOV\0sfj400.txt', /get_lun
+  READF, lun, SFJ_coords
+  CLOSE, lun
+  free_lun, lun
+;  FOR n=0, SFJ_lines-1 DO BEGIN
+;    a = AACGMConvert(SFJ_coords[0,n], SFJ_coords[1,n], 400, latm, lonm, r, geo=geo)
+;    SFJ_coords[0:1,n] = [latm, lonm]
+;  ENDFOR
+
+  ; find northern hemisphere MLAT outlines
+  lon = indgen(361, /float)
+  nmlat = fltarr(numlat,361)
+  nmlon = fltarr(numlat,361)
+  FOR n=0, numlat-1 DO BEGIN
+    lat = make_array(361, /float, value=mlatline[n])
+    FOR i=0, 360 DO BEGIN
+      a = AACGMConvert(lat[i], lon[i], 400., mlat, mlon, r, geo=1)
+	  nmlat[n,i] = mlat
+	  nmlon[n,i] = mlon
+    ENDFOR
+  ENDFOR
+  
+  ; plot
+  set_plot, 'PS'
+  device, filename='C:\UAFThesis\UAFThesis\Figures\ISRmap.ps', /color, /portrait, xsize=18, ysize=18, xoffset=0, yoffset=0
+  !P.MULTI = 0
+  loadct, 0, /silent
+  
+  latlim = 50
+  orientation = 0
+  map_set, 70, -90, orientation, /azimuthal, /isotropic, limit=[latlim,-180,90,180]
+  loadct, 1, /silent
+  polyfill, indgen(360), fltarr(360)+latlim, color=220
+  loadct, 0, /silent
+  map_continents, mag=0, /continents, /fill_continents, limit=[latlim,-180,90,180], color=150
+  map_grid, londel=30, latdel=20, glinethick=2, limit=[latlim,-180,90,180] 
+
+  loadct, 4, /silent
+  FOR n=0, numlat-1 DO BEGIN
+    oplot, nmlon[n,*], nmlat[n,*], thick=5, color=240
+  ENDFOR
+  loadct, 3, /silent
+  FOR r=0, nrad-1 DO BEGIN
+    c = 0
+    IF (northrad[r] EQ 'rkn') OR (northrad[r] EQ 'cly') OR (northrad[r] EQ 'inv') OR (northrad[r] EQ 'lyr') THEN c = 120
+    oplot, nlon[r,*], nlat[r,*], thick=3, color=c
+  ENDFOR
+;  polyfill, nlon[WHERE(northrad EQ 'rkn'),*], nlat[WHERE(northrad EQ 'rkn'),*], /line_fill, spacing=0.05, color=120
+
+  loadct, 3, /silent
+  color = 0
+  oplot, EISCAT_coords[1,*], EISCAT_coords[0,*], color=color, thick=5
+  oplot, ESR_coords[1,*], ESR_coords[0,*], color=color, thick=5
+  oplot, MH_coords[1,*], MH_coords[0,*], color=color, thick=5
+  oplot, PFISR_coords[1,*], PFISR_coords[0,*], color=color, thick=5
+  oplot, RISRC_coords[1,*], RISRC_coords[0,*], color=color, thick=5
+  oplot, RISRN_coords[1,*], RISRN_coords[0,*], color=200, thick=5
+  oplot, SFJ_coords[1,*], SFJ_coords[0,*], color=color, thick=5
+  polyfill, RISRN_coords[1,*], RISRN_coords[0,*], /line_fill, spacing=0.05, color=200
+
+  ; print ISR names
+  xyouts, (EISCAT_coords[1,0]+EISCAT_coords[1,EISCAT_lines/2])/2.0, (EISCAT_coords[0,0]+EISCAT_coords[0,EISCAT_lines/2])/2.0, 'EISCAT', color=color, charthick=4, alignment=0.5, charsize=0.7
+  xyouts, (ESR_coords[1,0]+ESR_coords[1,ESR_lines/2])/2.0, (ESR_coords[0,0]+ESR_coords[0,ESR_lines/2])/2.0, 'ESR', color=color, charthick=4, alignment=0.5, charsize=0.7
+  xyouts, (MH_coords[1,0]+MH_coords[1,MH_lines/2])/2.0, (MH_coords[0,0]+MH_coords[0,MH_lines/2])/2.0, 'MH', color=color, charthick=4, alignment=0.5, charsize=0.7
+  xyouts, (PFISR_coords[1,0]+PFISR_coords[1,PFISR_lines/2])/2.0, (PFISR_coords[0,0]+PFISR_coords[0,PFISR_lines/2])/2.0, 'PFISR', color=color, charthick=4, alignment=0.5, charsize=0.7
+  xyouts, (RISRC_coords[1,RISRC_lines/4]+RISRC_coords[1,3*RISRC_lines/4])/2.0, (RISRC_coords[0,RISRC_lines/4]+RISRC_coords[0,3*RISRC_lines/4])/2.0, 'RISR-C', color=color, charthick=4, alignment=0.5, charsize=0.7
+  xyouts, (RISRN_coords[1,RISRN_lines/6]+RISRN_coords[1,5*RISRN_lines/6])/2.0, (RISRN_coords[0,RISRN_lines/6]+RISRN_coords[0,5*RISRN_lines/6])/2.0, 'RISR-N', color=color, charthick=4, alignment=0.5, charsize=0.7
+  xyouts, (SFJ_coords[1,0]+SFJ_coords[1,SFJ_lines/2])/2.0, (SFJ_coords[0,0]+SFJ_coords[0,SFJ_lines/2])/2.0, 'SFJ', color=color, charthick=4, alignment=0.5, charsize=0.7
+
+
+  device, /close
+
+END
+
+
+;================================================================================================================================
