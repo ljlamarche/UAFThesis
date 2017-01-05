@@ -287,7 +287,6 @@ PRO SuperDARNmap
   polyfill, nlon[WHERE(northrad EQ 'rkn'),*], nlat[WHERE(northrad EQ 'rkn'),*], /line_fill, spacing=0.05, color=120
 
 
-;  map_set, -90, 0, orientation, /azimuthal, /isotropic, /advance, limit=[-90,-180,-1*latlim,180]
   map_set, -90+shift, -90, orientation, /azimuthal, /isotropic, /advance, limit=[-1*latlim,-180,-1*latlim-shift,-90,-1*latlim,0,-1*latlim+shift,90]
   loadct, 1, /silent
   polyfill, indgen(360), fltarr(360)-2, color=220
