@@ -8,9 +8,15 @@ Plasmas can be either fully ionized, where most particles in the plasma are ioni
 \section{The Solar-Terrestrial Environment}
 The solar terrestrial environment begins with the Sun in the center of the solar system.  The Sun is composed of highly energized plasma that is gravitationally bound together.  The surface of the Sun has sunspots, which are dark, relatively cool regions with intense magnetic fields, as well as coronal holes, which are low density areas characterized with a continuous outflow of plasma.  The intense magnetic fields associated with sunspots can break down releasing a large amount of energy and plasma, known as a solar flare.  Planet-sized masses of plasma known as coronal mass ejections (CMEs) can be ejected from the surface, which can be large enough to maintain an internal magnetic field as they travel through the solar system.  The frequency of sunspots and large outbursts of plasma changes with the 11-year long solar cycle.  A large number of sunspots, high occurrence of fast, dense plasma outbursts, and a highly variably magnetic field indicate solar maximum.  Conversely, solar minimum is characterized by a low sunspot number and slow and relatively steady outflow.  This thesis examines factors that control irregularity production in the Earth's ionosphere, which can be strongly influenced by solar activity.
 
-The Sun interacts with the rest of the solar system through the solar wind, a continuous outflow of plasma that caries the Sun's magnetic field with it.  The solar wind typically has a density around 10 cm\(^{-3}\) and is traveling away from the Sun at approximately 400 km/s at Earth's orbit.  However, like the Sun, the solar wind is highly dynamic and these parameters can change drastically over a period of minutes.  CMEs, for instance, create a substantial increase in density and are often preceded by a shock, a region of hot, compressed plasma caused by the CME moving at supersonic speeds.  In addition to the outflow of plasma, the solar wind also consists of the Sun's magnetic field extended into the outer limits of the solar system, called the interplanetary magnetic field (IMF).  Because the Sun has a short rotation period (about 33 days), the IMF gets twisted into a spiral, commonly called the Parker Spiral \citep{Parker1958}.  When the IMF reaches the Earth, the magnetic field is typically oriented at a \(45^\circ\) inclination relative to the ecliptic, but this is highly variable depending on solar wind conditions.
+The Sun interacts with the rest of the solar system through the solar wind, a continuous outflow of plasma that caries the Sun's magnetic field with it.  This is shown in Figure \ref{fig:ste}.  The solar wind, green, typically has a density around 10 cm\(^{-3}\) and is traveling away from the Sun at approximately 400 km/s at Earth's orbit.  However, like the Sun, the solar wind is highly dynamic and these parameters can change drastically over a period of minutes.  CMEs, for instance, create a substantial increase in density and are often preceded by a shock, a region of hot, compressed plasma caused by the CME moving at supersonic speeds.  In addition to the outflow of plasma, the solar wind also consists of the Sun's magnetic field extended into the outer limits of the solar system, called the interplanetary magnetic field (IMF), dark blue in Figure \ref{fig:ste}.  Because the Sun has a short rotation period (about 33 days), the IMF gets twisted into a spiral, commonly called the Parker Spiral \citep{Parker1958}.  When the IMF reaches the Earth, the magnetic field is typically oriented at a \(45^\circ\) inclination relative to the ecliptic, but this is highly variable depending on solar wind conditions.
 
-The IMF interacts with the Earth's own magnetic field, and this interaction creates the magnetosphere.  Without the IMF, the magnetosphere would be approximately a dipole field, but dynamic pressure from the solar wind causes the Sun facing side to be compressed to 6--10 Earth radii and the rear side to be stretched into an extended tail (hundreds of Earth radii).  Because the solar wind is typically a supersonic flow, a bow shock forms on the dayside of the magnetosphere.  The heated and compressed solar wind plasma created by the bow shock is known as the magnetosheath.  The magnetopause is the actual boundary between solar wind plasma in the magnetosheath and magnetospheric plasma.  However, the magnetosphere is not fully closed.  At the magnetopause, magnetic reconnection can occur between the IMF and the Earth's magnetic field creating open field lines.  Magnetic field lines originating from the Earth are then directly connected to the Sun through the solar wind, which consequently allows highly energized solar particles to enter the magnetosphere.  Open field lines tend to occur around the Earth's polar caps, making these regions particularly interesting to study due to very complex behavior and coupled interactions between the Earth and the Sun.
+\begin{figure}
+	\includegraphics[width=0.7\textwidth,angle=270]{ste.pdf}
+	\caption{Diagram of the solar-terrestrial environment.  The solar wind contains both a steady stream of charged particles and the IMF, dark blue.  The red region represents the magnetosheath.  The manetopause is shown by the black dashed line.  Closed magnetic field lines from the earth are shown in grey while open field lines are shown in light blue.}
+	\label{fig:ste}
+\end{figure}
+
+The IMF interacts with the Earth's own magnetic field, and this interaction creates the magnetosphere.  Without the IMF, the magnetosphere would be approximately a dipole field, but dynamic pressure from the solar wind causes the Sun facing side to be compressed to 6--10 Earth radii and the rear side to be stretched into an extended tail (hundreds of Earth radii).  Because the solar wind is typically a supersonic flow, a bow shock forms on the dayside of the magnetosphere.  The heated and compressed solar wind plasma created by the bow shock is known as the magnetosheath, the red region in Figure \ref{fig:ste}.  The magnetopause, black dashed line, is the actual boundary between solar wind plasma in the magnetosheath and magnetospheric plasma.  However, the magnetosphere is not fully closed.  At the magnetopause, magnetic reconnection can occur between the IMF and the Earth's magnetic field creating open field lines.  The last closed field line (closed field lines shown in grey) where reconnection tends to occur at the magnetopause is highlighted in yellow.  Magnetic field lines originating from the Earth are then directly connected to the Sun through the solar wind, which consequently allows highly energized solar particles to enter the magnetosphere.  Open field lines, light blue, tend to occur around the Earth's polar caps, making these regions particularly interesting to study due to very complex behavior and coupled interactions between the Earth and the Sun.
 
 Closer to the Earth's surface, the magnetosphere also interacts with the Earth's ionosphere, a layer of partially ionized plasma in the upper atmosphere.  The interaction between charged particles in the ionosphere with magnetic field lines couples the ionosphere, magnetosphere, and solar wind to create non-trivial dynamics.  Additionally,  neutral winds in the thermosphere can influence the ionosphere through viscous interactions.  Overall, the charged particle interactions in the ionosphere create a highly complex system, which is further complicated by coupling with both the thermosphere from below and the magnetosphere and solar wind from above.  
 
@@ -334,37 +340,6 @@ The primary radar propogation factor to consider is the background plasma densit
 \end{equation}.
 There is no general agreement of what controls the fractional density, however, if it is approximately constant, then radar backscatter power could be directly proportional to \(n^2\).
 
-%Kane2012:
-%- diurnal, seasonal, solar cycle variation
-%- nighttime occurrence dirrectly proportional to peak electron density
-%- daytime occurrence significantly reduced by conductive E layer
-%Danskin2002:
-%- D region absorption not a major factor in echo occurrence
-%- under refraction occurs if n<1x10^11 m^-3
-%- over refraction occurs if n>4x10^11 m^-3
-%- echo power increases for stronger electric fields
-%Bristow2011:
-%- polar cap has nearly continuous production of decameter scale irregularities
-%- "near constant presnece of field-aligned density irregularities in the polar cap"
-%Milan1997:
-%- summer - backscatter observed at near ranges in midnight sector
-%- winter/equinox - backscatter observed at far ranges in midday sector
-%- frequency/boresite azimuth have a large impact on the ability to detect close backscatter
-%- increased backscatter at solar max
-%Makarevich2014:
-%- power increases with increasing density and electric field
-%- power drops significantly at large density values
-%- backscatter power proportional to n^2
-%Koustov2013:
-%- antisunward flows occur for negative Bz, sunward for positive
-%Koustov2004:
-%- increasced echo occurrence for solar max in midnight sector due to strong density gradients and electric fields
-%- noon sector does not see occurance increase with solar max
-%- high latitude radars have occurrence max in equinox months
-%- combination of propagation and production factors
-%Ballatore2001:
-%- backscatter occurrence increases for negative Bz
-%- backscatter occurrence increases with merging electric field strength
 
 \section{Motivation and Objectives}
 
