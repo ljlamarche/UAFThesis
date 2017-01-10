@@ -14,8 +14,14 @@ bibtex LLamarcheThesis
 
 bibtex introduction
 
+bibtex conclusion
+
 pdflatex LLamarcheThesis.tex
 
 pdflatex LLamarcheThesis.tex
 
 rm *.aux
+rm *.bbl
+rm *.blg
+rm *.out
+rm *.log
