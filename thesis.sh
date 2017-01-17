@@ -30,6 +30,6 @@ pdflatex LLamarcheThesis.tex
 
 rm *.aux
 rm *.bbl
-rm *.blg
+# rm *.blg
 rm *.out
 rm *.log
