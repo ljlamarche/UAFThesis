@@ -48,7 +48,11 @@
 %%		inadequate. Also added a second \makesig macro (\makenamedsig), which puts the names that you specify
 %%		on the page. This is not required by the Grad school, but it looks nice. Just pray that the Dept. Chair
 %%		isn't out of town when you turn in your thesis.
-
+%%
+%%  Edited by Leslie Lamarche 2017/1/18
+%%        Changed title page to match new formating requirements.
+%%        Signature page no longer required.
+%%        Page numbers moved to bottom of page and centered.
 
 \NeedsTeXFormat{LaTeX2e} 
 %% have to require "afterpage" to get the stupid 'Page' heading in the ToC, LoF, LoT, etc.
@@ -181,30 +185,53 @@
     \null\vfill
   \begin{center}
     { {\expandafter\uppercase\expandafter{\@title}} \par}
-    \bigskip \bigskip \medskip 
-        A \par 
-        \medskip 
-        THESIS \par
-    \bigskip \bigskip \medskip 
-        Presented to the Faculty \par
-        \medskip
-        of the University of Alaska Fairbanks \par
-    \bigskip \medskip
-        in Partial Fulfillment of the Requirements \par
-        \medskip
-        for the Degree of \par
-    \bigskip \bigskip \medskip 
-    {\expandafter\uppercase\expandafter{\@degree}} \par
     \bigskip \bigskip \bigskip 
     By \par
-    \bigskip 
+    \bigskip
     {\@author}, {\@prevdegrees} \par
     \bigskip \bigskip
-    Fairbanks, Alaska \par
+    A Dissertation Submitted in Partial Fulfillment of the Requirements \par
+    \medskip
+    for the Degree of \par
+    \bigskip \bigskip \medskip 
+    {\expandafter\expandafter{\@degree}} \par
+    in \par
+    {\expandafter\expandafter{\@department}} \par
+    
+	University of Alaska Fairbanks \par
     \bigskip 
     {\@degreemonth} {\@degreeyear}
   \end{center}
     \vfill\null
+
+	\noindent\hspace{1.5in}APPROVED:\vskip1.5ex\relax
+	\noindent\hskip2in\relax{\@commchair}, Committee Chair\relax\vskip-1ex\relax
+	\noindent\hskip2in{\@comone}, Committee Member\relax\vskip-1ex\relax
+	\noindent\hskip2in{\@comtwo}, Committee Member\relax\vskip-1ex\relax
+
+	\ifnum \@numberofmembers = 4
+	\noindent\hskip2in{\@comthree}, Committee Member\relax\vskip-1ex\relax
+	\fi
+
+	\ifnum \@numberofmembers = 5
+	\noindent\hskip2in{\@comthree}, Committee Member\relax\vskip1.5ex\relax
+	\noindent\hskip2in{\@comfour}, Committee Member\relax\vskip-1ex\relax
+	\fi
+
+	\ifnum \@numberofmembers = 6
+	\noindent\hskip2in{\@comthree}, Committee Member\relax\vskip-1ex\relax
+	\noindent\hskip2in{\@comfour}, Committee Member\relax\vskip-1ex\relax
+	\noindent\hskip2in{\@comfive}, Committee Member\relax\vskip-1ex\relax
+	\fi
+
+	\noindent\hskip2in\relax{\@depchair}, Chair\relax
+	\vskip-1ex\relax\noindent\hskip2.5in\relax \textit{Department of {\@department}} \vskip-1ex
+
+	\noindent\hskip2in{\@colldean}, Dean \relax\vskip-1ex
+	\noindent\hskip2.5in\textit{\@college}\hspace{.25in}\vskip-1ex\relax
+	\noindent\hskip2in{\@gsdean}, \textit{Dean of the Graduate School}\relax\vskip-1ex
+
+
 \setcounter{footnote}{0}
 }\newpage \thispagestyle{empty}~ %a blank page that will serve as the back of the title page
 \newpage}
@@ -395,9 +422,9 @@
 %%%%%%%%%%%%%%%
 \if@twoside
     \def\ps@headings{%
-      \let\@oddfoot\@empty\let\@evenfoot\@empty
-      \def\@evenhead{\thepage\hfil\slshape\leftmark}%
-      \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+      \def\@oddfoot{\hfil\thepage\hfil}%
+      \def\@evenfoot{\hfil\thepage\hfil}%
+      \let\@evenhead\@empty\let\@oddhead\@empty
       \let\@mkboth\markboth
       \def\chaptermark##1{%
         \markboth {\uppercase{\ifnum \c@secnumdepth >\m@ne
@@ -409,8 +436,8 @@
             ##1}}}}
 \else
     \def\ps@headings{%
-      \let\@oddfoot\@empty
-      \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+      \def\@oddfoot{\hfil\thepage\hfil}%
+      \let\@oddhead\@empty
       \let\@mkboth\markboth
       \def\chaptermark##1{%
         \markright {\uppercase{\ifnum \c@secnumdepth >\m@ne
@@ -418,9 +445,9 @@
             ##1}}}}
 \fi
 \def\ps@myheadings{%
-    \let\@oddfoot\@empty\let\@evenfoot\@empty
-    \def\@evenhead{\thepage\hfil\slshape\leftmark}%
-    \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+      \def\@oddfoot{\hfil\thepage\hfil}%
+      \def\@evenfoot{\hfil\thepage\hfil}%
+      \let\@evenhead\@empty\let\@oddhead\@empty
     \let\@mkboth\@gobbletwo
     \let\chaptermark\@gobble
     \let\sectionmark\@gobble
