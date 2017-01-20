@@ -15,7 +15,7 @@
    viewBox="0 0 1052.3622 744.09448"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.0 r"
    sodipodi:docname="ste.svg">
   <defs
      id="defs4">
@@ -49,17 +49,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="501.47757"
-     inkscape:cy="369.0051"
+     inkscape:zoom="0.81"
+     inkscape:cx="520.243"
+     inkscape:cy="455.91868"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1680"
-     inkscape:window-height="971"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="1280"
+     inkscape:window-height="751"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -144,8 +144,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cssc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#0027ff;stroke-width:2.77203083;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 155.95564,400.90797 C 237.89819,525.3451 268.67093,861.4674 257.94103,1000.3582"
+       style="fill:none;fill-rule:evenodd;stroke:#0027ff;stroke-width:2.74264765;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 155.94782,400.89969 c 81.95484,121.79481 112.7322,450.77982 102.00069,586.72139"
        id="path4306-9-0"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
