@@ -17,11 +17,9 @@ gs -q -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=510 -dDEVI
 pdflatex LLamarcheThesis.tex
 
 bibtex LLamarcheThesis
-
 bibtex introduction
-
 bibtex paper1
-
+bibtex paper2
 bibtex conclusion
 
 pdflatex LLamarcheThesis.tex
