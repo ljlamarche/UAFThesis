@@ -185,6 +185,7 @@ PRO SuperDARNmap
   northrad = ['bks','cly','fhe','fhw','gbr','han','hok','inv','kap','ksr','kod','pyk','pgr','rkn','sas','sto','wal']  
   nrad = n_elements(northrad)
   southrad = ['bpk','dce','hal','ker','mcm','san','sps','sye','sys','tig','unw','zho']
+;  southrad = ['sps']
   srad = n_elements(southrad)
   ; define lines of MLAT to plot
   mlatline = [80,60,40]
