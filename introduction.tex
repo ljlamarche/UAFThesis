@@ -13,6 +13,7 @@ The solar-terrestrial environment begins with the Sun in the center of the solar
 The Sun interacts with the rest of the solar system through the solar wind, a continuous outflow of plasma that carries the Sun's magnetic field with it.  This is shown in Figure \ref{fig:ste}.  The solar wind, represented by the green arrows in Figure \ref{fig:ste}, typically has a density around 10 cm\(^{-3}\) and is traveling away from the Sun at approximately 400 km/s at the Earth's orbit.  However, like the Sun, the solar wind is highly dynamic and these parameters can change drastically over a period of minutes.  CMEs, for instance, create a substantial increase in density and are often preceded by a shock, a region of hot, compressed plasma caused by the CME moving at supersonic speeds.  In addition to the outflow of plasma, the solar wind also contains the Sun's magnetic field extended into the outer limits of the solar system, called the interplanetary magnetic field (IMF), dark blue lines in Figure \ref{fig:ste}.  Because the Sun has a short rotation period (about 33 days), the IMF gets twisted into a spiral, commonly called the Parker Spiral \citep{Parker1958}.  When the IMF reaches the Earth, the magnetic field is typically oriented at a \(45\deg\) inclination relative to the ecliptic, but this is highly variable depending on solar wind conditions.
 
 \begin{figure}
+	\centering
 	\includegraphics[width=\textwidth,angle=0]{ste.pdf}
 	\caption[Solar-terrestrial environment]{Diagram of the solar-terrestrial environment.  The solar wind, green arrows, contains both a steady stream of charged particles and the interplanetary magnetic field, dark blue.  The red region represents the magnetosheath, the shock layer formed due to the supersonic plasma outflow from the Sun.  The magnetopause encloses the magnetosphere dominated by the geomagnetic field and is shown by the black dashed line.  Closed magnetic field lines from the Earth are shown in grey, while open field lines are shown in light blue.  The ionosphere is shown in yellow above the Earth's surface.}
 	\label{fig:ste}
@@ -27,6 +28,7 @@ Closer to the Earth's surface, the magnetosphere also interacts with the Earth's
 The focus of this body of work is the Earth's ionosphere, a region of the upper atmosphere that extends approximately between 50--1000 km in altitude where neutral gases have been partially ionized, resulting in free electrons and ions mixed with neutral particles.  Two competing processes occur in the ionosphere to create a peak in the electron density.  Solar illumination and particle precipitation ionize neutrals, and the density of ions increases as altitude decreases because there are more neutral molecules available to ionize.  However, below a certain point, the concentration of ions becomes large enough that recombination becomes a substantial factor, reducing the ion density.  The exact altitude where this density peak occurs varries with time of day, location, season, and solar cycle.  Representative model examples of electron density changes with altitude are shown in Figure \ref{fig:densprofile}, found from the International Reference Ionosphere (IRI) model run on January 1, 2007 at \(75\deg\) N, \(0\deg\) E, geographic (the IRI model is discussed further in Section \ref{sec:iri}).
 
 \begin{figure}
+	\centering
 	\includegraphics[width=\textwidth]{densprofile.pdf}
 	\caption[Ionosphere density profile]{Altitude profiles of electron density throughout the ionosphere found from the IRI model.  Typical extents of the \(D\), \(E\), and \(F\) regions are identified.}
 	\label{fig:densprofile}
@@ -48,6 +50,7 @@ This thesis is concerned with the polar ionosphere, which is a particularly inte
 Large-scale plasma irregularities are typically considered to be any density structure on the scale of greater than 30 km \citep{Kelley2009}.  Some common examples are polar patches, polar holes, and sun-aligned arcs.  Polar patches are large density enhancements (usually at least twice the background plasma density) that travel across the polar cap with the background convection, Figure \ref{fig:polarirreg}a \citep{Weber1984,Valladares1994}.  Polar holes are plasma density depletions that typically occur in the \(F\) region slightly poleward of the auroral oval \citep{Brinton1978}.  Sun-aligned arcs are large density forms that stretch across the polar cap along the Sun-Earth line.  They are very narrow and often characterized by large and complex velocity shears on either side of the arc \citep{Valladares1991}.  Large-scale plasma structures and the density gradients that surround them often serve as a platform for smaller-scale structures to form as well.  Polar patches, for instance, are known to form large finger-like structures along their trailing edges, Figure \ref{fig:polarirreg}b \citep{Gondarenko2004b,Hosokawa2016}.
 
 \begin{figure}
+	\centering
 	\includegraphics[width=0.5\textwidth]{irregularity.pdf}
 	\caption[Plasma irregularities in the polar ionosphere]{Plasma density irregularities occur in the polar cap at different scale sizes.  Polar patches, orange in Figures \ref{fig:polarirreg}a and \ref{fig:polarirreg}b, move with the background ionospheric convection, indicated by red arrows.  Smaller-scale structures often develop along the edges of polar patches where strong density gradients exist, Figure \ref{fig:polarirreg}b.  Intermediate-scale irregularities are primarily responsible for disrupting radio signals traveling through the ionosphere, Figure \ref{fig:polarirreg}c.  Field-aligned irregularities, FAIs, are density perturbations that form along the magnetic field lines, Figure \ref{fig:polarirreg}d.}
 	\label{fig:polarirreg}
@@ -90,6 +93,7 @@ The first observations of the ionosphere by CSRs were made in the 1930s \citep{E
 The primary instruments used within this body of work are radars within the Super Dual Auroral Radar Network (SuperDARN), a global network of high frequency (HF) CSRs that was designed to observe small-scale plasma structures in the ionosphere and map the global plasma convection.  The network currently consists of about 35 operational radars between the northern and southern hemispheres distributed at mid-, high-, and polar latitudes, Figure \ref{fig:superdarnmap}.  After the STARE experiment \citep{Greenwald1978}, the first HF ionospheric radar was built in Goose Bay, Canada in 1983, which would become the first of the SuperDARN radars \citep{Greenwald1985}.  
 
 \begin{figure}
+	\centering
 	\includegraphics[width=\textwidth,angle=180]{SuperDARNmap.pdf}
 	\caption[SuperDARN map]{Fields-of-view of all operational SuperDARN radars in both the northern (left) and southern (right) hemispheres.  Polar-latitude radars are shown with the red outlines.  The radars at Rankin Inlet (northern hemisphere) and McMurdo Station (southern hemisphere) are shaded in red because these two instruments are particularly important to this body of work.  Lines of constant magnetic latitude are shown in yellow at \(\Lambda = 40\deg, 60\deg, 80\deg\) in the northern hemisphere and at \(\Lambda = -40\deg,-60\deg,-80\deg\) in the southern hemisphere.}
 	\label{fig:superdarnmap}
@@ -110,6 +114,7 @@ The scattering cross section for a volume of \(N\) electrons in the ionosphere i
 Analysis of the returned power spectrum reveals the electron density, electron and ion temperatures, and LoS ion velocity \citep{Evans1969,Rishbeth1985,Nicolls2007a}.  Using a model of chemical composition at different altitudes, the average ion mass can also be found.  In addition, 3D convection velocities and electric field vectors can be derived from LoS ion velocity measurements in some of the more modern ISRs by assuming both \(\vec{E}\) and \(\vec{V}_E\) are constant across the radar's FoV \citep{Heinselman2008}.  More recently, a new algorithm has been developed that used the Lagrange method of undetermined multipliers to generate 2D convection velocity and electric field vectors without making this limiting assumption \citep{Nicolls2014}.  Each instrument must be calibrated with known electron density measurements to account for noise and system constants \citep{Nicolls2007a}.  This is done using the plasma frequency measured from either the plasma line of the ISR spectra during summer daytime period or ionosonde measurements for all other times \citep{Bahcivan2010,Themens2014}.
 
 \begin{figure}
+	\centering
 	\includegraphics[width=\textwidth]{ISRmap.pdf}
 	\caption[ISR map]{FoVs of all ISRs in the northern polar region.  The individual radars shown are identified by their commonly used acronyms: Poker Flat (PFISR), Resolute Bay North (RISR-N), Resolute Bay Canada (RISR-C), Sondrestrom (SFJ).  RISR-N, which is primarily used throughout this thesis, is shown in orange.  The FoV of the SuperDARN RKN radar is shown by the red outline.  Lines of constant MLAT are shown at \(\Lambda=80\deg,60\deg\) in yellow.}
 	\label{fig:isrmap}
@@ -164,7 +169,8 @@ In the polar cap at ionospheric altitudes, the magnetic field strength is relati
 
 
 \begin{figure}
-	\includegraphics[width=0.75\textwidth,angle=0]{magnetosphere.pdf}
+	\centering
+	\includegraphics[width=\textwidth,angle=0]{magnetosphere.pdf}
 	\caption[Magnetic reconnection footprint in the ionosphere]{Diagram of the interactions between the IMF, magnetosphere, and polar cap ionosphere.  Closed field lines in the Earth's magnetosphere are shown in grey, while open field lines are light blue.  The polar cap open-closed boundary is in green.  Magnetic field lines that are part of the IMF are shown in dark blue.  Magnetic reconnection occurs along the X-line (red) on the dayside of the magnetopause (dashed line).  The X-line can be mapped back along magnetic field lines (orange) to the ionosphere, where its projection is the merging gap (pink dotted line).  During reconnection events, the open-closed boundary expands equatorwards as more open field lines are formed and there is plasma flow across the merging gap. Figure adapted from \citet{Cowley1991}.}
 	\label{fig:magnetosphere}
 \end{figure}
@@ -182,7 +188,8 @@ At Figure \ref{fig:patch_formation}d, the burst of reconnection stops and the op
 A series of reconnection bursts can create a line of patches all propagating across the polar cap.  Reconnection bursts typically last about 2 min with anywhere between 7 min and 25 min between bursts \citep{Foster1984,Etemadi1988,Lockwood1992b}.  However, observations have shown convection flow to be close to continuous for much longer periods.  This can be explained by each reconnection burst exciting flow for a much longer interval than the time between bursts.  In this way, a reconnection burst can excite plasma flow before the convection from the previous burst has stopped, and a series of overlapping reconnection events like this can create continuous plasma flow through the polar cap \citep{Cowley1991}. 
 
 \begin{figure}
-	\includegraphics[width=0.75\textwidth,angle=0]{patch_formation.pdf}
+	\centering
+	\includegraphics[width=\textwidth,angle=0]{patch_formation.pdf}
 	\caption[Polar patch formation]{Polar patch formation through transient magnetopause reconnection.  The open-closed boundary is the green line.  Black contours represent plasma flow.  Dense daytime plasma is shown by the orange regions.  The burst of reconnection is occurring in Figures \ref{fig:patch_formation}a--\ref{fig:patch_formation}c, but stops in Figures \ref{fig:patch_formation}d--\ref{fig:patch_formation}f.  Figure adapted from \citet{Cowley1991}.}
 	\label{fig:patch_formation}
 \end{figure}
@@ -213,11 +220,11 @@ Recently, a new expression has been introduced that considers any arbitrary wave
 Here, \(\vec{k}\) is the wavevector, \(\omega\) is the wave frequency, and \(\vec{V}_{\alpha 0}\) is the background velocity of species \(\alpha\).  All other quantities in Equation \ref{eqn:gdi_Mak16} are not standard and described below.
 \begin{equation}
 \begin{split}
-	H_\alpha = S_\alpha F_\alpha + D_\alpha^{-1} F_\parallel \quad\quad\quad 
+	H_\alpha = S_\alpha F_\alpha + D_\alpha^{-1} F_\parallel \quad\quad\quad\quad&\quad\quad\quad\quad 
 	C_\alpha = \frac{T_\alpha}{m_\alpha \Omega_\alpha} \\
-	F_\alpha = i k_\perp^2 D_\alpha + \vec{G}\cdot\vec{k}_\perp D_\alpha + \vec{G}\cdot\vec{k}\times\uvec{b} \quad\quad\quad
+	F_\alpha = i k_\perp^2 D_\alpha + \vec{G}\cdot\vec{k}_\perp D_\alpha + \vec{G}\cdot\vec{k}\times\uvec{b} \quad\quad&\quad\quad\quad\quad
 	F_\parallel = i k_\parallel^2 + \vec{G}\cdot\vec{k}_\parallel \\
-	S_\alpha = \frac{1}{1+D_\alpha^2} \quad\quad\quad
+	S_\alpha = \frac{1}{1+D_\alpha^2} \quad\quad\quad\quad\quad\quad&\quad
 	D_\alpha = -\frac{i}{\Omega_\alpha}(\omega-\vec{k}\cdot{V}_{\alpha 0})+r_\alpha
 \end{split}
 \end{equation}
@@ -226,12 +233,12 @@ Throughout this thesis, \(T_\alpha\) and \(m_\alpha\) refer to the temperature a
 By considering certain limiting cases, expressions for the instability growth rate in different regions can be derived from Equation \ref{eqn:gdi_Mak16}.  These expressions are summarized in Table \ref{tab:gdi_exps}.  In addition to the quantities previously described in relation to Equation \ref{eqn:gdi_Mak16}, the following definitions are useful for the expressions in Table \ref{tab:gdi_exps}.
 \begin{equation}
 \begin{split}
-	b = -\frac{\vec{G}\cdot\vec{k}\times\uvec{b}}{k_\perp^2} \quad\quad\quad
+	b = -\frac{\vec{G}\cdot\vec{k}\times\uvec{b}}{k_\perp^2} \quad\quad&\quad\quad\quad\quad
 	y = \frac{k_\parallel}{k_\perp} \\
-	R = \frac{\sigma_H}{\sigma_P} = \frac{D_i+D_e}{1+\Psi} \quad\quad
-	\psi = -r_ir_e \quad\quad
+	R = \frac{\sigma_H}{\sigma_P} = \frac{D_i+D_e}{1+\Psi} \quad\quad\quad\quad\quad
+	\psi =& -r_ir_e \quad\quad\quad\quad\quad
 	\hat{\psi} = \psi\left(1+\frac{k_\parallel^2}{r_e^2 k_\perp^2}\right) \\
-	\vec{V}_d = \vec{V}_{e0}-\vec{V}_{i0} = (r_i-r_e)\left[s_es_i(1+\psi)\left(R\vec{V}_E-\frac{\vec{E}}{B}\right)\right]
+	\vec{V}_d = \vec{V}_{e0}-\vec{V}_{i0} = (r_i-r_e)&\left[s_es_i(1+\psi)\left(R\vec{V}_E-\frac{\vec{E}}{B}\right)\right]
 \end{split}
 \end{equation}
 
@@ -243,15 +250,18 @@ For the purposes of this thesis, the cold plasma limit expression in Table \ref{
 Equation \ref{eqn:gdi} is applicable throughout the \(E\) and lower \(F\) regions.  
 
 \begin{table}
-\begin{tabular}{l l}
-Limiting Case & Growth Rate, \(\gamma\) \\
-\hline
-GDI/FBI in \(E\) Region & \(\gamma = \frac{1}{1+\hat{\psi}}\left[\frac{\hat{\psi}}{\nu_i}\left(\left(\frac{\vec{V}_d\cdot \vec{k}}{1+\hat{\psi}}\right)^2-C_s^2 k_\perp^2\right)+\frac{br_i\vec{V}_d\cdot \vec{k}}{1+\hat{\psi}}\right]\) \\
-GDI/CCI in \(F\) Region & \(\gamma = -\frac{b}{\psi+y^2}\left[\frac{\psi\vec{k}\cdot\vec{E}_{0\perp}+E_{0\parallel}k_\parallel}{B}\right]+C\left[r_ek_\perp^2-\frac{k_\parallel^2}{r_i}\left(1+\frac{r_i^2}{\psi+y^2}\right)\right]\) \\
-Cold Plasma in \(F\) Region & \(\gamma = \frac{b}{1+\psi}\left(R\vec{V}_E-\frac{\vec{E}_{0\perp}}{B}\right)\cdot\vec{k}\) \\
-\end{tabular}
-\caption[Irregularity growth rates]{Irregularity growth rates in the ionosphere for three different limiting cases \citep{Makarevich2016a}.}
-\label{tab:gdi_exps}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\setlength{\tabcolsep}{15pt}
+	\begin{tabular}{l l}
+	Limiting Case & Growth Rate, \(\gamma\) \\
+	\hline
+	GDI/FBI in \(E\) Region & \(\gamma = \frac{1}{1+\hat{\psi}}\left[\frac{\hat{\psi}}{\nu_i}\left(\left(\frac{\vec{V}_d\cdot \vec{k}}{1+\hat{\psi}}\right)^2-C_s^2 k_\perp^2\right)+\frac{br_i\vec{V}_d\cdot \vec{k}}{1+\hat{\psi}}\right]\) \\
+	GDI/CCI in \(F\) Region & \(\gamma = -\frac{b}{\psi+y^2}\left[\frac{\psi\vec{k}\cdot\vec{E}_{0\perp}+E_{0\parallel}k_\parallel}{B}\right]+C\left[r_ek_\perp^2-\frac{k_\parallel^2}{r_i}\left(1+\frac{r_i^2}{\psi+y^2}\right)\right]\) \\
+	Cold Plasma in \(F\) Region & \(\gamma = \frac{b}{1+\psi}\left(R\vec{V}_E-\frac{\vec{E}_{0\perp}}{B}\right)\cdot\vec{k}\) \\
+	\end{tabular}
+	\caption[Irregularity growth rates]{Irregularity growth rates in the ionosphere for three different limiting cases \citep{Makarevich2016a}.}
+	\label{tab:gdi_exps}
 \end{table}
 
 Although linear GDI theory as described above predicts clear dependence on wavevector direction \citep{Makarevich2014c}, this theory is only valid in the long-wavelength limit, \(\vec{k}\cdot\vec{V}_E \ll \nu_\alpha\).  In the \(F\) region, the ion-neutral collision frequency, \(\nu_i\), is about 10 Hz and if the drift speed, \(V_E\), is about 1000 m/s, fluid theory only applies to wavelengths greater than 100 m, larger than the decameter-scale waves that are detected by SuperDARN.  This raises the important question of whether or not the same anisotropy that is predicted by linear GDI theory at larger scales can be expected in small-scale irregularities where other processes (not described by the linear fluid theory) may be important.  This issue has mostly been studied through numerical simulations due to the challenges associated with measuring a high-resolution 2D spectrum experimentally.

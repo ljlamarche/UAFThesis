@@ -52,7 +52,8 @@
 %%  Edited by Leslie Lamarche 2017/1/18
 %%        Changed title page to match new formating requirements.
 %%        Signature page no longer required.
-%%        Page numbers moved to bottom of page and centered.
+%%        Page numbers moved to bottom of page and centered
+%%        Set Abstract to page 3 (iii) per new format requirements
 
 \NeedsTeXFormat{LaTeX2e} 
 %% have to require "afterpage" to get the stupid 'Page' heading in the ToC, LoF, LoT, etc.
@@ -174,13 +175,13 @@
 \def\comfive #1{\gdef\@comfive{#1}}
 
 %% \maketitle makes titlepage. requires all the above macros 
-%% page gets set to 3
+%% page gets set to 1
 \def\maketitle{
-{   \let\footnotesize\small
+    \let\footnotesize\small
     \let\footnoterule\relax
-    \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
-    \setcounter{page}{3} 
+    \setcounter{page}{1} 
     \thispagestyle{empty}
+    \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
     \addcontentsline{toc}{frontchapter}{\titlename}
     \null\vfill
   \begin{center}
@@ -189,7 +190,7 @@
     By \par
     \bigskip
     {\@author}, {\@prevdegrees} \par
-    \bigskip \bigskip
+    \bigskip \bigskip \bigskip
     A Dissertation Submitted in Partial Fulfillment of the Requirements \par
     \medskip
     for the Degree of \par
@@ -197,43 +198,43 @@
     {\expandafter\expandafter{\@degree}} \par
     in \par
     {\expandafter\expandafter{\@department}} \par
-    
+    \bigskip \bigskip \medskip
 	University of Alaska Fairbanks \par
-    \bigskip 
+    \bigskip \bigskip \medskip
     {\@degreemonth} {\@degreeyear}
   \end{center}
     \vfill\null
 
-	\noindent\hspace{1.5in}APPROVED:\vskip1.5ex\relax
-	\noindent\hskip2in\relax{\@commchair}, Committee Chair\relax\vskip-1ex\relax
-	\noindent\hskip2in{\@comone}, Committee Member\relax\vskip-1ex\relax
-	\noindent\hskip2in{\@comtwo}, Committee Member\relax\vskip-1ex\relax
+	\noindent\hspace{1.75in}APPROVED:\vskip1.5ex\relax
+	\noindent\hskip2.5in\relax{\@commchair}, Committee Chair\relax\vskip-1ex\relax
+	\noindent\hskip2.5in{\@comone}, Committee Member\relax\vskip-1ex\relax
+	\noindent\hskip2.5in{\@comtwo}, Committee Member\relax\vskip-1ex\relax
 
 	\ifnum \@numberofmembers = 4
-	\noindent\hskip2in{\@comthree}, Committee Member\relax\vskip-1ex\relax
+	\noindent\hskip2.5in{\@comthree}, Committee Member\relax\vskip-1ex\relax
 	\fi
 
 	\ifnum \@numberofmembers = 5
-	\noindent\hskip2in{\@comthree}, Committee Member\relax\vskip1.5ex\relax
-	\noindent\hskip2in{\@comfour}, Committee Member\relax\vskip-1ex\relax
+	\noindent\hskip2.5in{\@comthree}, Committee Member\relax\vskip1.5ex\relax
+	\noindent\hskip2.5in{\@comfour}, Committee Member\relax\vskip-1ex\relax
 	\fi
 
 	\ifnum \@numberofmembers = 6
-	\noindent\hskip2in{\@comthree}, Committee Member\relax\vskip-1ex\relax
-	\noindent\hskip2in{\@comfour}, Committee Member\relax\vskip-1ex\relax
-	\noindent\hskip2in{\@comfive}, Committee Member\relax\vskip-1ex\relax
+	\noindent\hskip2.5in{\@comthree}, Committee Member\relax\vskip-1ex\relax
+	\noindent\hskip2.5in{\@comfour}, Committee Member\relax\vskip-1ex\relax
+	\noindent\hskip2.5in{\@comfive}, Committee Member\relax\vskip-1ex\relax
 	\fi
 
-	\noindent\hskip2in\relax{\@depchair}, Chair\relax
-	\vskip-1ex\relax\noindent\hskip2.5in\relax \textit{Department of {\@department}} \vskip-1ex
+	\noindent\hskip2.5in\relax{\@depchair}, Chair\relax\vskip-1ex\relax
+	\noindent\hskip3in\relax \textit{Department of {\@department}} \vskip-1ex
 
-	\noindent\hskip2in{\@colldean}, Dean \relax\vskip-1ex
-	\noindent\hskip2.5in\textit{\@college}\hspace{.25in}\vskip-1ex\relax
-	\noindent\hskip2in{\@gsdean}, \textit{Dean of the Graduate School}\relax\vskip-1ex
+	\noindent\hskip2.5in{\@colldean}, Dean \relax\vskip-1ex
+	\noindent\hskip3in\textit{\@college}\hspace{.25in}\vskip-1ex\relax
+	\noindent\hskip2.5in{\@gsdean}, \textit{Dean of the Graduate School}\relax\vskip-1ex
 
 
 \setcounter{footnote}{0}
-}\newpage \thispagestyle{empty}~ %a blank page that will serve as the back of the title page
+\newpage \thispagestyle{empty}~ %a blank page that will serve as the back of the title page
 \newpage}
 
 %% The \makesig macro emits a UAF-approved signature page ready for
@@ -372,11 +373,11 @@
 \newpage \thispagestyle{empty}~ % a blank page that serves as the backside of the signature page
 \newpage}
 
-%% the abstract goes here and gets its page set to 5, as req'd (note:
+%% the abstract goes here and gets its page set to 3, as req'd (note:
 %% abstract and acknowledgements are frontschap's --> defined later)
 \newenvironment{abstract}{
 \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
-\setcounter{page}{5}\frontchap*{\abstractname}
+\setcounter{page}{3}\frontchap*{\abstractname}
 \addcontentsline{toc}{frontchapter}{\abstractname}
 }
 {\newpage\renewcommand{\thepage}{\arabic{page}}}
@@ -1151,18 +1152,21 @@
 \fi
 
 %% here's where we meet the page layout requirements of the grad school
-\oddsidemargin 0.5in   %   Note that \oddsidemargin = \evensidemargin
-   \evensidemargin 0.0in
+\oddsidemargin 0.25in   %   Note that \oddsidemargin = \evensidemargin
+   \evensidemargin 0.25in
    \marginparwidth 0pt
 \marginparsep 10pt      % Horizontal space between outer margin and 
                         % marginal note
-\topmargin 0.0in        %    Nominal distance from top of page to top of
+\topmargin 0.25in        %    Nominal distance from top of page to top of
                         %    box containing running head.
-\headheight 12pt        %    Height of box containing running head.
-\headsep 25pt           %    Space between running head and text.
+%\headheight 12pt        %    Height of box containing running head.
+%\headsep 25pt           %    Space between running head and text.
+\headheight = 0truein        %    Height of box containing running head.
+\headsep = 0truein           %    Space between running head and text.
 \topskip = 11pt         %    '\baselineskip' for first line of page.
                         % Bottom of page:
-\footskip 30pt          %    Distance from baseline of box containing
+%\footskip 30pt          %    Distance from baseline of box containing
+\footskip = 0.75truein          %    Distance from baseline of box containing
                         %    foot to baseline of last line of text.
 \textheight = 8.5truein
 %\advance\textheight by \topskip
