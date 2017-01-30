@@ -5,8 +5,9 @@
 \usepackage{ppl}
 \usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage{natbib}
+\usepackage[square]{natbib}
 \usepackage{hyperref}
+\usepackage{doi}
 \usepackage{chapterbib}
 \usepackage{appendix}
 
@@ -25,6 +26,9 @@
 
 %% Look for figures in local Figures directory
 \graphicspath{{Figures/}}
+
+%% Set footnote markers to uppercase roman numerals
+\renewcommand{\thefootnote}{\Roman{footnote}}
 
 %%======================================================================================%%
 %%======================================================================================%%

@@ -54,6 +54,7 @@
 %%        Signature page no longer required.
 %%        Page numbers moved to bottom of page and centered
 %%        Set Abstract to page 3 (iii) per new format requirements
+%%        Changed margins and spacing
 
 \NeedsTeXFormat{LaTeX2e} 
 %% have to require "afterpage" to get the stupid 'Page' heading in the ToC, LoF, LoT, etc.
@@ -1167,7 +1168,9 @@
                         % Bottom of page:
 %\footskip 30pt          %    Distance from baseline of box containing
 \footskip = 0.75truein          %    Distance from baseline of box containing
-                        %    foot to baseline of last line of text.
+                        %    foot to baseline of last line of text.                
+\footnotesep = 15pt
+                    
 \textheight = 8.5truein
 %\advance\textheight by \topskip
 \textwidth 6.0truein     % Width of text line.

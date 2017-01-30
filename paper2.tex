@@ -1,50 +1,19 @@
+% Chapter 3: paper2
 
-%\documentclass[angeo, manuscript]{copernicus}
+\chapter[A modeling study of asymmetries in plasma irregularity characteristics near gradient reversals]{A modeling study of asymmetries in plasma irregularity characteristics near gradient reversals\footnote{Published as: {Lamarche}, L.~J., and R.~A. {Makarevich} (2016), A modeling study of asymmetries in plasma irregularity characteristics near gradient reversals, \textit{Ann. Geophysicae}, \textit{34}, 709--723, \doi{10.5194/angeo-34-709-2016}.}}
 
-%\begin{document}
-
-%\linenumbers
-
-\chapter{A modeling study of asymmetries in plasma irregularity characteristics near gradient reversals}
-
-
-%\Author[1]{Leslie J.}{Lamarche}
-%\Author[1]{Roman A.}{Makarevich}
-
-%\affil[1]{Geophysical Institute and Department of Physics, University of Alaska Fairbanks, Fairbanks, Alaska, USA}
+\label{sec:paper2}
 
 
 
-%\runningtitle{Asymmetries in Plasma Irregularities}
 
-%\runningauthor{Lamarche}
-
-%\correspondence{Leslie J. Lamarche (ljlamarche@alaska.edu)}
-
-
-
-%\received{}
-%\pubdiscuss{} %% only important for two-stage journals
-%\revised{}
-%\accepted{}
-%\published{}
-
-
-
-%\firstpage{1}
-
-%\maketitle
-
-
-
-%\begin{abstract}
-
+\section*{Abstract}
 Asymmetries in plasma density irregularity generation between the leading and trailing edges of the large-scale plasma density structures in the high-latitude ionosphere are investigated. A model is developed that evaluates the gradient-drift instability (GDI) growth rate differences across the gradient reversal that is applicable at all propagation directions and for the broad range of altitudes spanning the entire lower ionosphere. In particular, the model describes asymmetries that would be observed by an oblique scanning radar near density structures in the polar cap such as elongated polar patches. The dependencies on the relative orientations between the directions of the gradient reversal, plasma convection, and wave propagation are examined at different altitudinal regions. At all altitudes, the largest asymmetries are expected for observations along the gradient reversals, e.g. when an elongated structure is oriented along the radar boresite. The convection direction that results in the strongest asymmetries exhibits a strong dependence on the altitude, with the optimal convection being parallel to the gradient reversal in the \(E\) region, perpendicular to it in the \(F\) region, and at some angle between these extremes in the transitional region. Implications for observations of polar patches by oblique scanning radars within the Super Dual Auroral Radar Network are discussed. It is demonstrated that the wave propagation direction relative to the prevalent convection and gradient directions plays a critical role in controlling both the irregularity growth rate and its asymmetries near gradient reversals.
 
-%\end{abstract}
 
 
 \section{Introduction}
+\label{sec:p2intro}
 Plasma density structures in the high-latitude ionosphere range in size from a few centimeters to hundreds of kilometers. In the ionospheric \(F\) region, they typically move with the large-scale plasma convection, i.e. their phase velocity is the \(\vec{E}\times\vec{B}\) drift velocity.  Observations of large-scale density structures in the polar cap ionosphere such as polar patches and sun-aligned arcs have shown some asymmetry in the small-scale irregularity characteristics between their leading and trailing edges \citep[e.g.][]{Weber1984}. In general, trailing edges exhibit stronger structuring, which is often interpreted in terms of more favorable conditions for the gradient-drift instability (GDI) along the trailing edge \citep{Weber1984,Milan2002a, Koustov2012,Moen2012}.
 
 
@@ -58,7 +27,8 @@ Oblique-sounding coherent radars within the Super Dual Auroral Radar Network (Su
 The aim of this study is to investigate the asymmetries between the GDI growth rates near gradient reversals that often occur in the vicinity of large-scale density structures. The specific objectives are to (1) develop a quantitative approach for comparing the growth rates on either side of the structure,  (2) analyse how the growth rates and asymmetries change for different orientations of the background density gradient and convection velocity and determine if there is an optimal radar orientation for which the asymmetry is the strongest, and (3) investigate how the growth rate and asymmetries change between the ionospheric \(E\) and \(F\) layers.
 
 
-\section{Modeling of Growth Rates within Radar's Field-of-View}\label{Sec:2}
+\section{Modeling of Growth Rates within Radar's Field-of-View}
+\label{sec:model_fov}
 In this study, we investigate behavior of the GDI growth rate within the field-of-view (FoV) of an oblique scanning radar with a particular focus on asymmetries between the leading and trailing edges of large-scale density structures in the ionosphere. Since growth rate exhibits a strong dependence on the altitude through its dependence on the ratio between the Hall to Pedersen conductivities \(R=\sigma_H/\sigma_P\) \citep{Makarevich2014c}, it is important to understand and model altitudinal dependencies of related parameters.
 
 Figure \ref{fig:1}a presents altitudinal dependencies of several parameters of interest. Shown are the ratios of collision frequencies and gyrofrequencies for electrons \(-r_e=\nu_e/|\Omega_e|\) (blue) and ions \(r_i=\nu_i/\Omega_i\) (green), the anisotropy parameter \(\psi=-r_i r_e\) (pink), and the conductivity ratio \(R=\sigma_H/\sigma_P = \left(r_i+r_e\right)/\left(1+\psi\right)\) (dashed black line on top of the green one). The above notations are the same as in the recent study by \citet{Makarevich2014c}, where the electrons gyrofrequency \(\Omega_e=-|e|B/m_e\) and the ratio \(r_e=\nu_e/\Omega_e\) are negative, while other quantities of interest are positive. The \(x\) axis in Figure \ref{fig:1}a does not have any units since all presented parameters are dimensionless quantities.
@@ -93,7 +63,7 @@ Here, \(\hat{\vec{k}}\), \(\hat{\vec{b}}\), \(\hat{\vec{g}}\), and \(\hat{\vec{e
 
 
 
-Each radar cell in Figure \ref{fig:1}c is color-coded in the GDI growth rate at its center, with the color bar given in the bottom-right corner of Figure \ref{fig:1}c.  On the left side of the radar FoV, the growth rate is positive on the leading edge of the gradient reversal and negative on the trailing edge, but both are very close to zero.  Conversely, the growth rate is negative on the leading edge and positive on the trailing edge on the right side of the FoV.  In addition, both the negative and positive values are much larger (\(\sim\mp0.5\)) than on the left side. For this presentation, a gradient field that is uniform in magnitude was assumed; this was done to illustrate the most salient features of the GDI growth rate pattern and in particular effects due to variations in direction and altitude. In practice, the gradient magnitude will also change depending on the distance from the structure, but the directional and altitudinal effects in asymmetries will be the same. This is further examined in Section \ref{Sec:Rev} where a more realistic approach is employed. The important common features are that the GDI growth rate and its asymmetries are strongly dependent on the altitude and direction of observations.  The direction of observation is directly related to the wave propagation direction since for every beam the radar samples a narrow range of propagation directions.  The present study has considered a dependence on the observational direction, but an alternative presentation of the same effect is to consider a fixed scattering volume with variable propagation directions.  This alternate presentation has been shown in \citet{Makarevich2014c}, their figure 1 and figure 2.  These figures show the GDI growth rate in all wavevector directions for set gradient and drift velocity directions for the \(E\) and \(F\) regions, respectively.
+Each radar cell in Figure \ref{fig:1}c is color-coded in the GDI growth rate at its center, with the color bar given in the bottom-right corner of Figure \ref{fig:1}c.  On the left side of the radar FoV, the growth rate is positive on the leading edge of the gradient reversal and negative on the trailing edge, but both are very close to zero.  Conversely, the growth rate is negative on the leading edge and positive on the trailing edge on the right side of the FoV.  In addition, both the negative and positive values are much larger (\(\sim\mp0.5\)) than on the left side. For this presentation, a gradient field that is uniform in magnitude was assumed; this was done to illustrate the most salient features of the GDI growth rate pattern and in particular effects due to variations in direction and altitude. In practice, the gradient magnitude will also change depending on the distance from the structure, but the directional and altitudinal effects in asymmetries will be the same. This is further examined in Section \ref{sec:model_reversal} where a more realistic approach is employed. The important common features are that the GDI growth rate and its asymmetries are strongly dependent on the altitude and direction of observations.  The direction of observation is directly related to the wave propagation direction since for every beam the radar samples a narrow range of propagation directions.  The present study has considered a dependence on the observational direction, but an alternative presentation of the same effect is to consider a fixed scattering volume with variable propagation directions.  This alternate presentation has been shown in \citet{Makarevich2014c}, their figure 1 and figure 2.  These figures show the GDI growth rate in all wavevector directions for set gradient and drift velocity directions for the \(E\) and \(F\) regions, respectively.
 
 
 Figure \ref{fig:1}c presented the growth rate pattern for one particular orientation of the gradient reversal and plasma convection. Figure \ref{fig:2} presents the same analysis for four different orientations and locations of the gradient reversal. In all cases, the convection direction is assumed to be perpendicular to the gradient reversal direction (\(\phi-\theta=90\deg\)).  This is because large-scale structures, such as polar patches tend to drift perpendicular to their elongation direction \citep{Makarevitch2004c,Makarevich2015b}. This requirement was convenient for presenting different growth rate patterns, but will be relaxed later in this study.
@@ -112,22 +82,22 @@ Figure \ref{fig:2}b shows an inclined gradient reversal through the FoV in the \
 
 Figure \ref{fig:2}c presents the same configuration as Figure \ref{fig:2}a, except that a gradient reversal is centered in the transitional region. Similar to Figure \ref{fig:2}a, the growth rate is close to zero on both sizes of the reversal in the center of the radar FoV.  However, there are more extreme values (\(\sim\mp0.5\)) near the edge beams.  Figure \ref{fig:2}d shows an inclined gradient reversal in the transitional region.  The growth rate difference across the gradient is again more extreme further away from the boresite. Overall, this analysis demonstrated that both the gradient reversal orientation and its position in the FoV are important in controlling the asymmetries between the leading and trailing edges.
 
-\section{Modeling of Growth Rate Differences Across the Gradient Reversal}\label{Sec:Rev}
-
+\section{Modeling of Growth Rate Differences Across the Gradient Reversal}
+\label{sec:model_reversal}
 In order to quantify the above-noted differences in the growth rate for different orientations of the gradient reversal, the average change in the growth rate across the reversal \(\Delta\gamma_{avg}\) was found for any general configuration of the gradient reversal and the convection direction. The approach presented in Figures \ref{fig:1}c and \ref{fig:2} was useful for presenting and emphasizing general spatial patterns in the growth rate. In this section, we employ two new methods that are more robust, independent of the way the the radar FoV is divided into beam-range cells, and more suitable for evaluating the growth rate differences in the vicinity of large-scale structures. These two new methods are described below.
 
 
 
 \subsection{Numerical Method}
-\label{sec:num}
+\label{sec:numerical}
 In the first method, evenly spaced points were selected along the gradient reversal within the radar FoV. These points did not necessarily correspond to real range gates or beams used in the standard SuperDARN radar configuration.  A virtual radar beam was constructed that intersected each point.  From this, the virtual slant range and beam azimuth were found, which were used to find the wave vector \(\vec{k}\) and the height corresponding to that point.  The growth rates on opposite sides of the gradient reversal were found as follows.  For the leading edge, the gradient vector \(\vec{G}\) is set to be perpendicular to the gradient reversal and in a direction such that the component of \(\vec{V}_E\) along \(\vec{G}\) is negative, i.e. \(\vec{V}_E\cdot \vec{G}<0\). For the trailing edge, the opposite direction is selected such that \(\vec{V}_E\cdot \vec{G}>0\). These two cases can be thought of as the limiting cases when two points on either side of the reversal are both moved towards the reversal until they are both colocated on it.  The GDI growth rate for both cases can then be calculated using Eq. (\ref{eqn:Mak14gr}) as described above.  The difference in growth rate across the reversal, \(\Delta\gamma\), can then be found by subtracting the trailing edge case from the leading edge case.  The average difference in growth rate across the reversal for the entire FoV, \(\Delta\gamma_{avg}\), can be found by averaging \(\Delta\gamma\) of every point initially considered along the gradient reversal.
 
 
 
-\subsection{Analytic Method}\label{sec:ana}
+\subsection{Analytic Method}
+\label{sec:analytic}
 
-
-An alternative approach is to develop an analytic expression for \(\Delta\gamma_{avg}\) for any general direction of the gradient reversal \(\theta\) and convection \(\phi\) as described in Appendix \ref{app:1}. The result is
+An alternative approach is to develop an analytic expression for \(\Delta\gamma_{avg}\) for any general direction of the gradient reversal \(\theta\) and convection \(\phi\) as described in Appendix \ref{sec:p2appendix}. The result is
 \begin{equation}
 \label{eqn:gr}
 \Delta\gamma_{avg}=H(\theta,\phi)\left[\sin(\phi-\theta)-C\sin(\phi+\theta)+R\left(\cos(\phi-\theta)-C\cos(\phi+\theta)\right)\right], 
@@ -137,15 +107,15 @@ with
 \label{eqn:Heaviside}
 H(\theta,\phi)=\Theta(\phi-\theta+\pi)-\Theta(\theta-\phi-\pi)+2\Theta(\phi-\theta-\pi)-2\Theta(\phi-\theta),
 \end{equation}
-function \(\Theta\) being the Heaviside step function, and \(C=0.87\) for SuperDARN observations, Appendix \ref{app:1}. This expression can be readily used to compute \(\Delta\gamma_{avg}\) for any given combination of \(\theta\) and \(\phi\). One limitation of this expression is, however, that it can only be applied when the conductivity ratio \(R\) is approximately constant, i.e. in the \(E\) region or in the \(F\) region, but not in the transitional region.
+function \(\Theta\) being the Heaviside step function, and \(C=0.87\) for SuperDARN observations, Appendix \ref{sec:p2appendix}. This expression can be readily used to compute \(\Delta\gamma_{avg}\) for any given combination of \(\theta\) and \(\phi\). One limitation of this expression is, however, that it can only be applied when the conductivity ratio \(R\) is approximately constant, i.e. in the \(E\) region or in the \(F\) region, but not in the transitional region.
 
 
 
 \subsection{General Vector Orientations}
 
-The two methods for finding the average difference in the GDI growth rate across the gradient reversal can now be employed to characterize different orientations. In this section, we consider a more general case of different relative orientations of the gradient reversal and the convection direction, not necessarily restricted to the case of \(\theta- \phi= 90\deg\) that was considered in Section \ref{Sec:2}. In other words, we consider all possible differences \(\theta- \phi\).
+The two methods for finding the average difference in the GDI growth rate across the gradient reversal can now be employed to characterize different orientations. In this section, we consider a more general case of different relative orientations of the gradient reversal and the convection direction, not necessarily restricted to the case of \(\theta- \phi= 90\deg\) that was considered in Section \ref{sec:model_fov}. In other words, we consider all possible differences \(\theta- \phi\).
 
-Figure \ref{fig:3} examines the growth rate difference across the gradient reversal for 4 selected angle differences \(\theta- \phi\) as indicated in the top-right corner of each panel. In each case, the average growth rate difference, notated simply by \(\Delta\gamma\) for the remainder of this paper, is calculated for different \(\theta\) values from \(0\deg\) to \(360\deg\). In each plot, the convection direction \(\phi\) changes with \(\theta\) so that their difference remains constant. The average growth rate difference is shown on the \(y\) axis in arbitrary units. The numerical method results, Section \ref{sec:num}, are shown for the averages (solid lines) and standard deviations (shaded regions). The blue and red curves correspond to the \(E\)- and \(F\)-region cases. The analytic method results, Section \ref{sec:ana}, are also presented for the expected average differences (dashed lines). Because the growth rate difference is calculated by subtracting the trailing edge \(\gamma\) from the leading edge \(\gamma\), negative \(\Delta\gamma\) indicates larger instability growth on the trailing edge than the leading edge. In addition, large \(\Delta\gamma\) (either positive or negative) indicates a strong contrast between the two sides of the gradient reversal.
+Figure \ref{fig:3} examines the growth rate difference across the gradient reversal for 4 selected angle differences \(\theta- \phi\) as indicated in the top-right corner of each panel. In each case, the average growth rate difference, notated simply by \(\Delta\gamma\) for the remainder of this paper, is calculated for different \(\theta\) values from \(0\deg\) to \(360\deg\). In each plot, the convection direction \(\phi\) changes with \(\theta\) so that their difference remains constant. The average growth rate difference is shown on the \(y\) axis in arbitrary units. The numerical method results, Section \ref{sec:numerical}, are shown for the averages (solid lines) and standard deviations (shaded regions). The blue and red curves correspond to the \(E\)- and \(F\)-region cases. The analytic method results, Section \ref{sec:analytic}, are also presented for the expected average differences (dashed lines). Because the growth rate difference is calculated by subtracting the trailing edge \(\gamma\) from the leading edge \(\gamma\), negative \(\Delta\gamma\) indicates larger instability growth on the trailing edge than the leading edge. In addition, large \(\Delta\gamma\) (either positive or negative) indicates a strong contrast between the two sides of the gradient reversal.
 
 \begin{figure}
 	\centering
@@ -216,6 +186,7 @@ Each small panel in Figure \ref{fig:5}c has the same format as Figure \ref{fig:4
 
 
 \section{Discussion}
+\label{sec:p2discussion}
 In this study, we have applied the GDI linear fluid theory to study the asymmetries in the GDI growth rate on either side of a large-scale density structure, particularly as applied to observations with oblique scanning radars such as SuperDARN.  The important new aspect of this study is explicit consideration of varying wave vector direction and altitude and their effects on asymmetries in the plasma structuring processes. We focus on the first-order effects due to the differences in the GDI growth rate that are often involved in interpreting asymmetries in intensity and occurrence characteristics of  small-scale plasma irregularities in the high-latitude ionosphere.  Below, we discuss the applicability of these results and their implication for interpretation of radar observations near gradient reversals.
 
 The original expression used to define the GDI growth rate, Equation \ref{eqn:Mak14gr}, has been derived under the assumption of negligible inertial effects \citep{Makarevich2014c}, i.e. in the low-frequency and long-wavelength limit: \(\omega\ll \nu_{in}\), \(\lambda\gg 2\pi V_E \nu_{in}^{-1}\). The fluid theory itself also applies directly to long wavelengths, i.e scales much larger than the ion mean free path. The observations with which we compare our results refer to small-scale irregularities and, more specifically, decameter-scale waves in the \(E\) and \(F\) regions as well as in the transitional region, in the case of SuperDARN observations. In the \(E\) region up to 130 km in altitude, these conditions may be satisfied for decameter scales \citep[e.g.][]{Fejer1984}. In the \(F\) region, the long-wavelength case refers to significantly larger scales (\(\sim\) 1000 m) below which the fluid theory is not necessarily directly applicable. However, observational studies have found the behavior of decameter-scale irregularities in the \(F\) region to be consistent with many fluid theory predictions, including their propagation with the \(\vec{E}\times\vec{B}\) drift velocity and stronger waves on the trailing edge of gradient reversals. This leads to a common interpretation that decameter-scale waves observed by SuperDARN and  kilometer-scale waves in the \(F\) region described by a standard fluid approach are closely related, possibly by a turbulent cascade \citep[e.g.][]{Tsunoda1988}.  Within the above discussed limits of applicability of the basic equation (\ref{eqn:Mak14gr}) employed in the present modeling, GDI is operational throughout the wide range of ionospheric altitudes spanning both the \(E\) and \(F\) regions. This is because there is always a range of propagation and gradient directions for which growth rates are positive in both the \(E\) and \(F\) regions.
@@ -247,6 +218,7 @@ Another challenge in observing altitudinal transitions is associated with a requ
 
 
 \section{Conclusions}
+\label{sec:p2conclusions}
 A model of asymmetries in plasma wave generation due to sharp reversals in the plasma density gradient near elongated density structures in the high-latitude ionosphere revealed the following:
  
 \begin{enumerate}
@@ -260,13 +232,12 @@ A model of asymmetries in plasma wave generation due to sharp reversals in the p
 
 
 
-%\appendix
 \begin{subappendices}
-\section{Analytic Expression for the GDI Growth Rate Difference}\label{app:1}
+\section{Analytic Expression for the GDI Growth Rate Difference}
+\label{sec:p2appendix}
 
 
-
-In this section, we derive an analytic expression for the average difference in the GDI growth rate across the gradient reversal passing through the radar's viewing area, Figure \ref{fig:1}c. The starting point is Equation (\ref{eqn:Mak14gr}). Consider a single point that lies on the gradient reversal within the radar's FoV. In the geometry illustrated in Figure \ref{fig:1}c, the relevant vectors at this point can be written as \(\vec{\hat k}=-\sin\alpha\vec{\hat{e}}_1-\cos\alpha\vec{\hat{e}}_2\), \(\vec{\hat e}=-\sin\phi\vec{\hat{e}}_1+\cos\phi\vec{\hat{e}}_2\), \(\hat{\vec{g}}=\pm[\sin\theta\vec{\hat{e}}_1-\cos\theta\vec{\hat{e}}_2]\), where angles \(\theta\) and \(\phi\) were previously defined in Section \ref{Sec:2}, angle \(\alpha\) is the angle between the wave vector and the boresite direction, and unit vectors \(\vec{\hat{e}}_1\)  and \(\vec{\hat{e}}_2\) are  perpendicular and parallel to the boresite, respectively.
+In this section, we derive an analytic expression for the average difference in the GDI growth rate across the gradient reversal passing through the radar's viewing area, Figure \ref{fig:1}c. The starting point is Equation (\ref{eqn:Mak14gr}). Consider a single point that lies on the gradient reversal within the radar's FoV. In the geometry illustrated in Figure \ref{fig:1}c, the relevant vectors at this point can be written as \(\vec{\hat k}=-\sin\alpha\vec{\hat{e}}_1-\cos\alpha\vec{\hat{e}}_2\), \(\vec{\hat e}=-\sin\phi\vec{\hat{e}}_1+\cos\phi\vec{\hat{e}}_2\), \(\hat{\vec{g}}=\pm[\sin\theta\vec{\hat{e}}_1-\cos\theta\vec{\hat{e}}_2]\), where angles \(\theta\) and \(\phi\) were previously defined in Section \ref{sec:model_fov}, angle \(\alpha\) is the angle between the wave vector and the boresite direction, and unit vectors \(\vec{\hat{e}}_1\)  and \(\vec{\hat{e}}_2\) are  perpendicular and parallel to the boresite, respectively.
 
 
 Using these expressions, all the terms in Equation \ref{eqn:Mak14gr} can be expressed as functions of \(\alpha\), \(\theta\), and \(\phi\)
@@ -315,28 +286,11 @@ where a new constant  has been defined: \(C\equiv\sin(2\alpha_0)/2\alpha_0\). Fo
 \end{subappendices}
 
 
-%\begin{acknowledgements}
-%This work was supported by NSF grants AGS-1248127 and PLR-1443504. The MSISE-90 model is available from the GSFC/SPDF OMNIWeb interface at http://omniweb.gsfc.nasa.gov/.
-%\end{acknowledgements}
+\section*{Acknowledgements}
+This work was supported by NSF grants AGS-1248127 and PLR-1443504. The MSISE-90 model is available from the GSFC/SPDF OMNIWeb interface at \url{http://omniweb.gsfc.nasa.gov/}.
 
 
 
 \bibliographystyle{uafthesis}
 \bibliography{references}
-
-
-
-
-%\newpage
-
-
-
-
-
-
-
-%\addtocounter{figure}{-1}\renewcommand{\thefigure}{\arabic{figure}a}
-
-
-%\end{document}
 
