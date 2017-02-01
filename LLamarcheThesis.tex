@@ -11,6 +11,7 @@
 \usepackage{chapterbib}
 \usepackage{appendix}
 \usepackage[inline]{enumitem}
+\usepackage{longtable}
 %\usepackage[intoc]{nomencl}
 %\usepackage{makeidx}
 %\usepackage[acronym,nomain]{glossaries}
@@ -74,6 +75,14 @@
 \tableofcontents
 \listoffigures
 \listoftables
+
+\begin{acronyms}
+	\input{acronyms}
+\end{acronyms}
+
+\begin{acknowledgements}
+	\input{acknowledgements}
+\end{acknowledgements}
 
 \addtocontents{toc}{\protect\afterpage{~\hfill{Page}\par\medskip}}
 

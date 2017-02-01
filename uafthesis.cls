@@ -376,10 +376,20 @@
 
 %% the abstract goes here and gets its page set to 3, as req'd (note:
 %% abstract and acknowledgements are frontschap's --> defined later)
-\newenvironment{abstract}{
+\newenvironment{abstract}
+{
 \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
 \setcounter{page}{3}\frontchap*{\abstractname}
 \addcontentsline{toc}{frontchapter}{\abstractname}
+}
+{\newpage\renewcommand{\thepage}{\arabic{page}}}
+
+%% acronyms
+\newenvironment{acronyms}
+{
+\if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
+\newpage\addcontentsline{toc}{frontchapter}{\acronymname}
+\frontchap*{\acronymname}
 }
 {\newpage\renewcommand{\thepage}{\arabic{page}}}
 
@@ -1120,6 +1130,7 @@
 \newcommand\appendixname{Appendix}
 \newcommand\abstractname{Abstract}
 \newcommand\acknowledgename{Acknowledgements}
+\newcommand\acronymname{List of Acronyms}
 \newcommand\prefname{Preface}
 \newcommand\indname{Index}
 
