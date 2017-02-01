@@ -10,6 +10,10 @@
 \usepackage{doi}
 \usepackage{chapterbib}
 \usepackage{appendix}
+\usepackage[inline]{enumitem}
+%\usepackage[intoc]{nomencl}
+%\usepackage{makeidx}
+%\usepackage[acronym,nomain]{glossaries}
 
 %%======================================================================================%%
 %%======================================================================================%%
@@ -32,6 +36,12 @@
 
 %%======================================================================================%%
 %%======================================================================================%%
+
+%\makenomenclautre
+%\nomenclature{IMF}{Interplanetary Magnetic Field}
+% makeindex <filename.glo> -s nomenclature.ist -o uaf_thesis_example.gls
+
+%\makeglossaries
 
 \begin{document}
 
@@ -67,6 +77,11 @@
 
 \addtocontents{toc}{\protect\afterpage{~\hfill{Page}\par\medskip}}
 
+%\section*{Acronyms}
+%\newacronym{superdarn}{SuperDARN}{Super Dual Auroral Radar Network}
+%\gls{superdarn}
+%\printglossaries
+
 \include{introduction}
 
 \include{paper1}
@@ -76,6 +91,8 @@
 %\include{paper3}
 
 \include{conclusion}
+
+%\printnomenclature
 
 %\appendix
 %\include{appendix}

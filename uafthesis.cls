@@ -1153,6 +1153,8 @@
 \fi
 
 %% here's where we meet the page layout requirements of the grad school
+%% 2017-1-30 LLamarche - margins now even at 1.25"
+
 \oddsidemargin 0.25in   %   Note that \oddsidemargin = \evensidemargin
    \evensidemargin 0.25in
    \marginparwidth 0pt

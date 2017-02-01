@@ -20,6 +20,8 @@ bibtex paper1
 bibtex paper2
 bibtex conclusion
 
+# makeindex -s LLamarcheThesis.ist -t LLamarcheThesis.alg -o LLamarcheThesis.acr
+
 pdflatex LLamarcheThesis.tex
 
 pdflatex LLamarcheThesis.tex
