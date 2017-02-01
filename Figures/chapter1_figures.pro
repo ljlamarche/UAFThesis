@@ -263,6 +263,7 @@ PRO SuperDARNmap
   device, filename='C:\UAFThesis\UAFThesis\Figures\SuperDARNmap.ps', /color, /landscape, xsize=18, ysize=10, xoffset=0, yoffset=18.3
   !P.MULTI = 0
   !P.MULTI = [0,2,1]
+  !P.FONT = 1
   loadct, 0, /silent
   
   latlim = 35
@@ -279,13 +280,16 @@ PRO SuperDARNmap
   FOR n=0, numlat-1 DO BEGIN
     oplot, nmlon[n,*], nmlat[n,*], thick=5, color=240
   ENDFOR
-  loadct, 3, /silent
+  loadct, 1, /silent
+  polyfill, nlon[WHERE(northrad EQ 'rkn'),*], nlat[WHERE(northrad EQ 'rkn'),*], /line_fill, spacing=0.01, color=120
+  polyfill, nlon[WHERE(northrad EQ 'cly'),*], nlat[WHERE(northrad EQ 'cly'),*], /line_fill, spacing=0.01, color=120
+  polyfill, nlon[WHERE(northrad EQ 'inv'),*], nlat[WHERE(northrad EQ 'inv'),*], /line_fill, spacing=0.01, color=120
+  loadct, 7, /silent
   FOR r=0, nrad-1 DO BEGIN
-    c = 0
-    IF (northrad[r] EQ 'rkn') OR (northrad[r] EQ 'cly') OR (northrad[r] EQ 'inv') OR (northrad[r] EQ 'lyr') THEN c = 120
-    oplot, nlon[r,*], nlat[r,*], thick=3, color=c
+    oplot, nlon[r,*], nlat[r,*], thick=3, color=0
+    IF (northrad[r] EQ 'rkn') THEN oplot, nlon[r,*], nlat[r,*], thick=5, color=120
   ENDFOR
-  polyfill, nlon[WHERE(northrad EQ 'rkn'),*], nlat[WHERE(northrad EQ 'rkn'),*], /line_fill, spacing=0.05, color=120
+  xyouts, 0.39, 0.85, 'NORTH', charthick=2, charsize=1.5, /normal
 
 
   map_set, -90+shift, -90, orientation, /azimuthal, /isotropic, /advance, limit=[-1*latlim,-180,-1*latlim-shift,-90,-1*latlim,0,-1*latlim+shift,90]
@@ -299,13 +303,17 @@ PRO SuperDARNmap
   FOR n=0, numlat-1 DO BEGIN
     oplot, smlon[n,*], smlat[n,*], thick=4, color=240
   ENDFOR
-  loadct, 3, /silent
+  loadct, 1, /silent
+  polyfill, slon[WHERE(southrad EQ 'mcm'),*], slat[WHERE(southrad EQ 'mcm'),*], /line_fill, spacing=0.01, color=120
+  loadct, 7, /silent
   FOR r=0, srad-1 DO BEGIN
-    c = 0
-	IF (southrad[r] EQ 'mcm') THEN c = 120
-    oplot, slon[r,*], slat[r,*], thick=3, color=c
+    oplot, slon[r,*], slat[r,*], thick=3, color=0
+	IF (southrad[r] EQ 'mcm') THEN oplot, slon[r,*], slat[r,*], thick=5, color=120
   ENDFOR
-  polyfill, slon[WHERE(southrad EQ 'mcm'),*], slat[WHERE(southrad EQ 'mcm'),*], /line_fill, spacing=0.05, color=120
+  xyouts, 0.89, 0.85, 'SOUTH', charthick=2, charsize=1.5, /normal
+  
+  xyouts, 0.02, 0.85, '(a)', charthick=2, charsize=1.5, /normal
+  xyouts, 0.52, 0.85, '(b)', charthick=2, charsize=1.5, /normal
 
   device, /close  
 
@@ -436,12 +444,13 @@ PRO ISRmap
   set_plot, 'PS'
   device, filename='C:\UAFThesis\UAFThesis\Figures\ISRmap.ps', /color, /portrait, xsize=18, ysize=18, xoffset=0, yoffset=0
   !P.MULTI = 0
+  !P.FONT = 1
   loadct, 0, /silent
   
-  latlim = 60
+  latlim = 65
   orientation = 0
   shift = 10
-  map_set, 90-shift, -90, orientation, /azimuthal, /isotropic, limit=[latlim,-180,latlim+shift,90,latlim,0,latlim-shift,-90]
+  map_set, 90-shift, -90, orientation, /azimuthal, /isotropic, limit=[latlim,-180,latlim+shift-5,90,latlim,0,latlim-shift+5,-90]
   loadct, 1, /silent
   polyfill, indgen(360), fltarr(360)+latlim-latlim+2, color=220
   loadct, 0, /silent
@@ -452,13 +461,13 @@ PRO ISRmap
   FOR n=0, numlat-1 DO BEGIN
     oplot, nmlon[n,*], nmlat[n,*], thick=5, color=240
   ENDFOR
-  loadct, 3, /silent
+;  loadct, 1, /silent
+;  polyfill, nlon[WHERE(northrad EQ 'rkn'),*], nlat[WHERE(northrad EQ 'rkn'),*], /line_fill, spacing=0.01, color=120
+  loadct, 7, /silent
   FOR r=0, nrad-1 DO BEGIN
-    c = 0
-    IF (northrad[r] EQ 'rkn') OR (northrad[r] EQ 'cly') OR (northrad[r] EQ 'inv') OR (northrad[r] EQ 'lyr') THEN c = 120
-    oplot, nlon[r,*], nlat[r,*], thick=3, color=c
+    oplot, nlon[r,*], nlat[r,*], thick=3, color=0
+    IF (northrad[r] EQ 'rkn') THEN oplot, nlon[r,*], nlat[r,*], thick=5, color=120
   ENDFOR
-;  polyfill, nlon[WHERE(northrad EQ 'rkn'),*], nlat[WHERE(northrad EQ 'rkn'),*], /line_fill, spacing=0.05, color=120
 
   loadct, 3, /silent
   color = 0
@@ -469,16 +478,16 @@ PRO ISRmap
   oplot, RISRC_coords[1,*], RISRC_coords[0,*], color=color, thick=5
   oplot, RISRN_coords[1,*], RISRN_coords[0,*], color=200, thick=5
   oplot, SFJ_coords[1,*], SFJ_coords[0,*], color=color, thick=5
-  polyfill, RISRN_coords[1,*], RISRN_coords[0,*], /line_fill, spacing=0.05, color=200
+  polyfill, RISRN_coords[1,*], RISRN_coords[0,*], /line_fill, spacing=0.01, color=200
 
   ; print ISR names
-  xyouts, (EISCAT_coords[1,0]+EISCAT_coords[1,EISCAT_lines/2])/2.0, (EISCAT_coords[0,0]+EISCAT_coords[0,EISCAT_lines/2])/2.0, 'EISCAT', color=color, charthick=4, alignment=0.5, charsize=0.7
-  xyouts, (ESR_coords[1,0]+ESR_coords[1,ESR_lines/2])/2.0, (ESR_coords[0,0]+ESR_coords[0,ESR_lines/2])/2.0, 'ESR', color=color, charthick=4, alignment=0.5, charsize=0.7
-  xyouts, (MH_coords[1,0]+MH_coords[1,MH_lines/2])/2.0, (MH_coords[0,0]+MH_coords[0,MH_lines/2])/2.0, 'MH', color=color, charthick=4, alignment=0.5, charsize=0.7
-  xyouts, (PFISR_coords[1,0]+PFISR_coords[1,PFISR_lines/2])/2.0, (PFISR_coords[0,0]+PFISR_coords[0,PFISR_lines/2])/2.0, 'PFISR', color=color, charthick=4, alignment=0.5, charsize=0.7
-  xyouts, (RISRC_coords[1,RISRC_lines/4]+RISRC_coords[1,3*RISRC_lines/4])/2.0, (RISRC_coords[0,RISRC_lines/4]+RISRC_coords[0,3*RISRC_lines/4])/2.0, 'RISR-C', color=color, charthick=4, alignment=0.5, charsize=0.7
-  xyouts, (RISRN_coords[1,RISRN_lines/6]+RISRN_coords[1,5*RISRN_lines/6])/2.0, (RISRN_coords[0,RISRN_lines/6]+RISRN_coords[0,5*RISRN_lines/6])/2.0, 'RISR-N', color=color, charthick=4, alignment=0.5, charsize=0.7
-  xyouts, (SFJ_coords[1,0]+SFJ_coords[1,SFJ_lines/2])/2.0, (SFJ_coords[0,0]+SFJ_coords[0,SFJ_lines/2])/2.0, 'SFJ', color=color, charthick=4, alignment=0.5, charsize=0.7
+  xyouts, (EISCAT_coords[1,0]+EISCAT_coords[1,EISCAT_lines/2])/2.0, (EISCAT_coords[0,0]+EISCAT_coords[0,EISCAT_lines/2])/2.0, 'EISCAT', color=color, charthick=4, alignment=0.5, charsize=1.2
+  xyouts, (ESR_coords[1,0]+ESR_coords[1,ESR_lines/2])/2.0, (ESR_coords[0,0]+ESR_coords[0,ESR_lines/2])/2.0, 'ESR', color=color, charthick=4, alignment=0.5, charsize=1.2
+  xyouts, (MH_coords[1,0]+MH_coords[1,MH_lines/2])/2.0, (MH_coords[0,0]+MH_coords[0,MH_lines/2])/2.0, 'MH', color=color, charthick=4, alignment=0.5, charsize=1
+  xyouts, (PFISR_coords[1,0]+PFISR_coords[1,PFISR_lines/2])/2.0, (PFISR_coords[0,0]+PFISR_coords[0,PFISR_lines/2])/2.0, 'PFISR', color=color, charthick=4, alignment=0.5, charsize=1.2
+  xyouts, (RISRC_coords[1,RISRC_lines/4]+RISRC_coords[1,3*RISRC_lines/4])/2.0, (RISRC_coords[0,RISRC_lines/4]+RISRC_coords[0,3*RISRC_lines/4])/2.0, 'RISR-C', color=color, charthick=4, alignment=0.5, charsize=1.2
+  xyouts, (RISRN_coords[1,RISRN_lines/6]+RISRN_coords[1,5*RISRN_lines/6])/2.0, (RISRN_coords[0,RISRN_lines/6]+RISRN_coords[0,5*RISRN_lines/6])/2.0, 'RISR-N', color=color, charthick=4, alignment=0.5, charsize=1.2
+  xyouts, (SFJ_coords[1,0]+SFJ_coords[1,SFJ_lines/2])/2.0, (SFJ_coords[0,0]+SFJ_coords[0,SFJ_lines/2])/2.0, 'SFJ', color=color, charthick=4, alignment=0.5, charsize=1.2
 
 
   device, /close
@@ -620,7 +629,6 @@ PRO blankmap
   ENDFOR
   loadct, 1, /silent
   polyfill, slon[WHERE(southrad EQ 'san'),*], slat[WHERE(southrad EQ 'san'),*], /line_fill, spacing=0.01, color=170
-  loadct, 1, /silent
   polyfill, slon[WHERE(southrad EQ 'sps'),*], slat[WHERE(southrad EQ 'sps'),*], /line_fill, spacing=0.01, color=170
   loadct, 7, /silent
   polyfill, slon[WHERE(southrad EQ 'mcm'),*], slat[WHERE(southrad EQ 'mcm'),*], /line_fill, spacing=0.01, color=130
