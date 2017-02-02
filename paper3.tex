@@ -1,0 +1,1150 @@
+%% 11/23/2015
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AGUJournalTemplate.tex: this template file is for articles formatted with LaTeX
+%
+% This file includes commands and instructions
+% given in the order necessary to produce a final output that will
+% satisfy AGU requirements. 
+%
+% You may copy this file and give it your
+% article name, and enter your text.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PLEASE DO NOT USE YOUR OWN MACROS
+% DO NOT USE \newcommand, \renewcommand, or \def, etc.
+%
+% FOR FIGURES, DO NOT USE \psfrag or \subfigure.
+% DO NOT USE \psfrag or \subfigure commands.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% All questions should be e-mailed to latex@agu.org.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Step 1: Set the \documentclass
+%
+% There are two options for article format:
+%
+% 1) PLEASE USE THE DRAFT OPTION TO SUBMIT YOUR PAPERS.
+% The draft option produces double spaced output.
+% 
+% 2) numberline will give you line numbers.
+
+%% To submit your paper:
+%\documentclass[draft,linenumbers]{agujournal}
+%\draftfalse
+
+%\usepackage{graphicx}
+%\usepackage{amsmath}
+%\usepackage{lineno}
+%
+%% For final version.
+% \documentclass{agujournal}
+
+% Now, type in the journal name: \journalname{<Journal Name>}
+
+% ie, \journalname{Journal of Geophysical Research}
+%% Choose from this list of Journals:
+%
+% JGR-Atmospheres
+% JGR-Biogeosciences
+% JGR-Earth Surface
+% JGR-Oceans
+% JGR-Planets
+% JGR-Solid Earth
+% JGR-Space Physics
+% Global Biochemical Cycles
+% Geophysical Research Letters
+% Paleoceanography
+% Radio Science
+% Reviews of Geophysics
+% Tectonics
+% Space Weather
+% Water Resource Research
+% Geochemistry, Geophysics, Geosystems
+% Journal of Advances in Modeling Earth Systems (JAMES)
+% Earth's Future
+% Earth and Space Science
+%
+%
+%
+%\journalname{JGR-Space Physics}
+%
+%
+%\begin{document}
+%
+%% ------------------------------------------------------------------------ %%
+%  Title
+% 
+% (A title should be specific, informative, and brief. Use
+% abbreviations only if they are defined in the abstract. Titles that
+% start with general keywords then specific terms are optimized in
+% searches)
+%
+%% ------------------------------------------------------------------------ %%
+
+% Example: \title{This is a test title}
+
+%\title{Radar observations of density gradients, electric fields, and plasma irregularities near polar cap patches in the context of the gradient-drift instability}
+\chapter{Radar observations of density gradients, electric fields, and plasma irregularities near polar cap patches in the context of the gradient-drift instability}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  AUTHORS AND AFFILIATIONS
+%
+%% ------------------------------------------------------------------------ %%
+
+% Authors are individuals who have significantly contributed to the
+% research and preparation of the article. Group authors are allowed, if
+% each author in the group is separately identified in an appendix.)
+
+% List authors by first name or initial followed by last name and
+% separated by commas. Use \affil{} to number affiliations, and
+% \thanks{} for author notes.  
+% Additional author notes should be indicated with \thanks{} (for
+% example, for current addresses). 
+
+% Example: \authors{A. B. Author\affil{1}\thanks{Current address, Antartica}, B. C. Author\affil{2,3}, and D. E.
+% Author\affil{3,4}\thanks{Also funded by Monsanto.}}
+
+%\authors{Leslie J. Lamarche\affil{1} and Roman A. Makarevich\affil{1}}
+
+
+% \affiliation{1}{First Affiliation}
+% \affiliation{2}{Second Affiliation}
+% \affiliation{3}{Third Affiliation}
+% \affiliation{4}{Fourth Affiliation}
+
+%\affiliation{1}{Geophysical Institute, University of Alaska Fairbanks, 903 Koyukuk Drive, PO Box 757320, Fairbanks, AK, 99775-7320, USA}
+%(repeat as many times as is necessary)
+
+%% Corresponding Author:
+% Corresponding author mailing address and e-mail address:
+
+% (include name and email addresses of the corresponding author.  More
+% than one corresponding author is allowed in this LaTeX file and for
+% publication; but only one corresponding author is allowed in our
+% editorial system.)  
+
+% Example: \correspondingauthor{First and Last Name}{email@address.edu}
+
+%\correspondingauthor{Leslie Lamarche}{ljlamarche@alaska.edu}
+
+%% Keypoints, final entry on title page.
+
+% Example: 
+% \begin{keypoints}
+% \item	List up to three key points (at least one is required)
+% \item	Key Points summarize the main points and conclusions of the article
+% \item	Each must be 100 characters or less with no special characters or punctuation 
+% \end{keypoints}
+
+%  List up to three key points (at least one is required)
+%  Key Points summarize the main points and conclusions of the article
+%  Each must be 100 characters or less with no special characters or punctuation 
+
+%\begin{keypoints}
+%\item Radar echo power of small-scale structures increases as large-scale gradient magnitude increases, implying a connection between scale sizes
+%\item Directional dependence of small-scale structures is observed on all sides of a polar cap patch and not restricted to the leading/trailing edge 
+%\item Gradient-drift instability theory describes echo occurrence behavior including its directional dependence better than echo strength 
+%\end{keypoints}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  ABSTRACT
+%
+% A good abstract will begin with a short description of the problem
+% being addressed, briefly describe the new data or analyses, then
+% briefly states the main conclusion(s) and how they are supported and
+% uncertainties. 
+%% ------------------------------------------------------------------------ %%
+
+%% \begin{abstract} starts the second page 
+%\begin{abstract}
+\section*{Abstract}
+We present observations of plasma density gradients, electric fields, and small-scale plasma irregularities near a polar cap patch made by the Super Dual Auroral Radar Network radar at Rankin Inlet (RKN) and the northern face of Resolute Bay Incoherent Scatter Radar (RISN-N). RKN echo power and occurrence are analyzed in the context of gradient-drift instability (GDI) theory, with a particular focus on the previously uninvestigated 2D dependencies on wave propagation, electric field, and gradient vectors, with the latter two quantities evaluated directly from RISR-N measurements. It is shown that higher gradient and electric field components along the wavevector generally lead to the higher observed echo occurrence, which is consistent with the expected higher GDI growth rate, but the relationship with echo power is far less straight forward. The RKN echo power increases monotonically as the predicted linear growth rate approaches zero from negative values, but does not continue this trend into positive growth rate values, in contrast with GDI predictions. The observed greater consistency of echo occurrence with GDI predictions suggests that GDI operating in the linear regime can control basic plasma structuring, but measured echo strength may be affected by other processes and factors, such as multi-step or nonlinear processes or a shear-driven instability.
+%\end{abstract}
+
+
+%% ------------------------------------------------------------------------ %%
+%
+%  TEXT
+%
+%% ------------------------------------------------------------------------ %%
+
+%%% Suggested section heads:
+% \section{Introduction}
+% 
+% The main text should start with an introduction. Except for short
+% manuscripts (such as comments and replies), the text should be divided
+% into sections, each with its own heading. 
+
+% Headings should be sentence fragments and do not begin with a
+% lowercase letter or number. Examples of good headings are:
+
+% \section{Materials and Methods}
+% Here is text on Materials and Methods.
+%
+% \subsection{A descriptive heading about methods}
+% More about Methods.
+% 
+% \section{Data} (Or section title might be a descriptive heading about data)
+% 
+% \section{Results} (Or section title might be a descriptive heading about the
+% results)
+% 
+% \section{Conclusions}
+
+
+\section{Introduction}
+\label{sec:p3intro}
+
+Plasma irregularities in the ionosphere have been investigated for several decades using both in situ (sounding rockets and satellites) and remote (radars and optical instruments) techniques \citep[e.g. a comprehensive review by][]{Fejer1980}.  These observations revealed that ionospheric plasma is highly structured on scales ranging from a few centimeters to hundreds of kilometers.  The gradient-drift instability (GDI) has historically been considered one of the dominant drivers of this structuring at high latitudes \citep{Tsunoda1988}.  Many factors influence the strength of this instability, including plasma density, \(n\), density gradient, \(\nabla n\), electric field, \(\vec{E}\), and direction of the wavevector, \(\uvec{k}=\vec{k}/k\).  These factors can roughly be divided into two groups: density-related and electric-field-related which are further discussed below.
+
+Plasma density can affect the observation of ionospheric structuring in a number of ways, including controlling both plasma physical factors, which regulate generation of plasma waves in the ionosphere, and propagation factors, which affects how well irregularities can be observed using radars \citep[e.g.][]{Danskin2002,Koustov2004,Lamarche2015}.  Enhanced echo power can be the result of both improved GDI conditions and a particular plasma density creating more favorable radar propagation conditions in the ionosphere  \citep[e.g.][]{Koustov2012}.  Enhanced background plasma density can smooth out existing gradients and reduce the effectiveness of GDI \citep{Ruohoniemi1997}.  However, enhanced plasma density can also increase radar backscatter in that the radar cross section is proportional to the amplitude of density perturbations squared, \(\delta n^2\), so if the fractional density \(\delta n/n\) is approximately constant, the cross section and backscatter power are effectively proportional to \(n^2\) \citep{Makarevich2014b}.  The direct effect of gradients in the plasma density has rarely been studied either in terms of the gradient magnitude \(\lvert\nabla n\rvert\), strength \(\lvert\nabla n\rvert/n\), or direction, in part because these are difficult to evaluate experimentally.
+
+Observations of greater structuring on the trailing edge than the leading edge of polar cap patches provide one important example of how the direction of density gradients can be important for structuring \citep[e.g.][]{Weber1984,Milan2002b,Koustov2012,Moen2012}. Typically, this observation is interpreted in terms of GDI linear theory, according to which the growth rate is greatest when the gradient \(\nabla n\) is parallel to the drift velocity direction \(\vec{V}_E = \vec{E}\times\vec{B}/B^2\) and least when they are antiparallel.  Although previous studies have been successful in replicating this result in GDI models \citep{Gondarenko2004b,Gondarenko2006}, there have not been direct comparisons of the predicted and measured GDI growth rate dependencies on \(\nabla n\) and \(\vec{V}_E\) when both quantities are considered to be two-dimensional and independent.
+
+Implicit in the above relationship  between gradient strength vector \(\vec{G} = \nabla n/n\) and the drift velocity \(\vec{V}_E\) (parallel or antiparallel) is an assumption about their typical mutual orientation as well as the associated assumption about directions of the peak growth rate in terms of both the wavevector and the gradient. This leads to significant simplifications in the GDI growth rate expression \citep{Linson1970,Tsunoda1988}. In context of large-scale density structures at high-latitudes drifting perpendicular to their direction of elongation \citep{Makarevitch2004c,Makarevich2015b} such as polar cap patches and sun-aligned arcs, \(\vec{G}\) and \(\vec{V}_E\) are parallel on the trailing edge and antiparallel on the leading edge. However, there can be large variations in this \citep{Makarevitch2004c} and, in general, the growth rate changes with the wavevector direction \citep{Keskinen1982a,Keskinen1983,Makarevich2014c}. More insight can therefore be gained by considering the directions of vector quantities instead of considering a vector configuration that results in the peak growth.
+
+In this study, a general expression for the GDI growth rate is used that considers arbitrary directions of the density gradient \(\uvec{g}\), electric field \(\uvec{e}\), and wavevector \(\uvec{k}\), and is applicable throughout the\(F\) region \citep[Equation 23]{Makarevich2014c}.
+
+%\begin{linenomath*}
+\begin{equation}
+  \label{eqn:gdi}
+  \gamma = \frac{1}{B}\left(\uvec{k}\cdot\vec{E}\right)\left(\uvec{k}\cdot\uvec{b}\times\vec{G}\right) = GV_E\left(\uvec{k}\cdot\uvec{e}\right)\left(\uvec{k}\cdot\uvec{b}\times\uvec{g}\right)
+\end{equation}
+%\end{linenomath*}
+
+Equation (\ref{eqn:gdi}) describes the dependence on the magnitudes of the electric field $E$ or, equivalently, convection speed \(V_E=E/B\) and the density gradient strength \(G\). In addition, it describes a dependence on the purely directional factors \(\uvec{k}\cdot\uvec{e}\) and \(\uvec{k}\cdot\uvec{b}\times\uvec{g}\). Past experimental investigations focused on a very limited subset of these dependencies.
+
+The 2D electric field \(\vec{E}\)  and plasma drift velocity \(\vec{V}_E\) can be found from incoherent scatter radar (ISR) measurements, using the standard ISR method utilizing line-of-sight ion velocity data \citep{Hei08}.  Additionally, ISRs have been previously used to determine density patterns in the ionosphere \citep{Semeter2009,Dahlgren2012a,Dahlgren2012b}. \citet{Dahlgren2012b} qualitatively compared the location of irregularities detected by a coherent HF radar to high-density regions identified by an ISR.  The observations were described in the context of GDI predictions, but the growth rate has not been explicitly evaluated. The current study aims to fill this gap by calculating 2D density gradient fields based on ISR plasma density patterns. Previous studies that evaluated plasma density gradients have found them primarily from in situ measurements from sounding rockets \citep{Moen2012,Lynch2015}, but that method inherently only allows one component of the gradient to be resolved and only allows for measurements along the rocket's flight path.  The new method employed here allows a field of 2D gradient vectors to be calculated, which, together with the 2D electric fields also provided by ISR, allows for experimental investigations of plasma structuring in context of factors \(\uvec{k}\cdot\vec{E}\) and \(\uvec{k}\cdot\uvec{b}\times\vec{G}\) as well their directional equivalents \(\uvec{k}\cdot\uvec{e}\) and \(\uvec{k}\cdot\uvec{b}\times\uvec{g}\), Equation (\ref{eqn:gdi}).
+
+In order to investigate the relationship between GDI growth rate and the degree of plasma structuring in the ionosphere, structuring must be quantified and measured.  Information on plasma structuring at small scales (\(\lambda \approx 10\) m) is widely available from the Super Dual Auroral Radar Network (SuperDARN), so this study will focus on small-scale irregularities.  Specifically, this study uses the SuperDARN radar at Rankin Inlet (RKN) to measure ionospheric echo strength and occurrence as an indication of the degree of plasma structuring in the ionosphere. The ISR at Resolute Bay, which will be used to determine electric fields and plasma density gradients, observes a portion of the RKN field-of-view (FoV) in the \(F\) region.  Although both echo occurrence and strength have been used as proxies for irregularity structuring \citep[e.g.][]{Milan2002b,Koustov2012}, any differences between these two indicators have not been analyzed, particularly in the context of the above-discussed factors that are expected to control the wave characteristics.
+
+The aim of this study is to investigate the relationship between factors that control the directionally-dependent GDI growth rate and plasma structuring in the ionosphere by analyzing coincident measurements of echo occurrence, power, density gradients, and the electric field made by RKN and RISR-N.  The specific objectives are to 
+\begin{enumerate*}[label={(\arabic*)}]
+	\item evaluate how plasma density and density gradients affect the strength and occurrence of echoes measured by RKN,
+	\item investigate the directional dependency of plasma structuring in the ionosphere in the context of predictions made by linear GDI theory, and
+	\item determine if there is a difference between echo occurrence and power as observed by RKN and consider implications for plasma structuring.
+\end{enumerate*}
+
+	
+\section{Experiment Configuration and Data Postprocessing}
+\label{sec:experiment}
+SuperDARN is a network of HF coherent radars that are designed to study plasma irregularities and large-scale plasma motion in the ionosphere \citep{Chisham2007}.  It consists of over 30 individual radars in both the northern and southern hemispheres at \mbox{mid-,} auroral, and polar latitudes.  Each radar has 16--24 beams, spanning \(\sim3.25\deg\) horizontally and \(\sim30\deg\) vertically, and 75--100 range bins, typically 45-km long.  A complete scan of all beams can occur in 60 s or 120 s, depending on the mode of operation.  Each radar measures Doppler velocity, signal-to-noise ratio (SNR) or power, and spectral width of ionospheric echoes using a 17-lag autocorrelation function.  A more detailed description of the SuperDARN network can be found in \citet{Chisham2007}.
+
+In the current study, the ground scatter was eliminated using the standard criteria, \(|V-\Delta V| < 30\) m/s and \(|W-\Delta W| < 35\) m/s, where \(V\) is the Doppler velocity, \(W\) is spectral width, and \(\Delta V\) and \(\Delta W\) represent the uncertainty in these quantities, respectively.  To limit the contribution of interference and other spurious echoes, measurements were also eliminated if the SNR was less than 3 dB or the spectral width was greater than 500 m/s.  Further filtering of ground scatter was achieved by considering only echoes where the velocity measured by RKN was reasonably close to that measured by RISR-N, as described in Section \ref{sec:velocity}.
+
+This study utilized the northern face of the Incoherent Scatter Radar (ISR) at Resolute Bay, Canada (RISR-N).  This is one of the Advanced Modular Incoherent Scatter Radar (AMISR) systems that consists of an electronically steerable phased array, allowing the radar to make measurements in different directions close to simultaneously by quickly cycling through all beam directions \citep{Bahcivan2010}.  Typically, AMISR systems have two types of pulses, a long pulse for \(F\)-region observations with 72-km range resolution and an alternating code pulse for \(E\)-region observations with 4.5-km range resolution.  The radar measures a power spectrum and the electron density, ion and electron temperatures, and ion drift velocity are found using a standard ISR technique \citep{Evans1969,Risbeth1985,Nicolls2007}.  Calibration accounts for the noise and system constants \citep{Nicolls2007} and is done using either plasma line measurements (for summer daytime) or ionosonde measurements (for all other times) \citep{Bahcivan2010,Themens2014a}.  3D convection velocity and electric field vectors in the $F$ region are also found by combining all ion drift components measured at a particular magnetic latitude (MLAT) and assuming that both \(\vec{E}\) and \(\vec{V}_E\) are constant in magnetic longitude (MLON) \citep{Heinselman2008}.
+
+The common mode for RISR-N is the WorldDay mode, which is typically scheduled for 5--6 days per month.  The technical specification, such as number and orientation of beams, pulse sequences, and cadence, of the WorldDay mode changes slightly depending on the rendition of the mode that is currently being used.  For the event investigated in this study, RISR-N was run in WorldDay64m, in which 11 beams are used to collect data at approximately 70-s intervals.
+
+Figure \ref{fig:f1} shows the FoV of both RKN, located at 62.82\(\deg\)N, 93.11\(\deg\)W, geographic (72.6\(\deg\)N, 26.4\(\deg\)W, geomagnetic), and RISR-N, located at 74.73\(\deg\)N, 94.91\(\deg\)W, geographic (82.8\(\deg\)N, 36.8\(\deg\)W geomagnetic).  Geomagnetic coordinates were determined using the Altitude Adjusted Corrected Geomagnetic Coordinates (AACGM) model \citep{Shepard2014}.  The RKN footprint consists of individual radar cells, outlined in dashed lines.  Cells where SNR \(>\) 3 dB are color-coded in SNR measured at 18:16--18:17 UT on November 30, 2011. The locations of the 11 RISR-N beams at 300 km are shown by circles, with the color of each circle representing the electron density, \(n\), measured by RISR-N at 300 km during the post-integration interval closest to that of RKN.
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{fig1.pdf}
+  \caption{Experimental setup showing the FoVs of RKN and RISR-N. Lines of constant magnetic latitude are shown at \(75\deg\)N, \(80\deg\)N, and \(85\deg\)N. The pink outline shows the footprint of the full FoV of RISR-N at 400 km.  Raw RISR-N electron density measurements (\(n\)) on November 30, 2011 at 18:16 UT at 300 km are shown with colored circles, with the color scale given in the top-right corner.  Filled contours show interpolated electron density at 300 km, using the same color scale.  The interpolated area has been restricted to the 10 southernmost beams. In addition, RKN cells are outlined.  Cells with a signal-to-noise ratio (SNR) greater than 3 dB are color coded in SNR, according to the left color bar in top-right corner. RKN beam 7, which lies along \(335\deg\)E MLON, is outlined in black.}
+  \label{fig:f1}
+\end{figure}
+
+To calculate gradients, RISR-N density measurements at 300 km were first converted to a local Cartesian coordinate system and then interpolated to a grid with 10-km resolution in both the \(x\) and \(y\) directions.  The result of the interpolation is shown as filled contours in Figure \ref{fig:f1}, also colored in electron density according to the color bar in the top-right corner.  2D density gradient vectors were found by considering the average density change over two adjacent grid points in both the \(x\) and \(y\) directions.
+
+
+To find coincident points between RKN and RISR-N data, simultaneous times were first found in both data sets.  RISR-N and RKN data points were considered coincident if the start time of the RISR-N integration window occurred within the 60-s interval of the RKN FoV scan.  Because RISR-N data had a longer time cadence than the RKN data, a limited number of RKN measurements did not have a coincident RISR-N measurement within 60 s; these were not considered. To find spatially coincident points, the point in the interpolated density grid (or constant MLON electric field measurement) that was closest to the center of each RKN radar cell was found.  Two points were only considered coincident if they were within 20 km of each other.
+
+\section{Event Overview and Velocity Analysis}
+The snapshot shown in Figure \ref{fig:f1} is part of the event on November 30, 2011.  This event was selected because it included a high-density structure that passed through the common FoV area of RKN and RISR-N.  The structure has a density several times higher than the surrounding plasma and seems to move coherently with the convection flow.  It is observed in the local noon sector moving approximately poleward (antisunwards), so it can be categorized as a polar cap patch. The event is summarized in Figure \ref{fig:f2}.  Figure \ref{fig:f2}a shows a north-south keogram of electron density as measured along \(335\deg\) MLON by RISR-N at 17:00--19:00 UT.  The high-density structure that is of particular interest occurred at \(\sim\)18:15 UT and is well defined by the two oblique black lines.
+
+\begin{figure}
+	\includegraphics[width=\textwidth,angle=180]{fig2.pdf}
+  \caption{Left column is a keogram representation of (a and b) RISR-N electron density, (c) RKN line-of-sight velocity, and (d) RKN SNR for an event on November 30, 2011, 17:00--19:00 UT.  Color scales for all quantities are given to the right of the respective row. Keograms are taken at 335\(\deg\)E MLON and all RKN data are from beam 7.  Panel (b) also shows 2D plasma drift velocity derived from RISR-N measurements superimposed as vectors every 3 minutes.  Panels (c) and (d) also show contours of electron density plotted over RKN data. The high-density structure examined in this study is highlighted by the two oblique black lines between \(\sim\)18:00 and 18:30 UT. Panel (e) shows 16 snapshot 2D views of electron density, SNR, and plasma drift velocity within the time period highlighted with the pink bar at the top of panels (a)--(d).  Each RKN cell is color-coded in SNR. Interpolated electron density is shown as colored contour lines. Raw electron density measurements are the ten colored circles.  2D plasma drift velocity vectors are shown at \(335\deg\)E MLON.}
+  \label{fig:f2}
+\end{figure}
+
+Figure \ref{fig:f2}b shows the same keogram, but with 2D velocity vectors calculated from RISR-N measurements superimposed over the density data every 3 min.  Velocity data is available at \(\sim\)1-min intervals and these higher-resolution data were used for later analysis, but a subset is shown here to keep the plot readable. In the structure region, plasma velocity is primarily northwards with a small eastwards component, indicating that the structure is moving north-east.  Figure \ref{fig:f2}c shows the line-of-sight velocity measured in RKN beam 7, which is aligned with the \(335\deg\) MLON meridian, Figure \ref{fig:f1}. Contours of electron density from RISR-N (same as in Figure \ref{fig:f2}a) are shown over the RKN data. Figure \ref{fig:f2}d has the same format as Figure \ref{fig:f2}c, but shows the SNR measured by RKN. Most of the RKN echoes occur along the steep transition between the high- and low-density regions.  The velocity data indicates that the structure was moving consistently away from the radar with a speed of \(\sim\)500 m/s.  If the structure is moving north-east, as indicated in Figure \ref{fig:f2}b, the greatest power is observed south of it, or on the trailing edge.
+
+Figure \ref{fig:f2}e contains sixteen 2D snapshot views of the event at 18:09--18:27 UT (period shown by the pink bars at the top of Figures \ref{fig:f2}a--\ref{fig:f2}d). Each snapshot is similar to that shown in Figure \ref{fig:f1} with SNR measured by RKN shown by color-filled radar cells, RISR-N electron density measurements shown as colored circles, interpolated electron density as colored contours, and plasma velocity as a line of 2D vectors at \(335\deg\) MLON. In this view, the interpolated density contours are left unfilled so as to not obscure the RKN SNR data.  
+
+From velocity vectors in Figure \ref{fig:f2}e, the plasma drifts mostly northwards at the beginning of the time interval and more eastwards later during the event, similar to what is seen in Figure \ref{fig:f2}b. This results in the structure moving in a generally north-east direction, which can be also seen by looking at the interpolated density contours.  Thus, at 18:16 UT, the density peak of the patch is approximately centered in the panel, but it moves towards the top-right corner by 18:20 UT and has exited the panel to the top-right by 18:22 UT. In addition, the region where backscatter is observed by RKN (SNR \(>\) 3 dB) seems to follow the patch of high densities through the panels.  Between 18:09 and 18:12 UT, most of the observed backscatter occurs in the lower part of the panel, south of \(85\deg\) MLAT.  At 18:13--18:22 UT, the backscatter region moves northwards as the patch moves north-east.  This again indicates structuring on the trailing edge of the polar cap patch, while there is little evidence for a similar degree of structuring on the leading edge.  This effect is most obvious in panels for 18:19--18:21 UT, where the red circles and dark red contour are northward of the RKN cells filled with the red color.  That is, SNR is 40--50 dB on the trailing (south-west) edge, while SNR is closer to 20--30 dB on the leading (north-east) edge.
+
+In finding coincident points between RISR-N and RKN, all possible spatial conjunctions are considered.  This generally includes the entire FoV of RISR-N with coincident RKN echoes.  From Figure \ref{fig:f1}, this includes RKN beams 4--10 and up to 9 range gates.  This allows large portions of the density structures to be considered.  In some cases, e.g. Figure \ref{fig:f2}e at 18:20 UT, the entire patch exists within the observable area and all edges can be considered.  In other cases, radars sample only parts of density structures.  To minimize possible biases in the orientation of the density structures and their edges with respect to RKN, this study also considers the data collected over the entire 24-h period of November 30, 2011.  However, certain biases may still be present because this study is dominated by a single strong density enhancement and the patch moved through the FoV with a relatively constant velocity.  These biases are discussed further in Section \ref{sec:discussion2}.
+
+\label{sec:velocity}
+In addition to the standard SuperDARN method for eliminating ground scatter, this study further required that the velocities measured by RKN and RISR-N be comparable, since low SuperDARN velocities are one of the characteristics of ground scatter.  Figure \ref{fig:f3} is a scatter plot of coincident RKN and RISR-N velocities.  In this figure and all subsequent ones in this paper, black points refer to all observations throughout the event where there were coincident RISR-N and RKN echoes and red points represent only those echoes observed within the structure identified by the two oblique black lines in Figure \ref{fig:f2}.  Because RKN only measures velocity along the radar beam, RKN velocities are compared with RISR-N velocities projected onto the appropriate RKN beam direction.
+
+\begin{figure}
+	\includegraphics[width=\textwidth,angle=180]{fig3.pdf}
+  \caption{RKN line-of-sight velocity versus the projection of 2D RISR-N velocity onto the closest RKN beam. Black dots represent all coincident echoes that were observed by RKN and RISR-N simultaneously over the day considered, whereas red dots represent only echoes that occurred within the high-density structure.  The blue dashed line is the ideal coincidence line. The solid blue lines outline a region where the RKN velocity equals the RISR-N velocity within \(\pm\)500 m/s.}
+  \label{fig:f3}
+\end{figure}
+
+In Figure \ref{fig:f3}, there is a clustering of all echoes (black) around (0 m/s, 0 m/s) and a clustering of structure echoes (red) around (\(-700\) m/s, \(-700\) m/s).  The dashed blue line shows where RKN velocity equals the projected RISR-N velocity.  There is a secondary population composed of both all echoes and structure echoes that is centered around RKN velocity 0 m/s and is spread between RISR-N velocity \(-1500\) m/s and \(-500\) m/s.  Although it is difficult to distinguish in this presentation, echo occurrence analysis (not shown) does show a depression in occurrence around (\(-500\) m/s, 0 m/s), so this value is used as a distinction between populations where RKN velocities approximately equal RISR-N velocity and populations where this condition is not met, probably more representative of ground scatter or other spurious echoes.  The two solid blue lines are the projected RISR-N velocity plus or minus 500 m/s, so all observations that fall between these two lines represent RKN velocities that are within 500 m/s of the corresponding RISR-N velocity.  Points with greater deviation (all points not within the two solid blue lines) are discarded from the following analysis, which effectively removed the most spurious measurements, while retaining a reasonable number of points.
+
+\section{Plasma Irregularities and Density-Related Factors}
+In order to investigate how density-related factors may affect echo power and occurrence, Figure \ref{fig:f4} shows scatter plots of echo power versus (a) electron density, \(n\), (b), electron density gradient magnitude, \(|\nabla n|\), and (c), and gradient strength, \(G = |\nabla n/n|\). Points are binned and averages (crosses) and standard deviations (shaded rectangles) are shown for both all echoes and only echoes within the structure.  Averages and standard deviations are only calculated if there are at least 3 points in a bin.  The thick black and red lines show count histograms for all echoes and only echoes within the structure, respectively.
+
+\begin{figure}
+\includegraphics[width=\textwidth,angle=180]{fig4.pdf}
+  \caption{Scatter plots of RKN echo power versus RISR-N measurements of (a) electron density, \(n\), (b) density gradient magnitude, \(|\nabla n|\), and (c) gradient strength, \(G=|\nabla n/n|\).  Black dots represent all echoes observed over the day, whereas red dots represent echoes that occur within the high-density structure.  Points have been binned and crosses indicate the average power of each bin, while shaded rectangles show one standard deviation. Thick black and red lines are point count histograms; scale is on the right axis.}
+  \label{fig:f4}
+\end{figure}
+
+In Figure \ref{fig:f4}a, most points are clustered at \(2\times10^{11}\)--\(5\times10^{11}\) \# m\(^{-3}\), corresponding to a peak in the all-counts histogram (black).  The structure-count histogram (red) has a secondary peak at this location, but its highest peak occurs at a much higher density, around \(1.1\times10^{12}\) \# m\(^{-3}\).  The latter feature is expected as the structure was specifically chosen to contain high density. The average power of all echoes increases approximately monotonically, particularly for densities above \(4\times10^{11}\) \# m\(^{-3}\). Average powers observed from structure echoes are typically higher than that for all echoes.  This is again expected because the structure was selected by a particular region of RKN data with high backscatter power.  The exception to this occurs at very high densities, above \(1\times10^{12}\) \# m\(^{-3}\), where there are few points with high densities that are not within the structure, so the two sets become very similar.  The average power of echoes within the structure does not increase monotonically, but instead appears to peak at around \(6\times10^{11}\) \# m\(^{-3}\).
+
+Figure \ref{fig:f4}b shows the dependence on density gradient magnitude, \(|\nabla n|\).  For all echoes, counts peak at low gradients and decrease.  For structure echoes, counts peak for gradients at \(2\times10^5\) \# m\(^{-4}\), although the count peak is very broad.  Average power increases nearly monotonically with an increasing gradient magnitude for both all echoes and structure echoes, except for very large densities. The structure echo power is again higher.
+
+Finally, Figure \ref{fig:f4}c shows the dependence on gradient strength, defined as \(G = |\nabla n/n|\).  In this case, both all-echo and structure-echo counts peak at about \(2\times10^{-6}\) m\(^{-1}\).  Similar to the density gradient, average power for both all echoes and structure echoes increases as gradient strength increases.  Interestingly, this trend is actually clearer and stronger in the gradient case (Figure \ref{fig:f4}b) than the gradient strength case (Figure \ref{fig:f4}c), which is unexpected as the GDI growth rate expression depends directly on the gradient strength, \(\vec{G}\), not the density gradient vector, \(\nabla n\), equation \ref{eqn:gdi}.  This feature is further discussed in Section \ref{sec:discussion1}.
+
+
+
+\section{Plasma Irregularities and Directional Factors}
+Figure \ref{fig:f5} contains similar scatter plots to Figure \ref{fig:f4}, but these demonstrate the dependence of echo power and counts on the two factors that directly impact the GDI linear growth rate, the rotated gradient component along the wavevector, \(\uvec{k}\cdot\uvec{b}\times\vec{G}\), and the electric field component along the wavevector, \(\uvec{k}\cdot\vec{E}\). An increase in either of these factors should theoretically be reflected in higher GDI growth rates, Equation \ref{eqn:gdi}, and this could occur through increase in the entire factor or its purely directional part, e.g. \(\uvec{k}\cdot\uvec{e}\), with of both of these possibilities investigated below. The wavevector direction \(\uvec{k}\) is determined from the RKN beam that viewed a particular scattering volume.  From the Bragg scatter condition, the received wave will have a wavevector pointing towards the radar and matching in direction the irregularity wavevector.
+
+\begin{figure}
+	\includegraphics[width=\textwidth,angle=180]{fig5.pdf}
+  \caption{Scatter plots of RKN echo power versus RISR-N measurements of (a) the gradient strength component, \(\uvec{k}\cdot\uvec{b}\times\vec{G}\), (b) the electric field component \(\uvec{k}\cdot\vec{E}\), (c) the normalized gradient component, \(\uvec{k}\cdot\uvec{b}\times\uvec{g}\), and (d) the normalized electric field component, \(\uvec{k}\cdot\uvec{e}\). The meaning of dots, crosses, vertical bars, and lines is the same as in Figure \ref{fig:f4}.}
+  \label{fig:f5}
+\end{figure}
+
+Power and counts are found from RKN, while the gradients, \(\vec{G}\), and electric fields, \(\vec{E}\), are 2D vectors evaluated by RISR-N, Section \ref{sec:experiment}. For brevity, the quantity \(\vec{G}\), previously described as the gradient strength, will be referred to simply as the gradient for the remainder of this paper.  In this experiment, the wavevector direction \(\uvec{k}\) is defined by the orientation of the RKN radar beam examining a particular scattering volume because the radar will only observe plasma waves propagating in this particular direction. Therefore, the first factor in equation \ref{eqn:gdi} is the component of the 2D electric field measured by RISR-N along the coincident RKN beam and the second factor is the component of the rotated 2D plasma density gradient along the coincident RKN beam.  Figure \ref{fig:f5}a shows the gradient component, \(\uvec{k}\cdot\uvec{b}\times\vec{G}\), and Figure \ref{fig:f5}b shows the electric field component, \(\uvec{k}\cdot\vec{E}\).  The purely directional parts of these factors or the normalized component of the gradient and electric field are shown in Figures \ref{fig:f5}c and \ref{fig:f5}d, respectively.  It is important to consider the normalized components independently to differentiate trends due to the directions of the electric field and gradients relative to the wavevector from those due to the magnitude of the electric field or gradient.
+
+In Figure \ref{fig:f5}a, the average power of all echoes tends to increase as the gradient component increases from zero. At negative values, the power is smaller than at positive values and is approximately constant below 20 dB. The trend in the structure echoes is less obvious and it seems to increase as  \(\uvec{k}\cdot\uvec{b}\times\vec{G}\) increases up to \(6\times10^{-6}\) m\(^{-1}\), but then levels off or even decreases slightly.  Counts for both all echoes and structure echoes peak at 0, but the distribution of all echoes is roughly symmetric, whereas the count histogram of structure echoes is biased towards positive values of  \(\uvec{k}\cdot\uvec{b}\times\vec{G}\).
+
+Figure \ref{fig:f5}b shows that, while the average power of all echoes is approximately constant with changing \(\uvec{k}\cdot\vec{E}\), the structure echoes exhibit a peak in power at \(\sim\)0.01 mV/m.
+Both all echoes and structure echoes are biased in occurrence towards positive values of \(\uvec{k}\cdot\vec{E}\). The all-echo distribution peaks at \(\sim\)0 mV/m and falls off very quickly for negative values of \(\uvec{k}\cdot\vec{E}\). The structure-echo distribution grows steadily between $-$0.015 mV/m and $+$0.025 mV/m and then drops off suddenly due to low occurrence of high-electric-field measurements.
+
+The purely directional part of the gradient, Figure \ref{fig:f5}c, does not appear to follow any trend in the average power of either all or structure echoes.  Structure average power is consistently higher, as expected, but both sets are approximately constant in power for all values of the normalized gradient component.  Importantly though, the occurrence of both all echoes and structure echoes peaks strongly at \(\uvec{k}\cdot\uvec{b}\times\uvec{g} = 1\) and exhibits a secondary peak at \(\uvec{k}\cdot\uvec{b}\times\uvec{g} = -1\).
+
+The purely directional part of the electric field, Figure \ref{fig:f5}d, again has average power approximately constant for all echoes, but average power for structure echoes peaks at \(\sim\)0.4.  The occurrence distribution for all echoes again peaks strongly at \(\uvec{k}\cdot\uvec{e} = 1\) with a secondary peak at \(\uvec{k}\cdot\uvec{e} = -1\). Counts grow steadily between \(\uvec{k}\cdot\uvec{e} = -0.3\) and \(\uvec{k}\cdot\uvec{e} = 0.9\), leading up to the primary peak.  The occurrence distribution for structure echoes is biased towards positive values of \(\uvec{k}\cdot\uvec{e}\) (there are no structure echoes observed below $-$0.3) and peaks at \(\sim\)0.5.
+
+Figure \ref{fig:f6} further examines the RKN echo power and occurrence versus the (a) dot product of the gradient and plasma drift velocity \(\vec{G}\cdot\vec{V}_E\) and (b) the expected GDI growth rate, with both evaluated from RISR-N measurements.  Similar to Figure \ref{fig:f5}, purely directional factors are shown for (c) the dot product of the gradient and the plasma drift velocity, \(\uvec{g}\cdot\mathbf{\hat{v}}_E\)  and (d) the GDI growth rate, given by \(\gamma^\prime \equiv \gamma/\left(GV_E\right) = (\uvec{k}\cdot\uvec{e})(\uvec{k}\cdot\uvec{b}\times\uvec{g})\), from equation (\ref{eqn:gdi}).  The normalized components are again important to determine if the relative directions of \(\vec{G}\) and \(\vec{V}_E\) impact the power and occurrence of backscatter independent of their magnitude.
+
+\begin{figure}
+	\includegraphics[width=\textwidth,angle=180]{fig6.pdf}
+  \caption{Same as Figure \ref{fig:f5}, but for (a) the dot product of the gradient and plasma drift velocity, \(\vec{G}\cdot\vec{V}_E\), (b) the calculated GDI growth rate, \(\gamma\), (c) the normalized dot product of the  gradient and plasma drift velocity, \(\uvec{g}\cdot\mathbf{\hat{v}}_E\), and (d) the normalized GDI growth rate, \(\gamma'\).}
+  \label{fig:f6}
+\end{figure}
+
+In Figure \ref{fig:f6}a, the trend in the average power of either all echoes or structure echoes is not monotonic, but structure echoes seem to show a small increase in average power as \(\vec{G}\cdot\vec{V}_E\) increases, and all echoes tend to have higher power for positive values of \(\vec{G}\cdot\vec{V}_E\) than for negative values. The occurrence distribution for all echoes is centered around 0, but counts are slightly higher for positive \(\vec{G}\cdot\vec{V}_E\).  Occurrence for structure echoes is biased towards positive values of \(\vec{G}\cdot\vec{V}_E\).  In Figure \ref{fig:f6}b, average power for all echoes is roughly constant and less than 20 dB when \(\gamma < 0\) s\(^{-1}\), but increases for positive values of \(\gamma\).  The occurrence distribution of all echoes is again centered around zero, but counts tend to be slightly higher for positive \(\gamma\).  The average power of structure echoes increases monotonically as \(\gamma\) goes from negative values to zero.  The behavior for positive \(\gamma\) is not monotonic, although the average power is always relatively high.
+
+Turning to purely directional dependencies, in Figure \ref{fig:f6}c, average power for all echoes is relatively constant at \(\sim\)20 dB, while average power for structure echoes is higher, but also variable.  Both occurrence histograms for all echoes and structure echoes have a strong peak where \(\uvec{g}\cdot\mathbf{\hat{v}}_E = 1\), i.e. where the gradient is parallel to the drift velocity. The all-echo histogram also has a secondary peak at \(\uvec{g}\cdot\mathbf{\hat{v}}_E = -1\), i.e. where the gradient is antiparallel to the drift velocity.  Figure \ref{fig:f6}d shows that the average power is relatively insensitive to changes in the normalized growth rate, although power for both all echoes and structure echoes appears to have a peak around \(\gamma'=0.4\).  The occurrence histogram for all echoes shows that echoes are observed for all values of \(\gamma'\) and peak at zero, but the distribution is asymmetric such that more counts are observed for \(\gamma'\) positive than negative.  Structure echoes are only observed for \(\gamma'>-0.3\), and are biased towards positive \(\gamma'\).
+
+Figure \ref{fig:f7} investigates the same factors as Figure \ref{fig:f5}, but here, scatter plots show the echo power (given as the color) versus the gradient component \(\uvec{k}\cdot\uvec{b}\times\vec{G}\) and electric field component \(\uvec{k}\cdot\vec{E}\), with the color bar shown to the right of the figure.  Figure \ref{fig:f7}a shows all echoes.  The solid black line in this and all other panels in this figure shows a linear fit to all points; equation is given at the bottom of the panel.  This linear fit includes all echoes considered in this study (SNR $>$ 3 dB).  The linear Pearson correlation coefficient of all points is given in the bottom-right corner of the panel.  Figure \ref{fig:f7}b shows power for all echoes versus purely directional factors \(\uvec{k}\cdot\uvec{b}\times\uvec{g}\) and \(\uvec{k}\cdot\uvec{e}\).  Figures \ref{fig:f7}c and \ref{fig:f7}d present the same information, but only structure echoes are shown.  Additionally in these two panels, the pink line shows the linear fit for points where SNR \(>\) 30 dB.  The equation of the line and linear correlation of this subset of points are again given at the bottom of each panel in pink.  In Figure \ref{fig:f7}c, the two linear fits are close to identical, so the pink line lies almost directly on top of the black line.
+
+\begin{figure}
+\includegraphics[width=\textwidth,angle=180]{fig7.pdf}
+  \caption{Scatter plots of RISR-N measurements of the electric field component, \(\uvec{k}\cdot\vec{E}\), versus the gradient component, \(\uvec{k}\cdot\uvec{b}\times\vec{G}\).  Points are color coded in RKN SNR, according to the color bar to the right.  Panels (a) and (b) show all coincident echoes, whereas panels (c) and (d) show only echoes within the structure.  Panels (a) and (c) show the electric field and gradient component, whereas panels (b) and (d) show the normalized components, representing directional dependence.  The black line in each panel is the linear fit of all data points in the panel (SNR \(>\) 3 dB).  The pink line in panels (c) and (d) shows the same for a subset of points with high power (SNR \(>\) 30 dB).  Equations for each line are given in the bottom-left corner of each panel and the correlation values are shown in the bottom-right corner.}
+  \label{fig:f7}
+\end{figure}
+
+In Figure \ref{fig:f7}a, points are clustered around \(\uvec{k}\cdot\uvec{b}\times\vec{G} = 0\) m\(^{-1}\) and \(\uvec{k}\cdot\vec{E} = 0.01\) mV/m.  Figure \ref{fig:f7}b has less localized clustering of points.  The bias of points toward positive values of \(\uvec{k}\cdot\vec{E}\) agrees with the results seen in Figures \ref{fig:f5}a and \ref{fig:f5}b.  As seen in Figure \ref{fig:f7}c as well as previous figures, structure echoes tend to have higher power.  The spread of the points is also substantially less for structure echoes than all echoes.  This can be seen in the higher linear correlation in Figure \ref{fig:f7}c than Figure \ref{fig:f7}a.  The same is true comparing Figures \ref{fig:f7}b and \ref{fig:f7}d, i.e. linear correlation is substantially higher in Figure \ref{fig:f7}d than Figure \ref{fig:f7}b. When only high power echoes are considered (SRN \(>\) 30 dB), linear correlations increase even more.  This can also be seen from a simple visual examination of Figures \ref{fig:f7}c and \ref{fig:f7}d, where the electric field component shows a clear increase with the gradient component, particularly for high-power echoes with SNR \(>\) 30 dB shown by red dots. Note that, in all cases, the relationship between the two factors is approximately linear and slope of the linear fit is positive within uncertainty. This finding is further discussed in Section \ref{sec:discussion2}.
+
+
+
+
+\section{Discussion}
+In this study, small-scale plasma irregularity characteristics were analyzed in the context of factors that affect the linear growth rate of the gradient-drift instability.  Previous experimental studies of GDI and its controlling factors focused on the convection electric field, electron density, fractional perturbation density, and density gradients derived from 1D measurements \citep[e.g.][]{Villian1986,Fukumoto1999,Fukumoto2000,Danskin2002,Oksavik2010,Moen2012,Makarevich2014b,Burston2016}.  In contrast, the current study focused on the previously uninvestigated directional dependence of radar echo occurrence and intensity and comparison with theoretical predictions for arbitrary gradient, electric field, and wave propagation vectors. To accomplish this, 2D density gradient vectors were estimated from multi-point and direct measurements of plasma density by an incoherent scatter radar and, in combination with electric field measurements by an ISR, used to evaluate the GDI growth rate.  In addition, differences between echo occurrence and backscatter power were examined in context of the GDI theory predictions. Below, we discuss three groups of issues aligned with the objectives of this study.
+
+
+
+\subsection{Effects of Density-Related Factors}
+\label{sec:discussion1}
+The fluid linear theory of GDI predicts that an increase in plasma density gradient strength \(G\) will increase irregularity production through GDI \citep{Keskinen1983,Makarevich2014c}. The current experimental results were generally consistent with this expectation. In particular, the echo power showed an expected increase with \(G\), Figure \ref{fig:f4}c. The point scatter was large but the increase was monotonic for bins with significant statistics. One of  most interesting aspects of these observations arguably concerns small scales of irregularities considered (\(\lambda \approx 10\) m), as explained below.
+
+The GDI growth rate applies to long wavelengths \(\lambda >1\) km in the $F$-region due to the fact that the fluid theory assumes the low-frequency (\(\omega \ll \nu_{in}\)) and long-wavelength (\(\lambda \gg 2\pi V_E\nu_{in}^{-1}\)) limits, where \(\nu_{in}\) is the ion-neutral collision frequency \citep[e.g.][]{Makarevich2014c}. In addition, density gradients estimated in this study refer to relative large scales \(L=G^{-1} =10\) km. Despite the differences in scales, strong similarities were observed between GDI predictions and measured irregularity characteristics at small scales. Because of these similarities, large- and small-scale irregularities are typically assumed to be closely related, possibly by a turbulent cascade \citep[e.g.][]{Tsunoda1988}. Our observations, including that of an increase in echo power with gradient strength \(G\), provide additional support for this idea.
+
+
+Another factor that can affect both the irregularity occurrence and strength is the background plasma density \(n\) itself. To achieve perpendicularity to the magnetic field in the polar cap, HF radars rely on beam refraction, which is dependent on the plasma density \citep{Bristow2011,Koustov2014,Lamarche2015}.  High plasma density can also reduce the occurrence of backscatter observed by radar by smoothing the gradients required for GDI \citep{Ruohoniemi1997,Koustov2004}, through \(E\)-region shorting \citep{Dan02,Kan12,Lam15}, or through attenuation of the signal through a dense \(D\) region \citep{Danskin2002}.  The peak in occurrence of all echoes in Figure \ref{fig:f4}a agrees with previous results that there is an optimal density for HF radar observations of \(F\)-region irregularities \citep{Danskin2002,Makarevich2014b,Koustov2014,Lamarche2015}.
+
+In the current study, however, a nearly monotonic increase in average power of all echoes with density was also found, Figure \ref{fig:f4}a, which can potentially be explained through radar backscatter theory. The backscatter power is known to be proportional to the perturbation intensity squared, \((\delta n)^2\), which can be represented as the product of the fractional perturbation density, \(\delta n/n\), and the background density, \(n\), squared.  If the fractional density is approximately constant, backscatter power is proportional to the background density squared, \(n^2\), which would result in a monotonic increase in backscatter power as \(n\) increases \citep{Kustov1988,Haldoupis1990,Makarevich2014b}. This explanation assumes a particular behavior of the fractional perturbation density \(\delta n/n\), with little knowledge currently being available either from experiment or theory and with other behaviors being possible, as elaborated on below.
+
+The current study has also considered the effects of the magnitude of the density gradient, \(|\nabla n|\), and the gradient strength, \(G = |\nabla n/n|\), Figures \ref{fig:f4}b and \ref{fig:f4}c.  The average power of both structure and all echoes showed an increase with both of these factors.  However, the relationship between power and \(|\nabla n|\) was somewhat stronger than that between power and \(G\), particularly in the case of structure echoes. This is puzzling as the expression for the GDI growth rate, equation \ref{eqn:gdi}, is dependent on \(G\), not \(|\nabla n|\).  This may be due to the previously mentioned density effect. When background density, \(n\), is low, \(G\) is high, but propagation conditions may be insufficient for the radar to observe irregularities.  In other words, even if instability growth is high in the \(F\) region and the plasma is highly structured, the radar beam does not observe it because it has not been refracted enough to be perpendicular to the magnetic field, resulting in an artificial undersampling of points where \(G\) is large.  An alternative explanation can be offered using a suitably modified argument involving the fractional density. Thus if the fractional density is proportional to the growth rate, \(\gamma\), instead of being approximately constant, backscatter power should be proportional to \((\gamma n)^2\). Because the growth rate is directly proportional to the magnitude of the gradient strength, equation (\ref{eqn:gdi}), the power will be proportional to the magnitude of the density gradient squared:
+
+\begin{equation}
+	\label{eqn:densgrad}
+	P(V_E,n) \propto \left(\frac{\delta n}{n}\right)^2 n^2 \propto \gamma^2 n^2 \propto G^2 n^2 = |\nabla n|^2
+\end{equation}
+
+From the current observations, it is not possible to conclude which of the three density-related parameters is most important and why, but they do suggest that both background density \(n\) and gradient strength \(G\) are important and that additional knowledge about fractional density behavior may be key to our understanding of complex interplay of the plasma- and radio-physical factors.
+
+\subsection{Directional Effects of Electric Field and Gradient Components}
+\label{sec:discussion2}
+One important new aspect of the current study is the experimental investigation of the directional dependence of the GDI growth rate, as represented by equation  (\ref{eqn:gdi}). This directional dependence has been previously predicted theoretically \citep{Keskinen1982a,Makarevich2014c,Lamarche2016}, but no experimental evidence is currently available, apart from asymmetry between leading and trailing edges of large-scale density structures. Because the growth rate \(\gamma\) is directly dependent on both the gradient component, \(\uvec{k}\cdot\uvec{b}\times\vec{G}\), and the electric field component, \(\uvec{k}\cdot\vec{E}\), the relative directions of the gradient, electric field, and wavevector are predicted to strongly influence plasma structuring in the ionosphere, equation (\ref{eqn:gdi}).  A new method was used to find 2D plasma density gradients based on RISR-N measurements and these, along with electric field measurements, are used here to examine directional dependencies.
+
+
+A summary of the results that agree with these predictions is presented in Table \ref{tab:results}.  The relationship between \(\vec{G}\) and \(\vec{V}_E\) described in entries 9 and 10 in Table \ref{tab:results} matches previously-reported observations of an asymmetry between the trailing and leading edge \citep[][]{Weber1984,Milan2002b,Koustov2012,Moe2012}. Most of these previous studies observed asymmetry only qualitatively and compared only the leading and trailing edge of patches instead of considering all directions around it.  The new approach employed here allowed a quantitative assessment using direct estimates from measurements. Apart from results 9 and 10, all other features in Table  \ref{tab:results} have not been reported before.
+
+\begin{table}
+\caption{A summary of the experimentally observed features that are consistent with the gradient-drift instability theory for arbitrary directions of the wavevector $\uvec{k}$, electric field $\uvec{e}$, and density gradient $\uvec{g}$.}
+\label{tab:results}
+\centering
+\begin{tabular}{|r|l|c|}
+	\hline
+	\textbf{\#}& \textbf{Experimental Feature} & \textbf{Figure} \\
+	\hline
+	1&Increase in average power of all echoes with \(\uvec{k}\cdot\uvec{b}\times\vec{G}\) & \ref{fig:f5}a \\
+	2&Greater occurrence of structure echoes when \(\uvec{k}\cdot\uvec{b}\times\vec{G}\) is positive & \ref{fig:f5}a, \ref{fig:f7}c \\
+	3&Increase in average power of structure echoes as \(\uvec{k}\cdot\vec{E}\) crosses zero & \ref{fig:f5}b \\
+	4&Greater occurrence of all echoes when \(\uvec{k}\cdot\vec{E}\) is positive & \ref{fig:f5}b, \ref{fig:f7}a \\
+	5&Monotonic increase in occurrence of structure echoes with \(\uvec{k}\cdot\vec{E}\) & \ref{fig:f5}b \\
+	6&Strong peak in occurrence when \(\uvec{k}\cdot\uvec{b}\times\uvec{g} = 1\) & \ref{fig:f5}c \\
+	7&Increase in all echo occurrence leading to a peak at \(\uvec{k}\cdot\uvec{e}=1\) & \ref{fig:f5}d \\
+	8&Greater occurrence of structure echoes when \(\uvec{k}\cdot\uvec{e}\) is positive & \ref{fig:f5}d \\
+	9&Higher average power when \(\vec{G}\cdot\vec{V}_E\) is positive & \ref{fig:f6}a \\
+	10&Strong peak in occurrence when \(\uvec{g}\cdot\mathbf{\hat{v}}_E = 1\) & \ref{fig:f6}c \\
+	11&More high power echoes when \(\uvec{k}\cdot\uvec{b}\times\vec{G}\) and \(\uvec{k}\cdot\vec{E}\) are positive & \ref{fig:f7}a \\
+	12&Greater occurrence of structure echoes when \(\uvec{k}\cdot\uvec{b}\times\vec{G}\) and \(\uvec{k}\cdot\vec{E}\) are positive & \ref{fig:f7}c \\
+	\hline
+\end{tabular}
+\end{table}
+
+Many of the results in Table \ref{tab:results} are based on Figure \ref{fig:f5}, which considers the dependence on the electric field term, \(\uvec{k}\cdot\vec{E}\), and the gradient term, \(\uvec{k}\cdot\uvec{b}\times\vec{G}\), of the growth rate independently.  Because the growth rate is the product of these two quantities, it can be challenging to interpret these plots, but they still provide useful insight into directional dependencies.  The two strong peaks at \(\uvec{k}\cdot\uvec{b}\times\uvec{g}=1\) and \(\uvec{k}\cdot\uvec{b}\times\uvec{g}=-1\) in Figure \ref{fig:f5}c indicate that many measurements were made when the gradient was perpendicular to the radar's boresight, \(\uvec{k}\perp\vec{G}\).  As discussed previously, the peaks in power in Figures \ref{fig:f5}b and \ref{fig:f5}d possibly indicate a preferred electric field direction for the event.  However, considering all echoes, a full range of electric field directions is observed (points exist for all values of \(\uvec{k}\cdot\uvec{e}\)), but there is a systematic increase in occurrence when \(\uvec{k}\cdot\uvec{e}>1\).  This indicates that irregularity growth is more favorable in the direction of the electric field, agreeing with previous results regarding the directional dependence of plasma irregularities \citep{Lamarche2016}.
+
+
+In relation to result 10, the strong peak in echo occurrence at \(\uvec{g}\cdot\mathbf{\hat{v}}_E = 1\) corresponds to \(\vec{G} \parallel \vec{V}_E\), which is considered the most favorable orientation for GDI growth.  What was unexpected in the observations presented in Figure \ref{fig:f6}c is the secondary peak at \(\uvec{g}\cdot\mathbf{\hat{v}}_E = -1\), corresponding to \(\vec{G}\) antiparallel to \(\vec{V}_E\), which is the least favorable configuration for GDI growth. It is possible that this secondary peak is due to a different instability mechanism, but the directional dependencies of other mechanisms are also rarely considered \citep{Burston2016}.  \(\vec{G}\) antiparallel to \(\vec{V}_E\) corresponds physically to the leading edge of a drifting plasma patch.  Conventionally there is thought to be little to no structuring on the leading edge of drifting large-scale density structures, but some simulations have shown if there is a significant velocity shear along the edge of the patch, the leading edge can become structured, although this will happen  only after a long period of time \citep{Gondarenko2006}. Thus a secondary peak in echo occurrence on the leading edge of the currently examined density structure may be due to this, non-GDI mechanism.  Additionally, it is possible that the patch rotated before entering the FoV such that the leading edge became the trailing edge and vice versa, which would lead to both sides exhibiting structuring \citep{Oksavik2010}.  The magnitude of these two peaks may be due to some directional bias within the event.  For some portions of the event, the patch is completely within the radar's FoV so measurements are taken from all edges.  However, because the patch does move almost directly northwards through the FoV, predominantly the leading and trailing edges are seen by the radar at times.  This means that the leading and trailing edges may be oversampled, which could explain the sharp peaks in occurrence when \(\vec{G}\) parallel or antiparallel to \(\vec{V}_E\) relative to other directions.
+
+One of the interesting features in Figure \ref{fig:f7} is the linear nature of the trend, particularly for the normalized components of high power echoes, Figure \ref{fig:f7}d.  GDI linear theory predicts a clustering of points where both \(\uvec{k}\cdot\uvec{b}\times\vec{G}\) and \(\uvec{k}\cdot\vec{E}\) are either positive or negative, or two clusters, one in quadrant I and one in quadrant III.  Figure \ref{fig:f7}c does show a relatively strong cluster of points in quadrant I but very few points in quadrant III.  Additionally, in Figure \ref{fig:f7}d, points appear to form a linear pattern, which is confirmed by the relatively high correlation coefficients.  A linear relationship between the electric field \(\vec{E}\) and density gradient \(\vec{G}\) is not necessarily expected, but if the majority of echoes are observed when \(\vec{G}\parallel\vec{V}_E\), the linear relationship between the normalized components does make some sense.  In this case \(\vec{E}\parallel\uvec{b}\times\vec{G}\), so a linear relationship between their normalized components is to be expected.
+
+In this study, the plasma drift is assumed to be driven primarily by convection electric fields, with the neutral wind contribution assumed to be negligible.  In general, this is reasonable because the data collected refers to the \(F\)-region, where neutral wind speed is much smaller than that of the \(\vec{E}\times\vec{B}\) convection, particularly for the present dataset which included many convection velocity measurements exceeding 500 m/s, Figures \ref{fig:f2}c and \ref{fig:f3}.  If, however, neutral winds were to contribute significantly at these altitudes, the effective convection electric field would be reduced and a corresponding reduction in the calculated growth rates would occur, so the growth rates presented here would be overestimated.
+
+
+\subsection{Differences Between Echo Power and Occurrence}
+\label{sec:discussion3}
+This study considered both echo power and occurrence, and it has been found that they do not necessarily follow the same trends.  This can be seen, for example, in Figure \ref{fig:f5}a, where the average power for all echoes gradually increases but occurrence peaks at zero, or in Figure \ref{fig:f5}b, where the average power for structure echoes peaks around 0.01 mV/m but occurrence increases monotonically to 0.025 mV/m.  In general, the echo occurrence seems to agree with GDI linear theory somewhat better than average power, Table \ref{tab:results}.  This is evident in Figures \ref{fig:f6}b and \ref{fig:f6}d, in which there is slightly greater occurrence for positive growth rates than negative growth rates, and structure echoes in particular are biased towards positive growth rates.  On the other hand, average power seems to either exhibit very little trend for positive growth rates or even decreases in the normalized case.
+
+One possible conclusion that can be drawn from this is that GDI is responsible for a basic level of plasma structuring in the ionosphere, but as waves increase in amplitude, other processes may take effect.  This could be a nonlinear combination of the Kelvin-Helmholtz instability (KHI) and GDI \citep{Gondarenko2006} or some kind of multi-step plasma structuring process \citep{Carlson2007,Carlson2008}.  Turbulent processes have also been proposed as contributing as much if not more than GDI to plasma structuring in the polar ionosphere under certain conditions \citep{Burston2010,Spicher2015,Burston2016}.
+
+Structure echoes do show a steady increase in average power while the growth rate is negative, Figure \ref{fig:f6}b, for both the non-normalized (between \(-0.001\) s\(^{-1}\) and 0  s\(^{-1}\)) and normalized cases (between \(-0.3\) and 0.1).  While this agrees well with the notion that increasing the growth rate should increase the strength of irregularities in the ionosphere, conventional understanding of a linear growth is that if the growth rate is negative, waves are damped, so there should be no structuring and no backscatter observed at all.
+
+To further consider this, it is important to recall that the growth rate predicts only how fast instabilities will grow in the linear regime, not their current amplitude.  This means that points with a positive growth rate could have structures in the process of developing while points with a negative growth rate could have preexisting structures that are being damped, which could explain how some backscatter is observed even when the growth rate is negative.  The electric field and density gradients were measured spatially and temporally coincidently with the backscatter measurements, so the calculated growth rate represents the local growth rate at a particular moment in time and does not give any information about the history of growth of the irregularity.  The shortest rise times (\(1/\gamma\)) were still on the order of several minutes while the cadence of measurement was \(\sim1\) per minute, so it is reasonable that measurements of \(\gamma\) and echoes were made faster than the local response time.
+
+With respect to the estimates of the growth rates, the highest rates were around 0.002 s\(^{-1}\), Figure \ref{fig:f6}c, which corresponds to a rise time of \(\sim8\) min.  However, the peak in echo occurrence occurred at \(\gamma\approx0.0001\) s\(^{-1}\), corresponding to a rise time of over 2.5 hours. In comparison with previous studies, \citet{Moe12} found through sounding rocket measurements \(\gamma = 0.021\) s\(^{-1}\) and a rise time of 47.6 s.  \citet{Carlson2007} estimated the rise time when GDI is the only instability mechanism operational as 5--10 min, but they also proposed a 2-step process in which KHI seeds GDI, in which case the rise time would be \(\sim50\) s.  \citet{Burston2016} found that on the edge of polar cap patches, the GDI growth rate is greater than 0.0017 s\(^{-1}\) (10-min rise time) approximately 81\% of the time and greater than 0.016 s\(^{-1}\) (1-min rise time) approximately 11\% of the time. The fastest growth rates estimated in the current study thus agree well with GDI growth rates estimated from previous studies as well as observations of how quickly structuring develops around polar cap patches \citep{Carlson2007}.  Overall, it appears that structuring can be directionally dependent and echo power and occurrence are not necessarily related in a simple way.
+
+
+
+\section{Conclusions}
+Signatures of plasma structuring in the polar \(F\)-region ionosphere have been investigated in the context of factors that control directionally-dependent growth rate of the gradient-drift instability.  The GDI growth rate was evaluated using 2D density gradient and electric field vectors measured by the northern face of the Resolute Bay Incoherent Scatter Radar, while information about structuring was inferred from echo occurrence and power measured by the SuperDARN radar at Rankin Inlet.  The findings are as follows:
+\begin{enumerate}
+	\item Echo power in general increases as plasma density, \(n\), density gradient magnitude, \(|\nabla n|\), and gradient strength, \(G = |\nabla n/n|\), all increase.  Small-scale structuring increases with large-scale gradients, implying strong coupling between different scale sizes.  The relationship between echo power and density gradient magnitude is stronger than that with the gradient strength, in contrast with GDI linear theory prediction, possibly suggesting that the fractional density is directly related to the growth rate.
+	\item Small-scale plasma structuring is observed on all edges of a polar cap patch, with plasma irregularity characteristics exhibiting a dependence on the edge orientation with respect to the propagation direction. Stronger structuring is not restricted to the trailing edge and generally observed when the wavevector is oriented in a direction relative to the density gradient or electric field where irregularity growth rate is more favorable according to a general GDI theory.  Echo occurrence peaks when the relative orientations of the gradient and plasma drift velocity is most favorable (parallel), however, there is also a strong secondary peak when the orientations are least favorable (antiparallel) and the gradient-drift instability should be linearly damped.  This could be explained by a strong velocity shear causing structuring on the leading edge of the patch.
+	\item Echo occurrence tends to follow the trends predicted by the linear theory of the gradient-drift instability better than echo power, suggesting that while GDI may be a dominant process in generating small-scale irregularities throughout the ionosphere, other mechanisms such as shear-driven KHI or nonlinear processes may exert greater control over the strength of those irregularities.
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  ACKNOWLEDGMENTS
+%
+% The acknowledgments must list:
+%
+% •	All funding sources related to this work from all authors
+%
+% •	Any real or perceived financial conflicts of interests for any
+%	author
+%
+% •	Other affiliations for any author that may be perceived as
+% 	having a conflict of interest with respect to the results of this
+% 	paper.
+%
+% •	A statement that indicates to the reader where the data
+% 	supporting the conclusions can be obtained (for example, in the
+% 	references, tables, supporting information, and other databases).
+%
+% It is also the appropriate place to thank colleagues and other contributors. 
+% AGU does not normally allow dedications.
+
+\section*{Acknowledgments}
+This work was supported by NSF grants AGS-1248127 and PLR-1443504.  SuperDARN data are freely available through the SuperDARN website at Virginia Tech \url{http://vt.superdarn.org/}.  The Resolute Bay Incoherent Scatter Radar (North) is operated by SRI International on behalf of the U.S. National Science Foundation under NSF Cooperative Agreement AGS-1133009.  The data are accessible from the SRI International online database at \url{http://amisr.sri.com/database/}.
+
+
+
+%%  REFERENCE LIST AND TEXT CITATIONS
+%
+% Either type in your references using
+%
+% \begin{thebibliography}{}
+% \bibitem[{\textit{Kobayashi et~al.}}(2003)]{R2013} Kobayashi, T.,
+% Tran, A.~H., Nishijo, H., Ono, T., and Matsumoto, G.  (2003).
+% Contribution of hippocampal place cell activity to learning and
+% formation of goal-directed navigation in rats. \textit{Neuroscience}
+% 117, 1025--1035.
+%
+% \bibitem{}
+% Text
+% \end{thebibliography}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Or, to use BibTeX:
+%
+% Follow these steps
+%
+% 1. Type in \bibliography{<name of your .bib file>} 
+%    Run LaTeX on your LaTeX file.
+%
+% 2. Run BiBTeX on your LaTeX file.
+%
+% 3. Open the new .bbl file containing the reference list and
+%   copy all the contents into your LaTeX file here.
+%
+% 4. Run LaTeX on your new file which will produce the citations.
+%
+% AGU does not want a .bib or a .bbl file. Please copy in the contents of your .bbl file here.
+
+%\bibliography{myrefll}
+%
+%\providecommand{\ddegrees}{\ensuremath{\deg}}
+%\begin{thebibliography}{46}
+%\providecommand{\natexlab}[1]{#1}
+%\expandafter\ifx\csname urlstyle\endcsname\relax
+%  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+%  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+%  \urlstyle{rm}\Url}\fi
+%
+%\bibitem[{\textit{Bahcivan et~al.}(2010)\textit{Bahcivan, Tsunoda, Nicolls, and
+%  Heinselman}}]{Bah10}
+%Bahcivan, H., R.~Tsunoda, M.~Nicolls, and C.~Heinselman (2010), Initial
+%  ionospheric observations made by the new {Resolute} incoherent scatter radar
+%  and comparison to solar wind {IMF}, \textit{Geophys. Res. Lett.},
+%  \textit{37}, L15103, \doi{10.1029/2010GL043632}.
+%
+%\bibitem[{\textit{Bristow et~al.}(2011)\textit{Bristow, Spaleta, and
+%  Parris}}]{Bri11}
+%Bristow, W.~A., J.~Spaleta, and R.~T. Parris (2011), {First observations of
+%  ionospheric irregularities and flows over the south geomagnetic pole from the
+%  Super Dual Auroral Radar Network (SuperDARN) HF radar at McMurdo Station,
+%  Antarctica}, \textit{J. Geophys. Res.}, \textit{116}, A12325,
+%  \doi{10.1029/2011JA016834}.
+%
+%\bibitem[{\textit{Burston et~al.}(2010)\textit{Burston, Astin, Mitchell,
+%  Alfonsi, Pedersen, and Skone}}]{Bur10}
+%Burston, R., I.~Astin, C.~Mitchell, L.~Alfonsi, T.~Pedersen, and S.~Skone
+%  (2010), Turbulent times in the northern polar ionosphere?, \textit{J.
+%  Geophys. Res.}, \textit{115}, A04310, \doi{10.1029/2009JA014813}.
+%
+%\bibitem[{\textit{Burston et~al.}(2016)\textit{Burston, Mitchell, and
+%  Astin}}]{Bur16}
+%Burston, R., C.~Mitchell, and I.~Astin (2016), Polar cap plasma patch primary
+%  linear instability growth rates compared, \textit{J. Geophys. Res. Space
+%  Physics}, \textit{121}, 3439--3451, \doi{10.1002/2015JA021895}.
+%
+%\bibitem[{\textit{Carlson et~al.}(2007)\textit{Carlson, Pedersen, Basu,
+%  Keskinen, and Moen}}]{Car07}
+%Carlson, H.~C., T.~Pedersen, S.~Basu, M.~Keskinen, and J.~Moen (2007), Case for
+%  a new process, not mechanism, for cusp irregularity production, \textit{J.
+%  Geophys. Res.}, \textit{112}, A11304, \doi{10.1029/2007JA012384}.
+%
+%\bibitem[{\textit{Carlson et~al.}(2008)\textit{Carlson, Oksavik, and
+%  Moen}}]{Car08}
+%Carlson, H.~C., K.~Oksavik, and J.~Moen (2008), On a new process for cusp
+%  irregularity production, \textit{Ann. Geophysicae}, \textit{26}, 2871--2885.
+%
+%\bibitem[{\textit{Chisham et~al.}(2007)\textit{Chisham, Lester, Milan, Freeman,
+%  Bristow, Grocott, McWilliams, Ruohoniemi, Yeoman, Dyson, Greenwald, Kikuchi,
+%  Pinnock, Rash, Sato, Sofko, Villain, and Walker}}]{Chi07}
+%Chisham, G., M.~Lester, S.~E. Milan, M.~P. Freeman, W.~A. Bristow, A.~Grocott,
+%  K.~A. McWilliams, J.~M. Ruohoniemi, T.~Yeoman, P.~L. Dyson, R.~A. Greenwald,
+%  T.~Kikuchi, M.~Pinnock, J.~P.~S. Rash, N.~Sato, G.~J. Sofko, J.-P. Villain,
+%  and A.~D.~M. Walker (2007), A decade of the {Super Dual Auroral Radar Network
+%  (SuperDARN)}: scientific achievements, new techniques and future directions,
+%  \textit{Surveys in Geophysics}, \textit{28}, 33--109,
+%  \doi{10.1007/s10712-007-9017-8}.
+%
+%\bibitem[{\textit{Dahlgren et~al.}(2012{\natexlab{a}})\textit{Dahlgren, Perry,
+%  Semeter, St.-Maurice, Hosokawa, Nicolls, Greffen, Shiokawa, and
+%  Heinselman}}]{Dah12b}
+%Dahlgren, H., G.~W. Perry, J.~L. Semeter, J.-P. St.-Maurice, K.~Hosokawa, M.~J.
+%  Nicolls, M.~Greffen, K.~Shiokawa, and C.~Heinselman (2012{\natexlab{a}}),
+%  {Space-time variability of polar cap patches: Direct evidence for internal
+%  plasma structuring}, \textit{J. Geophys. Res.}, \textit{117}, A09312,
+%  \doi{10.1029/2012JA017961}.
+%
+%\bibitem[{\textit{Dahlgren et~al.}(2012{\natexlab{b}})\textit{Dahlgren,
+%  Semeter, Hosokawa, Nicolls, Butler, Johnsen, Shiokawa, and
+%  Heinselman}}]{Dah12a}
+%Dahlgren, H., J.~L. Semeter, K.~Hosokawa, M.~J. Nicolls, T.~W. Butler, M.~G.
+%  Johnsen, K.~Shiokawa, and Heinselman (2012{\natexlab{b}}), Direct
+%  three-dimensional imaging of polar ionospheric strucutes with the {Resolute
+%  Bay Incoherent Scatter Radar}, \textit{Geophys. Res. Lett.}, \textit{39},
+%  L05104, \doi{10.1029/2012GL050895}.
+%
+%\bibitem[{\textit{Danskin et~al.}(2002)\textit{Danskin, Koustov, Ogawa,
+%  Nishitani, Nozawa, Milan, Lester, and Andre}}]{Dan02}
+%Danskin, D.~W., A.~V. Koustov, T.~Ogawa, N.~Nishitani, S.~Nozawa, S.~E. Milan,
+%  M.~Lester, and D.~Andre (2002), On the factors controlling occurrence of
+%  {F}-region coherent echoes, \textit{Ann. Geophysicae}, \textit{20}(9),
+%  1385--1397.
+%
+%\bibitem[{\textit{Evans}(1969)}]{Eva69}
+%Evans, J.~V. (1969), Theory and practice of ionosphere study by {Thomson
+%  Scatter Radar}, \textit{Proc. {IEEE}}, \textit{57}, 496--530.
+%
+%\bibitem[{\textit{Fejer and Kelley}(1980)}]{Fej80}
+%Fejer, B.~G., and M.~C. Kelley (1980), Ionospheric irregularities,
+%  \textit{Geophys. Rev.}, \textit{18}, 401--454.
+%
+%\bibitem[{\textit{{Fukumoto} et~al.}(1999)\textit{{Fukumoto}, {Nishitani},
+%  {Ogawa}, {Sato}, {Yamagishi}, and {Yukimatu}}}]{Fuk99}
+%{Fukumoto}, M., N.~{Nishitani}, T.~{Ogawa}, N.~{Sato}, H.~{Yamagishi}, and
+%  A.~{Yukimatu} (1999), Statistical analysis of echo power, {Doppler} velocity
+%  and spectral width obtained with the {Syowa South HF radar}, \textit{Adv.
+%  Polar Upper Atmos. Res.}, \textit{13}, 37--47.
+%
+%\bibitem[{\textit{{Fukumoto} et~al.}(2000)\textit{{Fukumoto}, {Nishitani},
+%  {Ogawa}, {Sato}, {Yamagishi}, and {Yukimatu}}}]{Fuk00}
+%{Fukumoto}, M., N.~{Nishitani}, T.~{Ogawa}, N.~{Sato}, H.~{Yamagishi}, and
+%  A.~S. {Yukimatu} (2000), Statistical study of {Doppler} velocity and echo
+%  power around 75\(\deg\) magnetic latitude using data obtained with the
+%  {Syowa} {East} {HF} radar in 1997, \textit{Adv. Polar Upper Atmos. Res.},
+%  \textit{14}, 93--102.
+%
+%\bibitem[{\textit{Gondarenko and Guzdar}(2004)}]{Gon04}
+%Gondarenko, N.~A., and P.~N. Guzdar (2004), Plasma patch structuring by the
+%  nonlinear evolution of the gradient drift instability in the high-latitude
+%  ionosphere, \textit{J. Geophys. Res.}, \textit{109}, A09301,
+%  \doi{10.1029/2004JA010504}.
+%
+%\bibitem[{\textit{Gondarenko and Guzdar}(2006)}]{Gon06}
+%Gondarenko, N.~A., and P.~N. Guzdar (2006), Nonlinear three-dimensional
+%  simulations of mesoscale structuring by multiple drives in high-latitude
+%  plasma patches, \textit{J. Geophys. Res.}, \textit{111}, A08302,
+%  \doi{10.1029/2006JA011701}.
+%
+%\bibitem[{\textit{Haldoupis et~al.}(1990)\textit{Haldoupis, Nielsen, and
+%  Schlegel}}]{Hal90}
+%Haldoupis, C., E.~Nielsen, and K.~Schlegel (1990), Dependence of radar auroral
+%  scattering cross section on the ambient electron density and the
+%  destabilizing electric field, \textit{Ann. Geophysicae}, \textit{8},
+%  195--212.
+%
+%\bibitem[{\textit{{Heinselman} and {Nicolls}}(2008)}]{Hei08}
+%{Heinselman}, C.~J., and M.~J. {Nicolls} (2008), {A Bayesian approach to
+%  electric field and E-region neutral wind estimation with the Poker Flat
+%  Advanced Modular Incoherent Scatter Radar}, \textit{Radio Sci.}, \textit{43},
+%  RS5013, \doi{10.1029/2007RS003805}.
+%
+%\bibitem[{\textit{Kane et~al.}(2012)\textit{Kane, Makarevich, and
+%  Devlin}}]{Kan12}
+%Kane, T.~A., R.~A. Makarevich, and J.~C. Devlin (2012), {{HF} radar
+%  observations of ionospheric backscatter during geomagnetically quiet
+%  periods}, \textit{Ann. Geophysicae}, \textit{30}, 221--233,
+%  \doi{10.5194/angeo-30-221-2012}.
+%
+%\bibitem[{\textit{{Keskinen} and {Ossakow}}(1982)}]{Kes82a}
+%{Keskinen}, M.~J., and S.~L. {Ossakow} (1982), {Nonlinear evolution of plasma
+%  enhancements in the auroral ionosphere. I - Long wavelength irregularities},
+%  \textit{J. Geophys. Res.}, \textit{87}, 144--150.
+%
+%\bibitem[{\textit{{Keskinen} and {Ossakow}}(1983)}]{Kes83}
+%{Keskinen}, M.~J., and S.~L. {Ossakow} (1983), Theories of high-latitude
+%  ionospheric irregularities: A review, \textit{Radio Sci.}, \textit{18}(6),
+%  1077--1091.
+%
+%\bibitem[{\textit{{Koustov} et~al.}(2004)\textit{{Koustov}, {Sofko},
+%  {Andr{\'e}}, {Danskin}, and {Benkevitch}}}]{Kou04}
+%{Koustov}, A.~V., G.~J. {Sofko}, D.~{Andr{\'e}}, D.~W. {Danskin}, and L.~V.
+%  {Benkevitch} (2004), {Seasonal variation of HF radar F region echo occurrence
+%  in the midnight sector}, \textit{J. Geophys. Res.}, \textit{109}, A06305,
+%  \doi{10.1029/2003JA010337}.
+%
+%\bibitem[{\textit{{Koustov} et~al.}(2012)\textit{{Koustov}, {Hosokawa},
+%  {Nishitani}, {Shiokawa}, and {Liu}}}]{Kou12}
+%{Koustov}, A.~V., K.~{Hosokawa}, N.~{Nishitani}, K.~{Shiokawa}, and H.~{Liu}
+%  (2012), {Signatures of moving polar cap arcs in the F-region PolarDARN
+%  echoes}, \textit{Ann. Geophysicae}, \textit{30}, 441--455.
+%
+%\bibitem[{\textit{{Koustov} et~al.}(2014)\textit{{Koustov}, {Ponomarenko},
+%  {Ghezelbash}, {Themens}, and {Jayachandran}}}]{Kou14}
+%{Koustov}, A.~V., P.~V. {Ponomarenko}, M.~{Ghezelbash}, D.~R. {Themens}, and
+%  P.~T. {Jayachandran} (2014), {Electron density and electric field over
+%  Resolute Bay and F region ionospheric echo detection with the Rankin Inlet
+%  and Inuvik SuperDARN radars}, \textit{Radio Sci.}, pp. 1194--1205,
+%  \doi{10.1002/2014RS005579}.
+%
+%\bibitem[{\textit{Kustov et~al.}(1988)\textit{Kustov, Uspenskii, and
+%  Williams}}]{Kus88}
+%Kustov, A.~V., M.~V. Uspenskii, and F.~J.~S. Williams (1988), Saturation
+%  effects of auroral-electrojet turbulence, \textit{Geom. Aeron.}, \textit{28},
+%  923--927.
+%
+%\bibitem[{\textit{Lamarche and Makarevich}(2015)}]{Lam15}
+%Lamarche, L.~J., and R.~A. Makarevich (2015), {Solar control of F region radar
+%  backscatter: Further insights from observations in the southern polar cap},
+%  \textit{J. Geophys. Res. Space Physics}, \textit{120}(11), 9875--9890,
+%  \doi{10.1002/2015JA021663}.
+%
+%\bibitem[{\textit{Lamarche and Makarevich}(2016)}]{Lam16}
+%Lamarche, L.~J., and R.~A. Makarevich (2016), A modeling study of asymmetries
+%  in plasma irregularity characteristics near gradient reversals, \textit{Ann.
+%  Geophysicae}, \textit{34}, 709--723, \doi{10.5194/angeo-34-709-2016}.
+%
+%\bibitem[{\textit{{Linson} and {Workman}}(1970)}]{Lin70}
+%{Linson}, L.~M., and J.~B. {Workman} (1970), Formation of striations in
+%  ionospheric plasma clouds, \textit{J. Geophys. Res.}, \textit{75}, 3211.
+%
+%\bibitem[{\textit{Lynch et~al.}(2015)\textit{Lynch, Hampton, Zettergren,
+%  Bekkeng, Conde, Fernandes, Horak, Lessard, Miceli, Michell, Moen, Nicolls,
+%  Powell, and Samara}}]{Lyn15}
+%Lynch, K.~A., D.~K. Hampton, M.~Zettergren, T.~A. Bekkeng, M.~Conde, P.~A.
+%  Fernandes, P.~Horak, M.~Lessard, R.~Miceli, R.~Michell, J.~Moen, M.~Nicolls,
+%  S.~P. Powell, and M.~Samara (2015), {MICA} sounding rocket observations of
+%  the conductivity-gradient-generated auroral ionospheric responses:
+%  Small-scale structures with large-scale drivers, \textit{J. Geophys. Res.
+%  Space Physics}, \textit{120}, 9661--9682, \doi{10.1002/2014JA020860}.
+%
+%\bibitem[{\textit{Makarevich}(2014)}]{Mak14c}
+%Makarevich, R.~A. (2014), {Symmetry considerations in the two-fluid theory of
+%  the gradient-drift instability in the lower ionosphere}, \textit{J. Geophys.
+%  Res.}, \textit{119}, \doi{10.1002/2014JA020292}.
+%
+%\bibitem[{\textit{Makarevich and Bristow}(2014)}]{Mak14b}
+%Makarevich, R.~A., and W.~A. Bristow (2014), Coordinated radar observations of
+%  plasma wave characteristics in the auroral {F} region, \textit{Ann.
+%  Geophysicae}, \textit{32}, 875--888.
+%
+%\bibitem[{\textit{Makarevich et~al.}(2015)\textit{Makarevich, Lamarche, and
+%  Nicolls}}]{Mak15b}
+%Makarevich, R.~A., L.~J. Lamarche, and M.~J. Nicolls (2015), {Resolute Bay
+%  Incoherent Scatter Radar} observations of plasma structures in the vicinity
+%  of polar holes, \textit{J. Geophys. Res. Space Physics}, \textit{120},
+%  \doi{10.1002/2015JA021443}.
+%
+%\bibitem[{\textit{Makarevitch et~al.}(2004)\textit{Makarevitch, Honary, McCrea,
+%  and Howells}}]{Mak04c}
+%Makarevitch, R.~A., F.~Honary, I.~W. McCrea, and V.~S.~C. Howells (2004),
+%  Imaging riometer observations of drifting absorption patches in the morning
+%  sector, \textit{Ann. Geophysicae}, \textit{22}, 3461--3478.
+%
+%\bibitem[{\textit{Milan et~al.}(2002)\textit{Milan, Lester, and
+%  Yeoman}}]{Mil02b}
+%Milan, S.~E., M.~Lester, and T.~K. Yeoman (2002), {HF} radar polar patch
+%  formation revisited: summer and winter variations in dayside plasma
+%  structuring, \textit{Ann. Geophysicae}, \textit{20}, 487--499.
+%
+%\bibitem[{\textit{Moen et~al.}(2012)\textit{Moen, Oksavik, Abe, Lester, Saito,
+%  Bekkeng, and Jacobsen}}]{Moe12}
+%Moen, J., K.~Oksavik, T.~Abe, M.~Lester, Y.~Saito, T.~A. Bekkeng, and K.~S.
+%  Jacobsen (2012), {First in situ measurements of HF radar echoing targets},
+%  \textit{Geophys. Res. Lett.}, \textit{39}, L07104,
+%  \doi{10.1029/2012GL051407}.
+%
+%\bibitem[{\textit{Nicolls et~al.}(2007)\textit{Nicolls, Heinselman, Hope,
+%  Ranjan, Kelley, and Kelly}}]{Nic07}
+%Nicolls, M.~J., C.~J. Heinselman, E.~A. Hope, S.~Ranjan, M.~C. Kelley, and
+%  J.~D. Kelly (2007), Imaging of polar mesosphere summer echoes with the 450
+%  {MHz} {Poker Flat Advanced Modular Incoherent Scatter Radar},
+%  \textit{Geophys. Res. Lett.}, \textit{34}, L20102,
+%  \doi{10.1029/2007GL031476}.
+%
+%\bibitem[{\textit{Oksavik et~al.}(2010)\textit{Oksavik, Barth, Moen, and
+%  Lester}}]{Oks10}
+%Oksavik, K., V.~L. Barth, J.~Moen, and M.~Lester (2010), On the entry and
+%  transit of high-density plasma across the polar cap, \textit{J. Geophys.
+%  Res.}, \textit{115}, \doi{10.1029/2010JA015817}.
+%
+%\bibitem[{\textit{Rishbeth and Williams}(1985)}]{Ris85}
+%Rishbeth, H., and P.~J.~S. Williams (1985), The {EISCAT} ionospheric radar: The
+%  system and its early results, \textit{Q. J. R. Astron. Soc.}, \textit{26},
+%  478--512.
+%
+%\bibitem[{\textit{Ruohoniemi and Greenwald}(1997)}]{Ruo97}
+%Ruohoniemi, J.~M., and R.~A. Greenwald (1997), {Rates of scattering occurrence
+%  in routine HF radar observations during solar cycle maximum}, \textit{Radio
+%  Sci.}, \textit{32}, 1051--1070.
+%
+%\bibitem[{\textit{{Semeter} et~al.}(2009)\textit{{Semeter}, {Butler},
+%  {Heinselman}, {Nicolls}, {Kelly}, and {Hampton}}}]{Sem09}
+%{Semeter}, J., T.~{Butler}, C.~{Heinselman}, M.~{Nicolls}, J.~{Kelly}, and
+%  D.~{Hampton} (2009), {Volumetric imaging of the auroral ionosphere: Initial
+%  results from PFISR}, \textit{J. Atmos. Sol. Terr. Phys.}, \textit{71},
+%  738--743.
+%
+%\bibitem[{\textit{Shepherd}(2014)}]{She14}
+%Shepherd, S.~G. (2014), Altitude-adjusted corrected geomagnetic coordinates:
+%  Definition and functional approximations, \textit{J. Geophys. Res.},
+%  \textit{119}(9), 7501--7521, \doi{10.1002/2014JA020264}.
+%
+%\bibitem[{\textit{Spicher et~al.}(2015)\textit{Spicher, Miloch, Clausen, and
+%  Moen}}]{Spi15}
+%Spicher, A., W.~J. Miloch, L.~B.~N. Clausen, and J.~I. Moen (2015), Plasma
+%  turbulence and coherent structures in the polar cap observed by the {ICI}-2
+%  sounding rocket, \textit{J. Geophys. Res. Space Physics}, \textit{120},
+%  10,959--10,978, \doi{10.1002/2015JA021634}.
+%
+%\bibitem[{\textit{Themens et~al.}(2014)\textit{Themens, Jayachandran, Nicolls,
+%  and MacDougall}}]{The14a}
+%Themens, D., P.~Jayachandran, M.~J. Nicolls, and J.~W. MacDougall (2014), {A
+%  Top to bottom evaluation of IRI-2007 within the polar cap}, \textit{J.
+%  Geophys. Res.}, \textit{119}, \doi{10.1002/2014JA020052}.
+%
+%\bibitem[{\textit{{Tsunoda}}(1988)}]{Tsu88}
+%{Tsunoda}, R.~T. (1988), {High-latitude F region irregularities - A review and
+%  synthesis}, \textit{Geophys. Rev.}, \textit{26}, 719--760.
+%
+%\bibitem[{\textit{{Villain} et~al.}(1986)\textit{{Villain}, {Beghin}, and
+%  {Hanuise}}}]{Vil86}
+%{Villain}, J.~P., C.~{Beghin}, and C.~{Hanuise} (1986), {ARCAD3-SAFARI}
+%  coordinated study of auroral and polar {F}-region ionospheric irregularities,
+%  \textit{Ann. Geophysicae}, \textit{4}, 61--68.
+%
+%\bibitem[{\textit{{Weber} et~al.}(1984)\textit{{Weber}, {Buchau}, {Moore},
+%  {Sharber}, {Livingston}, {Winningham}, and {Reinisch}}}]{Web84}
+%{Weber}, E.~J., J.~{Buchau}, J.~G. {Moore}, J.~R. {Sharber}, R.~C.
+%  {Livingston}, J.~D. {Winningham}, and B.~W. {Reinisch} (1984), {F layer
+%  ionization patches in the polar cap}, \textit{J. Geophys. Res.}, \textit{89},
+%  1683--1694.
+%
+%\end{thebibliography}
+
+%% After you run BibTeX, Copy in the contents of the .bbl file here:
+
+
+
+
+
+
+%Text here ===>>>
+
+%%
+
+%  Numbered lines in equations:
+%  To add line numbers to lines in equations,
+%  \begin{linenomath*}
+%  \begin{equation}
+%  \end{equation}
+%  \end{linenomath*}
+
+
+%
+% ---------------
+% EXAMPLE TABLE
+%
+% \begin{table}
+% \caption{Time of the Transition Between Phase 1 and Phase 2$^{a}$}
+% \centering
+% \begin{tabular}{l c}
+% \hline
+%  Run  & Time (min)  \\
+% \hline
+%   $l1$  & 260   \\
+%   $l2$  & 300   \\
+%   $l3$  & 340   \\
+%   $h1$  & 270   \\
+%   $h2$  & 250   \\
+%   $h3$  & 380   \\
+%   $r1$  & 370   \\
+%   $r2$  & 390   \\
+% \hline
+% \multicolumn{2}{l}{$^{a}$Footnote text here.}
+% \end{tabular}
+% \end{table}
+
+
+%% Enter Figures and Tables near as possible to where they are first mentioned:
+%
+% DO NOT USE \psfrag or \subfigure commands.
+%
+% Figure captions go below the figure.
+% Table titles go above tables;  other caption information
+%  should be placed in last line of the table, using
+% \multicolumn2l{$^a$ This is a table note.}
+%
+%----------------
+% EXAMPLE FIGURE
+%
+% \begin{figure}[h]
+% \centering
+% when using pdflatex, use pdf file:
+% \includegraphics[width=20pc]{figsamp.pdf}
+%
+% when using dvips, use .eps file:
+% \includegraphics[width=20pc]{figsamp.eps}
+%
+% \caption{Short caption}
+% \label{figone}
+%  \end{figure}
+
+
+
+
+%% SIDEWAYS FIGURE and TABLE 
+% AGU prefers the use of {sidewaystable} over {landscapetable} as it causes fewer problems.
+%
+% \begin{sidewaysfigure}
+% \includegraphics[width=20pc]{figsamp}
+% \caption{caption here}
+% \label{newfig}
+% \end{sidewaysfigure}
+% 
+%  \begin{sidewaystable}
+%  \caption{Caption here}
+% \label{tab:signif_gap_clos}
+%  \begin{tabular}{ccc}
+% one&two&three\\
+% four&five&six
+%  \end{tabular}
+%  \end{sidewaystable}
+
+%% If using numbered lines, please surround equations with \begin{linenomath*}...\end{linenomath*}
+%\begin{linenomath*}
+%\begin{equation}
+%y|{f} \sim g(m, \sigma),
+%\end{equation}
+%\end{linenomath*}
+
+%%% End of body of article
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional Appendix goes here
+%
+% The \appendix command resets counters and redefines section heads
+%
+% After typing \appendix
+%
+%\section{Here Is Appendix Title}
+% will show
+% A: Here Is Appendix Title
+%
+%\appendix
+%\section{Here is a sample appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Optional Glossary, Notation or Acronym section goes here:
+%
+%%%%%%%%%%%%%%  
+% Glossary is only allowed in Reviews of Geophysics
+%  \begin{glossary}
+%  \term{Term}
+%   Term Definition here
+%  \term{Term}
+%   Term Definition here
+%  \term{Term}
+%   Term Definition here
+%  \end{glossary}
+
+%
+%%%%%%%%%%%%%%
+% Acronyms
+%   \begin{acronyms}
+%   \acro{Acronym}
+%   Definition here
+%   \acro{EMOS}
+%   Ensemble model output statistics 
+%   \acro{ECMWF}
+%   Centre for Medium-Range Weather Forecasts
+%   \end{acronyms}
+
+%
+%%%%%%%%%%%%%%
+% Notation 
+%   \begin{notation}
+%   \notation{$a+b$} Notation Definition here
+%   \notation{$e=mc^2$} 
+%   Equation in German-born physicist Albert Einstein's theory of special
+%  relativity that showed that the increased relativistic mass ($m$) of a
+%  body comes from the energy of motion of the body—that is, its kinetic
+%  energy ($E$)—divided by the speed of light squared ($c^2$).
+%   \end{notation}
+
+
+
+
+
+
+
+%% ------------------------------------------------------------------------ %%
+%% Citations
+
+% Please use ONLY \citet and \citep for reference citations.
+% DO NOT use other cite commands (e.g., \cite, \citeyear, \nocite, \citealp, etc.).
+
+
+%% Example \citet and \citep:
+%  ...as shown by \citet{Boug10}, \citet{Buiz07}, \citet{Fra10},
+%  \citet{Ghel00}, and \citet{Leit74}. 
+
+%  ...as shown by \citep{Boug10}, \citep{Buiz07}, \citep{Fra10},
+%  \citep{Ghel00, Leit74}. 
+
+%  ...has been shown \citep [e.g.,][]{Boug10,Buiz07,Fra10}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Track Changes:
+% To add words, \added{<word added>}
+% To delete words, \deleted{<word deleted>}
+% To replace words, \replace{<word to be replaced>}{<replacement word>}
+% To explain why change was made: \explain{<explanation>} This will put
+% a comment into the right margin.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% At the end of the document, use \listofchanges, which will list the
+% changes and the page and line number where the change was made.
+
+% When final version, \listofchanges will not produce anything,
+% \added{<word or words>} word will be printed, \deleted{<word or words} will take away the word,
+% \replaced{<delete this word>}{<replace with this word>} will print only the replacement word.
+%  In the final version, \explain will not print anything.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%
+%\listofchanges
+%%%
+
+%\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Supporting Information
+%% (Optional) See AGUSuppInfoSamp.tex/pdf for requirements 
+%% for Supporting Information.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%More Information and Advice:
+%
+%------------------------------------------------------------------------ %%
+%
+% SECTION HEADS
+%
+%------------------------------------------------------------------------ %%
+%
+%Capitalize the first letter of each word (except for
+%prepositions, conjunctions, and articles that are
+%three or fewer letters).
+%
+%AGU follows standard outline style; therefore, there cannot be a section 1 without
+%a section 2, or a section 2.3.1 without a section 2.3.2.
+%Please make sure your section numbers are balanced.
+%---------------
+%Level 1 head
+%
+%Use the \section{} command to identify level 1 heads;
+%type the appropriate head wording between the curly
+%brackets, as shown below.
+%
+%An example:
+%\section{Level 1 Head: Introduction}
+%
+%---------------
+%Level 2 head
+%
+%Use the \subsection{} command to identify level 2 heads.
+%An example:
+%\subsection{Level 2 Head}
+%
+%---------------
+%Level 3 head
+%
+%Use the \subsubsection{} command to identify level 3 heads
+%An example:
+%\subsubsection{Level 3 Head}
+%
+%---------------
+%Level 4 head
+%
+%Use the \subsubsubsection{} command to identify level 3 heads
+%An example:
+%\subsubsubsection{Level 4 Head} An example.
+%
+%------------------------------------------------------------------------ %%
+%
+% IN-TEXT LISTS
+%
+%------------------------------------------------------------------------ %%
+%
+%Do not use bulleted lists; enumerated lists are okay.
+%\begin{enumerate}
+%\item
+%\item
+%\item
+%\end{enumerate}
+%
+%------------------------------------------------------------------------ %%
+%
+% EQUATIONS
+%
+%------------------------------------------------------------------------ %%
+%
+%Single-line equations are centered.
+%Equation arrays will appear left-aligned.
+%
+%Math coded inside display math mode \[ ...\]
+% will not be numbered, e.g.,:
+% \[ x^2=y^2 + z^2\]
+%
+% Math coded inside \begin{equation} and \end{equation} will
+% be automatically numbered, e.g.,:
+% \begin{equation}
+% x^2=y^2 + z^2
+% \end{equation}
+%
+%
+%To create multiline equations, use the
+%\begin{eqnarray} and \end{eqnarray} environment
+%as demonstrated below.
+%\begin{eqnarray}
+%  x_{1} & = & (x - x_{0}) \cos \Theta \nonumber \\
+%        && + (y - y_{0}) \sin \Theta  \nonumber \\
+%  y_{1} & = & -(x - x_{0}) \sin \Theta \nonumber \\
+%        && + (y - y_{0}) \cos \Theta.
+%\end{eqnarray}
+%
+%If you don't want an equation number, use the star form:
+%\begin{eqnarray*}...\end{eqnarray*}
+%
+%Break each line at a sign of operation
+%(+, -, etc.) if possible, with the sign of operation
+%on the new line.
+%
+%Indent second and subsequent lines to align with
+%the first character following the equal sign on the
+%first line.
+%
+%Use an \hspace{} command to insert horizontal space
+%into your equation if necessary. Place an appropriate
+%unit of measure between the curly braces, e.g.
+%\hspace{1in}; you may have to experiment to achieve
+%the correct amount of space.
+%
+%
+%------------------------------------------------------------------------ %%
+%
+% EQUATION NUMBERING: COUNTER
+%
+%------------------------------------------------------------------------ %%
+%
+%You may change equation numbering by resetting
+%the equation counter or by explicitly numbering
+%an equation.
+%
+%To explicitly number an equation, type \eqnum{}
+%(with the desired number between the brackets)
+%after the \begin{equation} or \begin{eqnarray}
+%command.  The \eqnum{} command will affect only
+%the equation it appears with; LaTeX will number
+%any equations appearing later in the manuscript
+%according to the equation counter.
+%
+%
+%If you have a multiline equation that needs only
+%one equation number, use a \nonumber command in
+%front of the double backslashes (\\) as shown in
+%the multiline equation above.
+%
+%If you are using line numbers, remember to surround
+%equations with \begin{linenomath*}...\end{linenomath*}
+%
+% To add line numbers to lines in equations:
+% \begin{linenomath*}
+% \begin{equation}
+% \end{equation}
+% \end{linenomath*}
+%
+%
+%

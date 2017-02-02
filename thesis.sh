@@ -18,6 +18,7 @@ bibtex LLamarcheThesis
 bibtex introduction
 bibtex paper1
 bibtex paper2
+bibtex paper3
 bibtex conclusion
 
 pdflatex LLamarcheThesis.tex
