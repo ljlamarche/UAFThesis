@@ -1,5 +1,5 @@
 
-\documentclass{uafthesis}
+\documentclass[12pt]{uafthesis}
 
 \special{papersize=8.5in,11in}
 \usepackage{ppl}
@@ -7,14 +7,12 @@
 \usepackage{graphicx}
 \usepackage[square]{natbib}
 \usepackage{doi}
-\usepackage{chapterbib}
+\usepackage[sectionbib]{chapterbib}
 \usepackage{appendix}
 \usepackage[inline]{enumitem}
 \usepackage{longtable}
 \usepackage{hyperref}
-%\usepackage[intoc]{nomencl}
-%\usepackage{makeidx}
-%\usepackage[acronym,nomain]{glossaries}
+
 
 %%======================================================================================%%
 %%======================================================================================%%
@@ -38,11 +36,6 @@
 %%======================================================================================%%
 %%======================================================================================%%
 
-%\makenomenclautre
-%\nomenclature{IMF}{Interplanetary Magnetic Field}
-% makeindex <filename.glo> -s nomenclature.ist -o uaf_thesis_example.gls
-
-%\makeglossaries
 
 \begin{document}
 
@@ -65,6 +58,7 @@
 \comtwo{Mark Conde}
 \comthree{Hui Zhang}
 
+% Named signature pages are no longer required as of Fall 2017
 %\makenamedsig
 \maketitle
 
@@ -84,12 +78,9 @@
 	\input{acknowledgements}
 \end{acknowledgements}
 
-\addtocontents{toc}{\protect\afterpage{~\hfill{Page}\par\medskip}}
-
-%\section*{Acronyms}
-%\newacronym{superdarn}{SuperDARN}{Super Dual Auroral Radar Network}
-%\gls{superdarn}
-%\printglossaries
+% Comment this out to have 'Page' only appear on first page of ToC, LoF, LoT, ect
+% New grad school requirements as of Spring 2017
+%\addtocontents{toc}{\protect\afterpage{~\hfill{Page}\par\medskip}}
 
 \include{introduction}
 
@@ -101,7 +92,6 @@
 
 \include{conclusion}
 
-%\printnomenclature
 
 %\appendix
 %\include{appendix}

@@ -55,10 +55,18 @@
 %%        Page numbers moved to bottom of page and centered
 %%        Set Abstract to page 3 (iii) per new format requirements
 %%        Changed margins and spacing
+%%        Modified \chapter so first chapter starts on an odd page - adds an extra blank page if last preface
+%%            page is odd
+%%        To have "Page" only on first page of ToC, LoF, ect, remove the following lines from the thesis.tex
+%%            file and afterpage package (no longer needed).
+%%			\addtocontents{toc}{\protect\afterpage{~\hfill{Page}\par\medskip}} % for the toc
+%%			\addtocontents{lof}{\protect\afterpage{~\hfill{Page}\par\medskip}} % for the lof
+%%        Added \phantomsection to \chapteruaf and \frontchap so hyperlinks in preface work - no idea why
+%%          but this fixes it.
 
 \NeedsTeXFormat{LaTeX2e} 
 %% have to require "afterpage" to get the stupid 'Page' heading in the ToC, LoF, LoT, etc.
-\usepackage{afterpage}
+%\usepackage{afterpage}
 \usepackage[switch]{lineno}
 \usepackage{tocloft}% http://ctan.org/pkg/tocloft
 %\usepackage[nottoc,notlot,notlof,section,numbib]{tocbibind}
@@ -379,7 +387,8 @@
 \newenvironment{abstract}
 {
 \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
-\setcounter{page}{3}\frontchap*{\abstractname}
+\setcounter{page}{3}
+\frontchap*{\abstractname}
 \addcontentsline{toc}{frontchapter}{\abstractname}
 }
 {\newpage\renewcommand{\thepage}{\arabic{page}}}
@@ -388,8 +397,9 @@
 \newenvironment{acronyms}
 {
 \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
-\newpage\addcontentsline{toc}{frontchapter}{\acronymname}
+\newpage
 \frontchap*{\acronymname}
+\addcontentsline{toc}{frontchapter}{\acronymname}
 }
 {\newpage\renewcommand{\thepage}{\arabic{page}}}
 
@@ -397,8 +407,9 @@
 \newenvironment{acknowledgements}
 {
 \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
-\newpage\addcontentsline{toc}{frontchapter}{\acknowledgename}
+\newpage
 \frontchap*{\acknowledgename}
+\addcontentsline{toc}{frontchapter}{\acknowledgename}
 }
 {\newpage\renewcommand{\thepage}{\arabic{page}}}
 
@@ -563,6 +574,7 @@
 \if@arabic\relax\else\if@chapterone\setcounter{page}{1}\else\relax\fi\fi
 \@chapteronefalse
                     \if@openright\cleardoublepage\else\clearpage\fi
+                    \phantomsection
 			%\clearpage
                     \thispagestyle{myheadings}%
                     \global\@topnum\z@
@@ -589,7 +601,7 @@
 }
 
 \newcommand\chapter{
-\if@arabic\relax\else\if@chapterone\setcounter{page}{1}\else\relax\fi\fi
+\if@arabic\relax\else\if@chapterone\if@openright\cleardoublepage\else\clearpage\fi\setcounter{page}{1}\else\relax\fi\fi
 \@chapteronefalse
                     \if@openright\cleardoublepage\else\clearpage\fi
                     \thispagestyle{myheadings}%
@@ -640,6 +652,7 @@
 %% here's the frontchap stuff, TOTALLY the same as a chapter, but with 
 %% centered chapter title
 \newcommand\frontchap{\if@openright\cleardoublepage\else\clearpage\fi
+					\phantomsection
                     \thispagestyle{myheadings}%
                     \global\@topnum\z@
                     \@afterindentfalse
@@ -1042,35 +1055,45 @@
     \if@restonecol\twocolumn\fi
     \newpage\renewcommand{\thepage}{\arabic{page}}}
 \let\l@table\l@figure
+
 \newdimen\bibindent
 \bibindent=1.5em
-\newenvironment{thebibliography}[1]
-     {\section{\bibname
-	\addcontentsline{toc}{section}{\bibname}        
-	\@mkboth{\uppercase{\bibname}}{\uppercase{\bibname}}}%
-      \list{\@biblabel{\arabic{enumiv}}}%
-           {\settowidth\labelwidth{\@biblabel{#1}}%
-            \leftmargin\labelwidth
-            \advance\leftmargin\labelsep
-            \if@openbib
-              \advance\leftmargin\bibindent
-              \itemindent -\bibindent
-              \listparindent \itemindent
-              \parsep \z@
-            \fi
-            \usecounter{enumiv}%
-            \let\p@enumiv\@empty
-            \renewcommand\theenumiv{\arabic{enumiv}}}%
-      \if@openbib
-        \renewcommand\newblock{\par}
-      \else
-        \renewcommand\newblock{\hskip .11em \@plus.33em \@minus.07em}%
-      \fi
-      \sloppy\clubpenalty4000\widowpenalty4000%
-      \sfcode`\.=\@m}
-     {\def\@noitemerr
-       {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist}
+%% IF USING CHAPTERBIB package: This will all be redefined, but get errors if you don't
+%%   define thebibliography environment in the first place
+\newenvironment{thebibliography}[1]{
+\section{\bibname}
+%		\addcontentsline{toc}{section}{\bibname}        
+\@mkboth{\uppercase{\bibname}}{\uppercase{\bibname}}
+%}%
+\list{\@biblabel{\arabic{enumiv}}}%
+{\settowidth\labelwidth{\@biblabel{#1}}%
+ \leftmargin\labelwidth \advance\leftmargin\labelsep \@openbib@code
+% \leftmargin\labelwidth \advance\leftmargin\labelsep
+% \if@openbib
+%   \advance\leftmargin\bibindent
+%   \itemindent -\bibindent
+%   \listparindent \itemindent
+%   \parsep \z@
+% \fi
+ \usecounter{enumiv}%
+ \let\p@enumiv\@empty
+ \renewcommand\theenumiv{\arabic{enumiv}}
+}%
+%\if@openbib
+%  \renewcommand\newblock{\par}
+%\else
+%  \renewcommand\newblock{\hskip .11em \@plus.33em \@minus.07em}%
+%\fi
+\sloppy \clubpenalty4000 \widowpenalty4000%
+\sfcode`\.=\@m
+}
+{
+\def\@noitemerr
+{\@latex@warning{Empty `thebibliography' environment}}%
+\endlist
+}
+
+
 \newcommand\newblock{}
 \newenvironment{theindex}
                {\if@twocolumn
@@ -1135,12 +1158,14 @@
 \newcommand\indname{Index}
 
 %% get bibliography in contents as a section (robustly)
+%% Again, this is redefined using the chapterbib package.
 \renewcommand\bibliography[1]{
-        \newpage
-                \addcontentsline{toc}{section}{\bibname}
+     \newpage
+             \addcontentsline{toc}{section}{\bibname}
 \if@filesw
-  \immediate\write\@auxout{\string\bibdata{#1}}\fi
-  \@input@{\jobname.bbl}}
+\immediate\write\@auxout{\string\bibdata{#1}}\fi
+\@input@{\jobname.bbl}
+}
         
 
 \newcommand\today{\ifcase\month\or
@@ -1164,14 +1189,14 @@
 \fi
 
 %% here's where we meet the page layout requirements of the grad school
-%% 2017-1-30 LLamarche - margins now even at 1.25"
+%% 2017-1-30 LLamarche - margins now even at 1"
 
-\oddsidemargin 0.25in   %   Note that \oddsidemargin = \evensidemargin
-   \evensidemargin 0.25in
+\oddsidemargin 0in   %   Note that \oddsidemargin = \evensidemargin
+   \evensidemargin 0in
    \marginparwidth 0pt
 \marginparsep 10pt      % Horizontal space between outer margin and 
                         % marginal note
-\topmargin 0.25in        %    Nominal distance from top of page to top of
+\topmargin 0in        %    Nominal distance from top of page to top of
                         %    box containing running head.
 %\headheight 12pt        %    Height of box containing running head.
 %\headsep 25pt           %    Space between running head and text.
@@ -1180,13 +1205,13 @@
 \topskip = 11pt         %    '\baselineskip' for first line of page.
                         % Bottom of page:
 %\footskip 30pt          %    Distance from baseline of box containing
-\footskip = 0.75truein          %    Distance from baseline of box containing
+\footskip = 0.5truein          %    Distance from baseline of box containing
                         %    foot to baseline of last line of text.                
 \footnotesep = 15pt
                     
-\textheight = 8.5truein
+\textheight = 9.0truein
 %\advance\textheight by \topskip
-\textwidth 6.0truein     % Width of text line.
+\textwidth 6.5truein     % Width of text line.
                          % For two-column mode: 
 \columnsep 10pt          %    Space between columns 
 \columnseprule 0pt       %    Width of rule between columns.
