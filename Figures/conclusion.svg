@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.64"
-     inkscape:cx="664.10173"
-     inkscape:cy="688.86114"
+     inkscape:zoom="0.90509668"
+     inkscape:cx="395.51422"
+     inkscape:cy="802.48736"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g1065"
      showgrid="false"
      inkscape:window-width="1280"
      inkscape:window-height="751"
@@ -5180,9 +5180,10 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#f51fba;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-       d="m 593.12198,97.141121 18.18275,30.809649"
+       d="M 593.12198,97.141121 577.05425,126.84592"
        id="path9184"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot9416"
@@ -5292,12 +5293,12 @@
        id="g1065"
        transform="translate(0,3.0478616e-4)">
       <rect
-         y="34.265568"
-         x="365.69055"
-         height="130.97351"
-         width="164.65578"
+         y="34.277328"
+         x="365.7023"
+         height="130.95"
+         width="168.77547"
          id="rect9510"
-         style="opacity:1;fill:#bcbcbc;fill-opacity:1;stroke:#0bff05;stroke-width:1.9056437;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="opacity:1;fill:#bcbcbc;fill-opacity:1;stroke:#0bff05;stroke-width:1.92916274;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       <flowRoot
          transform="translate(-167.68532,-113.01525)"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -5310,7 +5311,7 @@
              height="131.13042"
              width="181.95375"
              id="rect9476" /></flowRegion><flowPara
-           id="flowPara9478">Enhanced irregularity production for positive IMF By component</flowPara></flowRoot>    </g>
+           id="flowPara9478">Enhanced irregularity production for negative IMF By component</flowPara></flowRoot>    </g>
     <flowRoot
        xml:space="preserve"
        id="flowRoot9480"
