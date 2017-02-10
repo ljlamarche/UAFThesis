@@ -574,8 +574,8 @@
 \if@arabic\relax\else\if@chapterone\setcounter{page}{1}\else\relax\fi\fi
 \@chapteronefalse
                     \if@openright\cleardoublepage\else\clearpage\fi
+					%\clearpage
                     \phantomsection
-			%\clearpage
                     \thispagestyle{myheadings}%
                     \global\@topnum\z@
                     \@afterindentfalse
