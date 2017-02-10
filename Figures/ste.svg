@@ -15,7 +15,7 @@
    viewBox="0 0 1052.3622 744.09448"
    id="svg2"
    version="1.1"
-   inkscape:version="0.92.0 r"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="ste.svg">
   <defs
      id="defs4">
@@ -84,13 +84,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.81"
-     inkscape:cx="673.95751"
+     inkscape:cx="467.78467"
      inkscape:cy="460.23967"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="751"
+     inkscape:window-width="1625"
+     inkscape:window-height="895"
      inkscape:window-x="0"
      inkscape:window-y="23"
      inkscape:window-maximized="0" />
@@ -235,15 +235,15 @@
          id="flowPara4471">Open Field Lines</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4473"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.36727901px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#828282;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-       transform="matrix(0.77162677,-0.42576597,0.42576597,0.77162677,147.11182,754.29909)"><flowRegion
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.36727905px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#828282;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.79627726,-0.37765997,0.37765997,0.79627726,142.38166,707.22658)"><flowRegion
          id="flowRegion4475"><rect
            id="rect4477"
            width="381.83768"
            height="60.811192"
            x="688.72198"
            y="382.05582"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.36727901px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr;text-anchor:start;fill:#828282;fill-opacity:1;" /></flowRegion><flowPara
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.36727905px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#828282;fill-opacity:1" /></flowRegion><flowPara
          id="flowPara4479">Closed Field Lines</flowPara></flowRoot>    <path
        style="fill:none;fill-rule:evenodd;stroke:#56d5f3;stroke-width:2.64389133;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 376.33568,984.04966 c 7.43349,-38.91626 11.61095,-69.44787 76.30336,-98.33584 46.59976,-20.80881 89.72114,-18.46579 112.74968,-41.49433 31.6671,-31.66709 40.06333,-61.99978 36.49198,-115.02521"

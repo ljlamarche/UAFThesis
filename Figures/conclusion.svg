@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.90509668"
-     inkscape:cx="188.08329"
+     inkscape:cx="165.70452"
      inkscape:cy="802.48736"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -5177,9 +5177,10 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#f51fba;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-       d="m 593.12198,97.141121 18.18275,30.809649"
+       d="M 593.12198,97.141121 577.05425,126.84592"
        id="path9184"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot9416"
@@ -5304,12 +5305,12 @@
            y="121.00153"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
          id="flowPara9470">Optimal orientation to observe structure with radar</flowPara></flowRoot>    <rect
-       style="opacity:1;fill:#bcbcbc;fill-opacity:1;stroke:#0bff05;stroke-width:1.9056437;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#bcbcbc;fill-opacity:1;stroke:#0bff05;stroke-width:1.93072033;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect9510"
-       width="164.65578"
-       height="130.97351"
-       x="365.69055"
-       y="34.265568" />
+       width="169.05013"
+       height="130.94844"
+       x="365.70309"
+       y="34.278107" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot9472"
@@ -5322,7 +5323,7 @@
            x="537.40118"
            y="149.28581"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
-         id="flowPara9478">Enhanced irregularity production for positive IMF By component</flowPara></flowRoot>    <flowRoot
+         id="flowPara9478">Enhanced irregularity production for negative IMF By component</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot9480"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
