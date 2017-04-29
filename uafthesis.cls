@@ -63,6 +63,9 @@
 %%			\addtocontents{lof}{\protect\afterpage{~\hfill{Page}\par\medskip}} % for the lof
 %%        Added \phantomsection to \chapteruaf and \frontchap so hyperlinks in preface work - no idea why
 %%          but this fixes it.
+%%        Set \widowpenalty and \clubpenalty at 10000 to absolutely prevent widows and orphans
+%%        Defined \listoffiguresworks and \listoftablesworks to create List of Figures
+%%          and List of Tables
 
 \NeedsTeXFormat{LaTeX2e} 
 %% have to require "afterpage" to get the stupid 'Page' heading in the ToC, LoF, LoT, etc.
@@ -570,10 +573,14 @@
 %% Updated to use flushright environment, which will keep it 
 %%
 
+% \def\gsdean#1{\gdef\@gsdean{#1}} % the grad school dean's name 
+ 
+ 
 \newcommand\chapteruaf{
-\if@arabic\relax\else\if@chapterone\setcounter{page}{1}\else\relax\fi\fi
+%\if@arabic\relax\else\if@chapterone\setcounter{page}{1}\else\relax\fi\fi
+\if@arabic\relax\else\if@chapterone\if@openright\cleardoublepage\else\clearpage\fi\setcounter{page}{1}\else\relax\fi\fi
 \@chapteronefalse
-                    \if@openright\cleardoublepage\else\clearpage\fi
+                   \if@openright\cleardoublepage\else\clearpage\fi
 					%\clearpage
                     \phantomsection
                     \thispagestyle{myheadings}%
@@ -1001,24 +1008,33 @@
     \if@restonecol\twocolumn\fi
     \newpage\renewcommand{\thepage}{\arabic{page}}}
 \newcommand\listofothermaterials{%
-    \@chapteronefalse
-    \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
-    \if@twocolumn
-      \@restonecoltrue\onecolumn
-    \else
-      \@restonecolfalse
-    \fi
-    \chapteruaf*{\listothermatname
-      \@mkboth{\uppercase{\listothermatname}}%
-              {\uppercase{\listothermatname}}}%
-    \@chapteronetrue
-    %% get this in contents as a section
-    \addcontentsline{toc}{frontchapter}{\listothermatname}
-    %\cftafterloftitle
-    \@starttoc{lom}%
-    \if@restonecol\twocolumn\fi
-    \newpage\renewcommand{\thepage}{\arabic{page}}}
-\newcommand\listoffigures{%
+   \@chapteronefalse
+   \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
+   \if@twocolumn
+     \@restonecoltrue\onecolumn
+   \else
+     \@restonecolfalse
+   \fi
+   \chapteruaf*{\listothermatname
+     \@mkboth{\uppercase{\listothermatname}}%
+             {\uppercase{\listothermatname}}}%
+   \@chapteronetrue
+   %% get this in contents as a section
+   \addcontentsline{toc}{frontchapter}{\listothermatname}
+   %\cftafterloftitle
+   \@starttoc{lom}%
+   \if@restonecol\twocolumn\fi
+   \newpage\renewcommand{\thepage}{\arabic{page}}}
+
+%% For some #$*&@^ reason, \listoffigures and \listoftables mess up the page numbers.  I
+%%	think they're redefined somewhere but I can't &*$*^% figure out where.
+%%	Anyway, you DO need the original functions defined (below) because otherwise you get
+%%	errors about redefining something that's not already defined, but use \listoffiguresworks
+%%	and \listoftablesworks which are exactly the #^@*(#* same but with a different name.
+%%	Total hack, but &*!!#&$^, this is the last @&*#(^ thing I need to do before submitting
+%%	and I'm not spending anymore $&(*%& time on this.
+
+\newcommand\listoffiguresworks{%
     \@chapteronefalse
     \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
     \if@twocolumn
@@ -1036,8 +1052,7 @@
     \@starttoc{lof}%
     \if@restonecol\twocolumn\fi
     \newpage\renewcommand{\thepage}{\arabic{page}}}
-\newcommand\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
-\newcommand\listoftables{%
+\newcommand\listoftablesworks{%
     \@chapteronefalse
     \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
     \if@twocolumn
@@ -1046,15 +1061,59 @@
       \@restonecolfalse
     \fi
     \chapteruaf*{\listtablename
-      \@mkboth{\uppercase{\listtablename}}{\uppercase{\listtablename}}}%
-    %% get this in contents as a section
+      \@mkboth{\uppercase{\listtablename}}%
+              {\uppercase{\listtablename}}}%
     \@chapteronetrue
+    %% get this in contents as a section
     \addcontentsline{toc}{frontchapter}{\listtablename}
     %\cftafterloftitle
     \@starttoc{lot}%
     \if@restonecol\twocolumn\fi
     \newpage\renewcommand{\thepage}{\arabic{page}}}
+
+\newcommand\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
 \let\l@table\l@figure
+
+
+
+%% Original definition of \listoffigures and \listoftables.  Needed to prevent errors but
+%%	they don't do anything
+\newcommand\listoffigures{%
+%    \@chapteronefalse
+%    \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
+%    \if@twocolumn
+%      \@restonecoltrue\onecolumn
+%    \else
+%      \@restonecolfalse
+%    \fi
+%    \chapteruaf*{\listfigurename
+%      \@mkboth{\uppercase{\listfigurename}}{\uppercase{\listfigurename}}}%
+%    \@chapteronetrue
+%    %% get this in contents as a section
+%    \addcontentsline{toc}{frontchapter}{\listfigurename}
+%    %\cftafterloftitle
+%    \@starttoc{lof}%
+%    \if@restonecol\twocolumn\fi
+%    \newpage\renewcommand{\thepage}{\arabic{page}}
+    }
+\newcommand\listoftables{%
+%   \@chapteronefalse
+%    \if@arabic\relax\else\renewcommand{\thepage}{\roman{page}}\fi
+%  \if@twocolumn
+%    \@restonecoltrue\onecolumn
+%  \else
+%    \@restonecolfalse
+%  \fi
+%  \chapteruaf*{\listtablename
+%    \@mkboth{\uppercase{\listtablename}}{\uppercase{\listtablename}}}%
+%   %% get this in contents as a section
+%   \@chapteronetrue
+%  \addcontentsline{toc}{frontchapter}{\listtablename}
+%   %\cftafterloftitle
+%    \@starttoc{lot}%
+%   \if@restonecol\twocolumn\fi
+%   \newpage\renewcommand{\thepage}{\arabic{page}}
+    }
 
 \newdimen\bibindent
 \bibindent=1.5em
@@ -1217,6 +1276,9 @@
 \columnseprule 0pt       %    Width of rule between columns.
  
 %% force a raggedbottom here so page numbers at fronts o' chap's don't
+%% force no widows and no orphans, per grad schools needs
+\widowpenalty = 10000
+\clubpenalty = 10000
 %% spill over bottom margins
 \raggedbottom
 

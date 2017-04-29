@@ -14,7 +14,7 @@
    viewBox="0 0 1052.3622 744.09448"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.0 r"
    sodipodi:docname="magnetosphere.svg">
   <defs
      id="defs4" />
@@ -25,17 +25,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="565.07007"
-     inkscape:cy="412.35822"
+     inkscape:zoom="0.5"
+     inkscape:cx="482.03349"
+     inkscape:cy="372.35822"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1680"
-     inkscape:window-height="971"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="1280"
+     inkscape:window-height="751"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -87,20 +87,20 @@
        id="path4142-8"
        transform="translate(0,308.26772)" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#0027ff;stroke-width:3.38309073;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#ff7b00;stroke-width:3.38309073;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 171.15614,351.13603 C 275.06228,497.30298 314.08328,892.12059 300.47736,1055.2651"
        id="path4306-9"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#56d5f3;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 226.27417,348.08385 c 27.4347,36.15782 58.83645,82.80182 97.58073,97.58074 54.10602,20.63862 106.80579,21.95297 132.93608,48.08326 35.93237,35.93237 37.86356,81.69751 47.81119,129.865"
+       style="fill:none;fill-rule:evenodd;stroke:#56d5f3;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 282.52417,319.02135 c 10.5597,46.47032 40.01928,83.94646 80.70573,91.95574 38.16852,7.51362 75.72874,33.11689 99.18608,77.14576 17.8999,33.59768 32.23856,87.32251 42.18619,135.49"
        id="path4332"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cssc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#56d5f3;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 370.44882,323.14277 c 20.99891,27.12325 94.10268,66.37548 120.2376,133.93609 28.31838,73.20502 30.44472,101.94255 32.598,181.77668"
+       style="fill:none;fill-rule:evenodd;stroke:#56d5f3;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 389.19882,316.58027 c -0.56359,30.87325 75.35268,72.93798 101.4876,140.49859 28.31838,73.20502 30.44472,101.94255 32.598,181.77668"
        id="path4332-4"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csc" />
@@ -148,13 +148,13 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cscc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#0027ff;stroke-width:3.14539909;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#ff7b00;stroke-width:3.14539909;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 20.111558,383.15295 C 113.09103,524.35065 148.0086,905.74566 135.83347,1063.3438"
        id="path4306-9-0"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#0027ff;stroke-width:3.23510122;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-rule:evenodd;stroke:#ff7b00;stroke-width:3.23510122;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 92.206524,371.83702 C 189.55868,514.4941 226.11838,899.83103 213.37067,1059.058"
        id="path4306-9-4"
        inkscape:connector-curvature="0"
@@ -175,15 +175,16 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:100%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start">Magnetopause</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4449"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0027ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-       transform="translate(8,312.26772)"><flowRegion
-         id="flowRegion4451"><rect
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff7b00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(4.25,321.64272)"><flowRegion
+         id="flowRegion4451"
+         style="fill:#ff7b00;fill-opacity:1"><rect
            id="rect4453"
            width="80.610176"
            height="66.46804"
            x="29.698484"
            y="372.15631"
-           style="fill:#0027ff;fill-opacity:1;" /></flowRegion><flowPara
+           style="fill:#ff7b00;fill-opacity:1" /></flowRegion><flowPara
          id="flowPara4455">IMF</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4457"

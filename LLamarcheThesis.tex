@@ -8,8 +8,10 @@
 \usepackage[square]{natbib}
 \usepackage{doi}
 \usepackage[sectionbib]{chapterbib}
+\usepackage[nottoc,numbib]{tocbibind}
 \usepackage{appendix}
 \usepackage[inline]{enumitem}
+\usepackage{etoolbox}
 \usepackage{longtable}
 \usepackage{hyperref}
 
@@ -27,11 +29,17 @@
 %% Add \deg definition for degree sign
 \renewcommand{\deg}{^\circ}
 
+%% Add \captionbreak definition
+\newcommand{\captionbreak}{\\ \vspace{1mm}}
+
 %% Look for figures in local Figures directory
 \graphicspath{{Figures/}}
 
 %% Set footnote markers to uppercase roman numerals
 \renewcommand{\thefootnote}{\Roman{footnote}}
+
+%% Prevent bibliography enteries from running onto two pages
+\AtBeginEnvironment{thebibliography}{\interlinepenalty=10000}
 
 %%======================================================================================%%
 %%======================================================================================%%
@@ -58,7 +66,7 @@
 \comtwo{Mark Conde}
 \comthree{Hui Zhang}
 
-% Named signature pages are no longer required as of Fall 2017
+% Named signature pages are no longer required as of Fall 2016
 %\makenamedsig
 \maketitle
 
@@ -67,8 +75,9 @@
 \end{abstract}
 
 \tableofcontents
-\listoffigures
-\listoftables
+
+\listoffiguresworks
+\listoftablesworks
 
 \begin{acronyms}
 	\input{acronyms}

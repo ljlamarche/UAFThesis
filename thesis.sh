@@ -25,6 +25,8 @@ pdflatex LLamarcheThesis.tex
 
 pdflatex LLamarcheThesis.tex
 
+pdflatex LLamarcheThesis.tex
+
 rm *.aux
 rm *.bbl
 rm *.blg
